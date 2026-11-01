@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="portal-menu-shell">
+  <div class="portal-menu-heading">
+    <span class="section-kicker">DEPARTMENT PORTAL</span>
+    <h1>Select a workspace</h1>
+    <p>Choose Test Engineering or OSV. Each workspace is separate, and only individually authorized users can enter the selected section with their registered YubiKey.</p>
+  </div>
+
+  <div class="portal-choice-grid">
+    <a class="portal-choice te-choice" href="{{ url_for('choose_section', section_key='te') }}">
+      <div class="portal-choice-mark">TE</div>
+      <div>
+        <span class="portal-choice-label">TEST ENGINEERING</span>
+        <h2>TE Workspace</h2>
+        <p>Open the modular Test Engineering portal and its independent tools.</p>
+      </div>
+      <span class="portal-choice-action">Select TE &rarr;</span>
+    </a>
+
+    <a class="portal-choice osv-choice" href="{{ url_for('choose_section', section_key='osv') }}">
+      <div class="portal-choice-mark">OSV</div>
+      <div>
+        <span class="portal-choice-label">ON-SITE VERIFICATION</span>
+        <h2>OSV Workspace</h2>
+        <p>Open the existing OSV ticket, KPI, history, alert, and administration system.</p>
+      </div>
+      <span class="portal-choice-action">Select OSV &rarr;</span>
+    </a>
+  </div>
+
+  {% if session.get('user_id') %}
+  <div class="portal-signed-in">Signed in as <strong>{{ session.get('username') }}</strong>. Selecting a workspace switches sections without requiring another YubiKey OTP.</div>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}{% block content %}
+<div class="page-head" style="margin-bottom:14px;">
+  <div>
+    <h1>Database Management</h1>
+    <p class="muted" style="margin:0">Back up the current database, or import an uploaded database / CSV file.</p>
+  </div>
+</div>
+
+<div class="stats" style="margin-bottom:14px;">
+  <div class="stat"><span>{{ ticket_count }}</span>Tickets</div>
+  <div class="stat"><span>{{ user_count }}</span>Users</div>
+  <div class="stat"><span>{{ (db_size / 1024) | round(1) }} KB</span>Database Size</div>
+</div>
+
+<section class="card section-card" style="padding:14px;">
+  <h2>Active Database</h2>
+  <p class="muted" style="margin:6px 0;word-break:break-all;"><code>{{ db_path }}</code></p>
+  <a href="{{ url_for('admin_database_download') }}" class="primary" style="display:inline-block;padding:7px 14px;border-radius:7px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;">
+    Download Current Database (.db backup)
+  </a>
+</section>
+
+<section class="card section-card" style="padding:14px;">
+  <h2>Import SQLite Database (.db)</h2>
+  <p class="muted" style="margin:6px 0;font-size:12.5px;">
+    Upload a previously exported .db file. The app will read its <code>tickets</code> table and merge matching columns into the current database.
+  </p>
+  <form method="post" action="{{ url_for('admin_database_import_db') }}" enctype="multipart/form-data"
+        style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+    <label>Database File (.db)
+      <input type="file" name="db_file" accept=".db,.sqlite,.sqlite3" required>
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;color:var(--text);">
+      <input type="checkbox" name="clear_first" value="1">
+      <span>Clear existing tickets first (overwrite mode)</span>
+    </label>
+    <div>
+      <button class="primary" type="submit" onclick="return confirm('Import this database file?');">Import Database</button>
+    </div>
+  </form>
+</section>
+
+<section class="card section-card" style="padding:14px;">
+  <h2>Import CSV</h2>
+  <p class="muted" style="margin:6px 0;font-size:12.5px;">
+    Upload a CSV file. The importer recognises common columns such as
+    <code>Stock Code</code>, <code>MRS Ticket</code>, <code>Serial Number</code>,
+    <code>Technician</code>, <code>Test End Time</code>, <code>Result</code>,
+    <code>Part Type</code>, <code>WH Location</code>, and more.
+  </p>
+  <form method="post" action="{{ url_for('admin_database_import_csv') }}" enctype="multipart/form-data"
+        style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+    <label>CSV File
+      <input type="file" name="csv_file" accept=".csv" required>
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;color:var(--text);">
+      <input type="checkbox" name="clear_first" value="1">
+      <span>Clear existing tickets first (overwrite mode)</span>
+    </label>
+    <div>
+      <button class="primary" type="submit" onclick="return confirm('Import this CSV file?');">Import CSV</button>
+    </div>
+  </form>
+</section>
+
+<div class="card section-card" style="padding:14px;border-left:4px solid var(--warn);">
+  <strong style="color:var(--warn);">Notes</strong>
+  <ul class="muted" style="margin:8px 0 0 18px;font-size:12.5px;line-height:1.7;">
+    <li>Importing is a merge operation. Existing rows are kept unless <em>Clear existing tickets first</em> is ticked.</li>
+    <li>The uploaded file must contain a <code>tickets</code> table (for .db) or a parsable CSV header row.</li>
+    <li>Column matching is case-sensitive against the current schema. Unknown columns are silently ignored.</li>
+  </ul>
+</div>
+{% endblock %}

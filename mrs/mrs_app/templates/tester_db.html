@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tester Database - MRS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body { background: #0f172a; color: #e6ecf7; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 95%; width: 2800px; margin: 0 auto; }
+        .card { background: #16213e; border: 1px solid #243456; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        
+        /* Accordion Tree Styles */
+        .accordion-header { background: #1c2b4d; padding: 12px 18px; border-radius: 6px; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; transition: background 0.2s; }
+        .accordion-header:hover { background: #23365e; }
+        .accordion-content { display: none; padding-left: 20px; border-left: 2px solid #243456; margin-bottom: 12px; }
+        .accordion-content.active { display: block; }
+        
+        /* Tester Item Card */
+        .tester-card { background: #0d1729; border: 1px solid #243456; border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+        .tester-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 17px; }
+        .spec-item label { display: block; font-size: 20px; color: #93a3c0; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
+        .spec-item span { color: #e6ecf7; word-break: break-all; }
+
+        /* Badges */
+        .badge { padding: 3px 8px; border-radius: 4px; font-size: 17px; font-weight: 600; display: inline-block; }
+        .badge-ok { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+        .badge-warning { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+        .badge-overdue { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+
+        /* Buttons & Forms */
+        input, select, textarea { background: #0b1220; border: 1px solid #243456; color: #e6ecf7; padding: 8px 12px; border-radius: 4px; font-size: 17px; width: 100%; box-sizing: border-box; }
+        button { background: #4f8cff; color: #fff; border: none; padding: 8px 14px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+        button:hover { background: #3b82f6; }
+        .btn-danger { background: #ef4444; }
+        .btn-danger:hover { background: #dc2626; }
+        .btn-secondary { background: #334155; }
+        .btn-secondary:hover { background: #475569; }
+
+        /* Comments & Images */
+        .comments-section { margin-top: 12px; border-top: 1px solid #243456; padding-top: 10px; }
+        .comment-item { font-size: 20px; background: #16213e; padding: 6px 10px; border-radius: 4px; margin-bottom: 6px; }
+        .comment-meta { color: #93a3c0; font-size: 17px; margin-bottom: 2px; }
+        .thumb-img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 1px solid #243456; cursor: pointer; margin-right: 5px; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); overflow-y: auto; padding: 30px 0; }
+        .modal-content { background: #16213e; border: 1px solid #243456; max-width: 700px; margin: 0 auto; padding: 25px; border-radius: 8px; }
+        .flash { padding: 10px 15px; border-radius: 4px; margin-bottom: 15px; font-size: 17px; }
+        .flash.success { background: rgba(34,197,94,0.15); color: #86efac; border: 1px solid rgba(34,197,94,0.3); }
+        .flash.error { background: rgba(239,68,68,0.15); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>Tester Database Management</h2>
+    <div style="display: flex; gap: 8px; align-items: center;">
+        <a href="{{ url_for('tester_db_export_csv') }}" style="background: #334155; color: #fff; padding: 8px 12px; border-radius: 4px; text-decoration: none; font-size: 17px; font-weight: 600;">📥 Export CSV</a>
+        
+        {% if session.get('is_admin') %}
+        <form method="POST" action="{{ url_for('tester_db_import_csv') }}" enctype="multipart/form-data" style="display: inline-flex; align-items: center; gap: 4px;">
+            <input type="file" name="csv_file" accept=".csv" required style="font-size: 17px; width: 170px; padding: 4px;">
+            <button type="submit" class="btn-secondary" style="font-size: 17px; padding: 7px 12px;">📤 Import CSV</button>
+        </form>
+        <button onclick="openModal('testerModal')">+ Add New Tester</button>
+        {% endif %}
+        
+        <a href="{{ url_for('overview') }}" style="color: #4f8cff; text-decoration: none; font-size: 17px; margin-left: 10px;">← Back to Overview</a>
+    </div>
+</div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for cat, msg in messages %}
+                    <div class="flash {{ cat }}">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Search Bar Card -->
+        <div class="card" style="padding: 15px;">
+            <form method="GET" action="{{ url_for('tester_db') }}" style="display: flex; gap: 10px;">
+                <input type="text" name="q" value="{{ q }}" placeholder="Search by Tester Name, Brand, Stockcode, or IP Address..." style="flex: 1;">
+                <button type="submit">Search</button>
+                {% if q %}
+                <a href="{{ url_for('tester_db') }}" style="background: #334155; color: #fff; padding: 8px 14px; border-radius: 4px; text-decoration: none; font-size: 17px; font-weight: 600; display: inline-flex; align-items: center;">Reset</a>
+                {% endif %}
+            </form>
+        </div>
+
+        <!-- Hierarchical Category Accordion Tree -->
+        <div class="card">
+            <h3 style="margin-top: 0; color: #93a3c0; font-size: 17px; margin-bottom: 15px;">Tester Categories & Stations Hierarchy</h3>
+            
+            {% if hierarchy %}
+                {% for category, brands in hierarchy.items() %}
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>📁 Category: {{ category }}</span>
+                    <span style="font-size: 12px; color: #93a3c0;">{{ brands | length }} Brands ▼</span>
+                </div>
+                <div class="accordion-content">
+                    {% for brand, memory_types in brands.items() %}
+                    <div class="accordion-header" style="background: #16213e;" onclick="toggleAccordion(this)">
+                        <span>🏷️ Brand / Vendor: {{ brand }}</span>
+                        <span style="font-size: 12px; color: #93a3c0;">{{ memory_types | length }} Types ▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        {% for mem_type, testers in memory_types.items() %}
+                        <div class="accordion-header" style="background: #0d1729;" onclick="toggleAccordion(this)">
+                            <span>⚙️ Type: {{ mem_type }}</span>
+                            <span style="font-size: 12px; color: #93a3c0;">{{ testers | length }} Testers ▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            {% for t in testers %}
+                            <div class="tester-card">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #243456; padding-bottom: 6px;">
+                                    <strong style="color: #4f8cff; font-size: 15px;">🖥️ {{ t.osv_tester }}</strong>
+                                    <div>
+                                        {% if t.maintenance_status == 'overdue' %}
+                                        <span class="badge badge-overdue">Maintenance Overdue ({{ t.days_till_maintenance }}d)</span>
+                                        {% elif t.maintenance_status == 'warning' %}
+                                        <span class="badge badge-warning">Due in {{ t.days_till_maintenance }} days</span>
+                                        {% else %}
+                                        <span class="badge badge-ok">Inspection OK ({{ t.days_till_maintenance }}d left)</span>
+                                        {% endif %}
+
+                                        {% if session.get('is_admin') %}
+                                        <button onclick="editTester({{ t | tojson | forceescape }})" class="btn-secondary" style="padding: 4px 10px; font-size: 12px; margin-left: 8px;">Edit</button>
+                                        <form method="POST" action="{{ url_for('tester_db') }}" style="display:inline;" onsubmit="return confirm('Delete tester {{ t.osv_tester }}?');">
+                                            <input type="hidden" name="action" value="delete">
+                                            <input type="hidden" name="id" value="{{ t.id }}">
+                                            <button type="submit" class="btn-danger" style="padding: 4px 10px; font-size: 12px; margin-left: 4px;">Delete</button>
+                                        </form>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tester-grid">
+                                    <div class="spec-item"><label>Vendor / Brand</label><span>{{ t.brand or '—' }}</span></div>
+                                    <div class="spec-item"><label>Username</label><span>{{ t.username or '—' }}</span></div>
+                                    <div class="spec-item"><label>Password</label><span>{{ t.password or '—' }}</span></div>
+                                    <div class="spec-item"><label>MAC Address</label><span>{{ t.mac_address or '—' }}</span></div>
+                                    <div class="spec-item"><label>IP Address</label><span>{{ t.ip_address or '—' }}</span></div>
+                                    <div class="spec-item"><label>Location (WH)</label><span>{{ t.location or '—' }}</span></div>
+                                    <div class="spec-item"><label>Remote Access</label><span>{{ t.remote_access or '—' }}</span></div>
+                                    <div class="spec-item"><label>Script Version</label><span>{{ t.script_version or '—' }}</span></div>
+                                    <div class="spec-item"><label>All Stockcode(s)</label><span>{{ t.all_stockcode or '—' }}</span></div>
+                                    <div class="spec-item"><label>OS</label><span>{{ t.os_version or '—' }}</span></div>
+                                    <div class="spec-item"><label>BIOS</label><span>{{ t.bios or '—' }}</span></div>
+                                    <div class="spec-item"><label>BMC</label><span>{{ t.bmc or '—' }}</span></div>
+                                    <div class="spec-item"><label>Work Instruction</label><span>{{ t.work_instruction or '—' }}</span></div>
+                                    <div class="spec-item"><label>Last Maintenance</label><span>{{ t.last_maintenance_date or '—' }}</span></div>
+                                </div>
+
+                                <!-- Images and Uploads -->
+                                <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                    <label style="font-size: 11px; color: #93a3c0; font-weight: 600;">IMAGES:</label>
+                                    {% for img in t.images_list %}
+                                    <a href="{{ url_for('tester_uploaded_file', filename=img) }}" target="_blank">
+                                        <img src="{{ url_for('tester_uploaded_file', filename=img) }}" class="thumb-img" alt="Tester Image">
+                                    </a>
+                                    {% else %}
+                                    <span style="font-size: 12px; color: #64748b;">No images attached.</span>
+                                    {% endfor %}
+                                    
+                                    <form method="POST" action="{{ url_for('tester_db') }}" enctype="multipart/form-data" style="display:inline-flex; gap: 5px; align-items: center; margin-left: auto;">
+                                        <input type="hidden" name="action" value="upload_image">
+                                        <input type="hidden" name="id" value="{{ t.id }}">
+                                        <input type="file" name="tester_image" required style="font-size: 17px; padding: 2px; width: 180px;">
+                                        <button type="submit" style="padding: 4px 8px; font-size: 11px;">Upload</button>
+                                    </form>
+                                </div>
+
+                                <!-- Comments Section -->
+                                <div class="comments-section">
+                                    <label style="font-size: 11px; color: #93a3c0; font-weight: 600; display: block; margin-bottom: 5px;">MAINTENANCE / INSPECTION COMMENTS:</label>
+                                    {% for c in t.comments_list %}
+                                    <div class="comment-item">
+                                        <div class="comment-meta"><strong>{{ c.user }}</strong> — {{ c.time }}</div>
+                                        <div>{{ c.text }}</div>
+                                    </div>
+                                    {% else %}
+                                    <div style="font-size: 12px; color: #64748b; margin-bottom: 6px;">No inspection comments recorded yet.</div>
+                                    {% endfor %}
+
+                                    <form method="POST" action="{{ url_for('tester_db') }}" style="display: flex; gap: 6px; margin-top: 6px;">
+                                        <input type="hidden" name="action" value="comment">
+                                        <input type="hidden" name="id" value="{{ t.id }}">
+                                        <input type="text" name="comment_text" placeholder="Add inspection note or update comment..." required style="font-size: 12px; padding: 5px 8px;">
+                                        <button type="submit" style="padding: 5px 10px; font-size: 12px;">Post Note</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <div style="text-align: center; color: #93a3c0; padding: 40px;">No testers found in the database. Click "+ Add New Tester" above to get started.</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Add/Edit Tester Modal -->
+    <div id="testerModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle" style="margin-top: 0; color: #e6ecf7;">Add New Tester Record</h3>
+            <form method="POST" action="{{ url_for('tester_db') }}">
+                <input type="hidden" name="action" value="save">
+                <input type="hidden" name="id" id="formId">
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                    <div>
+                        <label>Category</label>
+                        <select name="category" id="formCategory">
+                            <option value="DIMM">DIMM</option>
+                            <option value="Motherboard">Motherboard</option>
+                            <option value="GPU">GPU</option>
+                            <option value="Storage">Storage</option>
+                            <option value="Network">Network</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Brand / Vendor</label>
+                        <input type="text" name="brand" id="formBrand" required placeholder="e.g. Samsung, Micron">
+                    </div>
+                    <div>
+                        <label>Memory / Component Type</label>
+                        <input type="text" name="memory_type" id="formMemoryType" required placeholder="e.g. DDR5, DDR4">
+                    </div>
+                    <div>
+                        <label>OSV Tester Name</label>
+                        <input type="text" name="osv_tester" id="formOsvTester" required placeholder="e.g. Test Station 01">
+                    </div>
+                    <div>
+                        <label>Username</label>
+                        <input type="text" name="username" id="formUsername">
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="text" name="password" id="formPassword">
+                    </div>
+                    <div>
+                        <label>MAC Address</label>
+                        <input type="text" name="mac_address" id="formMacAddress">
+                    </div>
+                    <div>
+                        <label>IP Address</label>
+                        <input type="text" name="ip_address" id="formIpAddress">
+                    </div>
+                    <div>
+                        <label>Location (WH)</label>
+                        <input type="text" name="location" id="formLocation">
+                    </div>
+                    <div>
+                        <label>Remote Access</label>
+                        <input type="text" name="remote_access" id="formRemoteAccess" placeholder="e.g. SSH / IPMI URL">
+                    </div>
+                    <div>
+                        <label>Script Version</label>
+                        <input type="text" name="script_version" id="formScriptVersion" placeholder="e.g. v2.4.1">
+                    </div>
+                    <div>
+                        <label>All Stockcode(s)</label>
+                        <input type="text" name="all_stockcode" id="formAllStockcode" placeholder="e.g. STK-1001, STK-1002">
+                    </div>
+                    <div>
+                        <label>OS</label>
+                        <input type="text" name="os_version" id="formOsVersion" placeholder="e.g. Ubuntu 22.04">
+                    </div>
+                    <div>
+                        <label>BIOS</label>
+                        <input type="text" name="bios" id="formBios" placeholder="e.g. R01.02">
+                    </div>
+                    <div>
+                        <label>BMC</label>
+                        <input type="text" name="bmc" id="formBmc" placeholder="e.g. v1.15">
+                    </div>
+                    <div>
+                        <label>Last Maintenance Date</label>
+                        <input type="date" name="last_maintenance_date" id="formLastMaintenanceDate" required>
+                    </div>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label>Work Instruction</label>
+                    <input type="text" name="work_instruction" id="formWorkInstruction" placeholder="Link or reference instruction">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn-secondary" onclick="closeModal('testerModal')">Cancel</button>
+                    <button type="submit">Save Tester Record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            header.classList.toggle("open");
+            let content = header.nextElementSibling;
+            if (content.classList.contains("active")) {
+                content.classList.remove("active");
+            } else {
+                content.classList.add("active");
+            }
+        }
+
+        function openModal(modalId) {
+            document.getElementById('modalTitle').innerText = "Add New Tester Record";
+            document.getElementById('formId').value = "";
+            document.querySelector('#testerModal form').reset();
+            document.getElementById('formLastMaintenanceDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function editTester(t) {
+            document.getElementById('modalTitle').innerText = "Edit Tester: " + t.osv_tester;
+            document.getElementById('formId').value = t.id;
+            document.getElementById('formCategory').value = t.category;
+            document.getElementById('formBrand').value = t.brand;
+            document.getElementById('formMemoryType').value = t.memory_type;
+            document.getElementById('formOsvTester').value = t.osv_tester;
+            document.getElementById('formUsername').value = t.username;
+            document.getElementById('formPassword').value = t.password;
+            document.getElementById('formMacAddress').value = t.mac_address;
+            document.getElementById('formIpAddress').value = t.ip_address;
+            document.getElementById('formLocation').value = t.location;
+            document.getElementById('formRemoteAccess').value = t.remote_access;
+            document.getElementById('formScriptVersion').value = t.script_version;
+            document.getElementById('formAllStockcode').value = t.all_stockcode;
+            document.getElementById('formOsVersion').value = t.os_version;
+            document.getElementById('formBios').value = t.bios;
+            document.getElementById('formBmc').value = t.bmc;
+            document.getElementById('formWorkInstruction').value = t.work_instruction;
+            document.getElementById('formLastMaintenanceDate').value = t.last_maintenance_date || new Date().toISOString().split('T')[0];
+            document.getElementById('testerModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

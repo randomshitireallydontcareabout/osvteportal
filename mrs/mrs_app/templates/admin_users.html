@@ -1,0 +1,81 @@
+
+
+{% extends "base.html" %}{% block content %}
+<h1>Manage Users</h1>
+<section class="card section-card"><h2>Add a user</h2>
+  <form method="post" action="{{ url_for('admin_users_add') }}" class="row-form">
+    <label>Username <input name="username" type="text" required autocomplete="off"></label>
+    <label class="check"><input type="checkbox" name="is_admin" value="1"> Administrator</label>
+    <button class="primary" type="submit">Create user</button>
+  </form>
+</section>
+<section class="card section-card"><h2>Existing users ({{ users|length }})</h2>
+  <table><thead><tr>
+    <th>Username</th><th>Role</th><th>In progress</th><th>Completed</th><th>Created</th><th>Actions</th>
+  </tr></thead><tbody>
+  {% for u in users %}
+    <tr>
+      <td><strong>{{ u.username }}</strong>{% if u.id == session.user_id %} <span class="muted">(you)</span>{% endif %}</td>
+      <td>{% if u.is_admin %}<span class="badge admin">admin</span>{% else %}<span class="muted">user</span>{% endif %}</td>
+      <td>{{ u.open_count }}</td><td>{{ u.done_count }}</td>
+      <td class="muted">{{ u.created_at }}</td>
+      <td class="actions">
+        {% if u.yubikey_count %}<span class="badge completed">YubiKey ready</span>{% else %}<span class="badge failed">No YubiKey</span>{% endif %}
+        {% if u.id != session.user_id %}
+          <form method="post" action="{{ url_for('admin_users_delete', uid=u.id) }}"
+                onsubmit="return confirm('Delete {{ u.username }}?');">
+            <button class="danger" type="submit">Delete</button></form>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody></table>
+</section>
+
+<section class="card section-card" style="margin-top:16px;"><h2>Tab Access & YubiKey OTP Enrollment</h2><div class="flash error"><strong>YubiKey-only mode:</strong> every account, including administrators, must have at least one registered YubiKey before the current admin signs out. Accounts without a registered key cannot sign in.</div><p class="muted">Admins always retain full access. YubiKey OTP works over the HTTP web app because the host validates each one-time password with YubiCloud using HTTPS.</p>
+<div class="card" style="padding:12px;background:#0d1729;margin:10px 0 14px;">
+  <h3 style="margin:0 0 8px;">YubiCloud Validation Configuration</h3>
+  {% if yubico_configured %}<div class="flash success">YubiKey OTP validation is configured. Client ID: {{ yubico_client_id }}</div>{% else %}<div class="flash error">YubiKey OTP is not configured. Save the Yubico Client ID and Base64 Secret Key below before registering a key.</div>{% endif %}
+  <form method="post" action="{{ url_for('admin_yubico_config') }}" class="row-form">
+    <label>Yubico Client ID<input name="client_id" value="{{ yubico_client_id }}" inputmode="numeric" required placeholder="Numeric Client ID"></label>
+    <label>Yubico Base64 Secret Key<input name="secret_key" type="password" value="" required placeholder="Paste API secret key"></label>
+    <button class="primary">Save YubiCloud Settings</button>
+  </form>
+  <p class="muted" style="margin:8px 0 0;">HMAC implementation self-test: <strong>{% if yubico_hmac_ok %}Passed{% else %}Failed{% endif %}</strong>. Client ID and Secret Key must be generated as one matching pair. After saving, use a fresh OTP for registration. Click the OTP field and touch the OTP-enabled YubiKey slot once.</p>
+</div>
+{% for u in users %}<div class="card user-access-card">
+ <div class="user-access-heading"><strong>{{ u.username }}</strong><span class="badge">{{ u.yubikey_count }} YubiKey OTP key{% if u.yubikey_count != 1 %}s{% endif %}</span></div>
+ {% if not u.is_admin %}
+ <form method="post" action="{{ url_for('admin_user_categorized_access', uid=u.id) }}" class="categorized-access-form">
+   <div class="access-category-grid">
+     <section class="access-category osv-access-category">
+       <div class="access-category-heading"><span class="access-category-code">OSV</span><div><h3>OSV Access</h3><p>Existing OSV tabs</p></div></div>
+       <div class="access-option-grid">
+       {% for key,label in permission_tabs.items() %}
+         <label class="access-option"><input type="checkbox" name="osv_tab" value="{{ key }}" {% if key in u.allowed_tabs %}checked{% endif %}><span>{{ label }}</span></label>
+       {% endfor %}
+       </div>
+     </section>
+     <section class="access-category te-access-category">
+       <div class="access-category-heading"><span class="access-category-code">TE</span><div><h3>TE Access</h3><p>Test Engineering tabs</p></div></div>
+       <div class="access-option-grid">
+       {% for key,label in te_permission_tabs.items() %}
+         <label class="access-option"><input type="checkbox" name="te_tab" value="{{ key }}" {% if key in u.allowed_te_tabs %}checked{% endif %}><span>{{ label }}</span></label>
+       {% endfor %}
+       </div>
+       <p class="future-access-note">More TE tabs will appear here as modular TE features are added.</p>
+     </section>
+   </div>
+   <section class="access-category" style="margin-top:12px;">
+  <div class="access-category-heading"><span class="access-category-code">WI</span><div><h3>Work Instruction Editing</h3><p>Users without this permission can still view all work instructions.</p></div></div>
+  <label class="access-option"><input type="checkbox" name="can_edit_work_instructions" value="1" {% if u.can_edit_work_instructions %}checked{% endif %}><span>Allow this user to edit steps and upload step pictures</span></label>
+</section>
+<button class="primary save-categorized-access" type="submit">Save OSV, TE &amp; Work Instruction Access</button>
+ </form>
+ {% else %}
+ <div class="admin-full-access"><span class="badge admin">Administrator</span><p>Administrators automatically have full access to every OSV and TE tab.</p></div>
+ {% endif %}
+ <form method="post" action="{{ url_for('admin_user_yubikey_otp_register',uid=u.id) }}" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:end;"><label style="margin:0;flex:1 1 220px;">Key name<input name="device_name" placeholder="Example: Primary YubiKey"></label><label style="margin:0;flex:2 1 360px;">Fresh YubiKey OTP<input name="otp" autocomplete="off" required placeholder="Click here, then touch the YubiKey"></label><button class="success">Validate & Register</button></form>
+ {% if u.yubikeys %}<div style="margin-top:8px;display:flex;gap:7px;flex-wrap:wrap;">{% for key in u.yubikeys %}<span class="badge available">{{ key.device_name or 'YubiKey' }} · {{ key.public_id }}</span>{% endfor %}</div><form method="post" action="{{ url_for('admin_user_yubikey_clear',uid=u.id) }}" onsubmit="return confirm('Remove all YubiKey OTP keys for this user?')" style="margin-top:8px;"><button class="danger">Remove All YubiKeys</button></form>{% endif %}
+</div>{% endfor %}</section>
+{% endblock %}

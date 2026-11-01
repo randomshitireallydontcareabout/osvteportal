@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OSV KPI TV Presentation - Executive Display</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%; height: 100%; margin: 0; padding: 0;
+      overflow: hidden; background: #0b132b;
+    }
+    body {
+      color: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+    }
+    #tvPresentationCanvas {
+      width: 1920px;
+      height: 1080px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: center center;
+      background: #0b132b;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      will-change: transform;
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 2px solid #1e293b; padding: 10px 18px 8px; flex-wrap:wrap; gap:8px; flex:0 0 auto; }
+    header h1 { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+    header .subtitle { font-size: 12px; color: #94a3b8; }
+    .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .controls label { color: #94a3b8; font-size: 12px; font-weight: 600; display:flex; align-items:center; gap:6px; }
+    .controls select, .btn {
+      background: #1e293b; color: #38bdf8; border: 1px solid #334155;
+      padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;
+      text-decoration: none; font-weight: 600; transition: background 0.2s;
+      font-family: inherit;
+    }
+    .controls select { color: #fff; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 6px 18px; flex:0 0 auto; }
+    .metric-card { background: #111c38; border: 1px solid #1e2e4a; border-radius: 10px;
+      padding: 10px 14px; display: flex; flex-direction: column; justify-content: center; }
+    .metric-title { font-size: 11px; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+    .metric-value { font-size: 26px; font-weight: 700; color: #fff; margin-top: 2px; }
+    .metric-sub { font-size: 11px; color: #38bdf8; margin-top: 2px; }
+
+    .main-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 3fr); gap: 14px; flex: 1; min-height: 0; margin: 0 18px;
+      flex: 1; min-height: 0; margin: 4px 0; }
+    .left-column { display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+    .panel { background: #111c38; border: 1px solid #1e2e4a; border-radius: 10px;
+      padding: 12px 14px; display: flex; flex-direction: column; overflow: hidden; }
+
+    /* Overview receives 70% of the row; live testing receives 30%.
+       This is a 40% increase/decrease from the previous equal 50/50 split. */
+    .department-overview-column, .live-testing-panel { min-width: 0; }
+    /* Full-bleed 16:9 TV presentation. Designed for 1920x1080 and 3840x2160 displays. */
+
+    @media (max-height: 800px) {
+      .metrics-grid { gap: 8px; margin: 4px 0; }
+      .metric-card { padding: 7px 10px; }
+      .metric-value { font-size: 21px; }
+      .panel { padding: 8px 10px; }
+      .panel h3 { margin-bottom: 5px; padding-bottom: 4px; }
+      .credits-viewport { min-height: 260px; }
+      .overview-charts-grid svg { max-height: 24vh; }
+    }
+
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; overflow-y: auto; }
+      .live-testing-panel { min-height: 360px; }
+    }
+
+    .panel h3 { font-size: 14px; color: #cbd5e1; margin-bottom: 8px;
+      border-bottom: 1px solid #1e2e4a; padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+
+    .overview-charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      overflow-y: auto; flex: 1; }
+    .chart-box { background: #0d1729; min-width: 0; min-height: 0; border: 1px solid #233458; border-radius: 8px;
+      padding: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+    .overview-charts-grid ul { width:auto !important; display:flex !important; flex-wrap:wrap; justify-content:center; column-gap:18px; row-gap:4px; margin:6px auto 0 !important; }
+    .overview-charts-grid ul li { display:inline-flex !important; width:auto !important; margin:0 !important; gap:5px !important; }
+    .overview-charts-grid ul li span { flex:none !important; white-space:nowrap; }
+    .duty-monitor{background:#0d1729;border:1px solid #233458;border-radius:8px;padding:10px;display:flex;flex-direction:column;min-height:0}
+    .duty-monitor h4{color:#cbd5e1;font-size:14px;margin-bottom:7px;border-bottom:1px solid #233458;padding-bottom:6px}
+    .duty-list{display:flex;flex-direction:column;gap:7px;overflow:hidden}
+    .duty-item{padding:8px 10px;background:#132247;border-left:4px solid #22c55e;border-radius:6px}
+    .duty-item.High,.duty-item.Critical{border-left-color:#ef4444}.duty-item strong{color:#fff;font-size:13px}.duty-item p{color:#b8c5da;font-size:10px;margin-top:3px}.duty-meta{color:#38bdf8;font-size:10px;margin-top:3px}
+    .overview-charts-grid svg { width: 100% !important; max-width: 100% !important; height: auto !important; max-height: 28vh; }
+    .chart-box > div { width: 100%; min-width: 0; }
+
+    .chart-mode-focus { display: none; padding: 20px; text-align: center; overflow-y: auto; flex: 1; }
+    .chart-mode-focus > div { display: inline-block; }
+    .chart-mode-focus svg { max-width: 620px !important; }
+    body:not([data-chart-mode="grid"]) .chart-mode-grid { display: none; }
+    body[data-chart-mode="results"] .chart-mode-results,
+    body[data-chart-mode="status"] .chart-mode-status,
+    body[data-chart-mode="unclaimed"] .chart-mode-unclaimed,
+    body[data-chart-mode="passfail"] .chart-mode-passfail,
+    body[data-chart-mode="workstate"] .chart-mode-workstate,
+    body[data-chart-mode="resultbreakdown"] .chart-mode-resultbreakdown { display: block; }
+
+    .tech-stats-container { display: flex; flex-direction: column; gap: 6px;
+      overflow-y: auto; max-height: 180px; padding-right: 4px; }
+    .tech-stat-row { background: #0d1729; border: 1px solid #1e2e4a; border-radius: 6px;
+      padding: 6px 10px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+    .tech-name { font-weight: 700; color: #fff; }
+    .tech-badges { display: flex; gap: 10px; align-items: center; font-size: 11px; }
+
+    .credits-viewport { 
+      position: relative; 
+      flex: 1; 
+      overflow: hidden; 
+      background: #0d1729;
+      border: 1px solid #1e2e4a; 
+      border-radius: 8px; 
+      padding: 8px; 
+      min-height: 400px; /* Add this to prevent height collapse */
+    }
+    
+    .credits-track { 
+      position: absolute; 
+      width: calc(100% - 16px); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 8px;
+      animation: scrollCredits 35s linear infinite;
+      will-change: transform; 
+      transform: translateZ(0); 
+      backface-visibility: hidden; 
+    }
+    
+    .credits-viewport:hover .credits-track { 
+      animation-play-state: paused; 
+    }
+    
+    @keyframes scrollCredits {
+      0% { transform: translateY(100%) translateZ(0); }
+      100% { transform: translateY(-100%) translateZ(0); }
+    }
+    
+    .ticket-row-card { 
+      background: #132247; 
+      border-left: 4px solid #06b6d4;
+      border-radius: 6px; 
+      padding: 10px 14px; 
+      height: 74px; 
+      position: relative;
+      overflow: hidden; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: flex-start;
+      transition: background 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform, height, background, box-shadow;
+      transform: translateZ(0); 
+      backface-visibility: hidden; 
+    }
+    .ticket-info main { font-size: 17px; font-weight: 700; color: #fff; }
+    .ticket-info sub { font-size: 17px; color: #38bdf8; display: block; margin-top: 1px; }
+    .ticket-meta { text-align: right; font-size: 14px; color: #94a3b8; }
+    .ticket-meta span { color: #f59e0b; font-weight: 600; }
+    .ticket-details-pane { font-size: 11px; color: #cbd5e1;
+      display: flex; flex-direction: column; gap: 2px; margin-top: 6px;
+      border-top: 1px solid #233458; padding-top: 6px; }
+    .ticket-row-card.expanded { background: #1a2f5e; border-left-color: #22c55e;
+      box-shadow: 0 4px 18px rgba(6, 182, 212, 0.3); }
+    footer { padding-left:18px; padding-right:18px; display: flex; justify-content: space-between; align-items: center;
+      font-size: 11px; color: #64748b; border-top: 1px solid #1e293b; padding-top: 4px; }
+  </style>
+</head>
+<body data-chart-mode="grid">
+  <div id="tvPresentationCanvas">
+
+  <header>
+    <div>
+      <h1>OSV DEPARTMENT TV PRESENTATION MODE</h1>
+      <div class="subtitle">Real-Time Operational Dashboard &bull; Today: {{ today_str }} | Year: {{ current_year }}</div>
+    </div>
+    <div class="controls">
+      <label>Chart Type:
+        <select id="chartTypeSelect">
+          <option value="pie" {% if chart_type == 'pie' %}selected{% endif %}>Pie Chart</option>
+          <option value="donut" {% if chart_type == 'donut' %}selected{% endif %}>Donut Chart</option>
+          <option value="hbar" {% if chart_type == 'hbar' %}selected{% endif %}>Horizontal Bars</option>
+          <option value="vbar" {% if chart_type == 'vbar' %}selected{% endif %}>Vertical Bars</option>
+          <option value="stat" {% if chart_type == 'stat' %}selected{% endif %}>Stat Cards</option>
+          <option value="treemap" {% if chart_type == 'treemap' %}selected{% endif %}>Treemap</option>
+          <option value="radial" {% if chart_type == 'radial' %}selected{% endif %}>Radial / Rose</option>
+        </select>
+      </label>
+      <label>Chart View:
+        <select id="chartModeSelect" onchange="applyChartMode(this.value)">
+          <option value="grid">Grid Overview (3 charts)</option>
+          <option value="results">Stock Results Focus</option>
+          <option value="status">Ticket Status Focus</option>
+          <option value="unclaimed">Unclaimed vs Assigned Focus</option>
+          <option value="passfail">Pass vs Fail Today</option>
+          <option value="workstate">Work State Today</option>
+          <option value="resultbreakdown">Result Breakdown Today</option>
+        </select>
+      </label>
+      <button class="btn" onclick="location.reload()">&#x21bb; Refresh</button>
+      <button class="btn" onclick="toggleAutoRefresh()" id="autoBtn">Auto-Refresh: ON (60s)</button>
+      <a href="{{ url_for('admin_kpi', chart=chart_type) }}" class="btn" style="background:#334155; color:#fff;">Exit Mode</a>
+    </div>
+  </header>
+
+  <div class="metrics-grid">
+    <div class="metric-card" style="border-left: 4px solid #3b82f6;">
+      <div class="metric-title">Today's Received vs Completed</div>
+      <div class="metric-value">{{ today_received }} / {{ today_completed }}</div>
+      <div class="metric-sub">Tickets Worked Today</div>
+    </div>
+    <div class="metric-card" style="border-left: 4px solid #22c55e;">
+      <div class="metric-title">Month-To-Date (MTD) Completed</div>
+      <div class="metric-value" style="color: #22c55e;">{{ mtd_count }}</div>
+      <div class="metric-sub">Avg Duration: <strong>{{ mtd_avg_time }}</strong></div>
+    </div>
+    <div class="metric-card" style="border-left: 4px solid #a855f7;">
+      <div class="metric-title">Year-To-Date (YTD {{ current_year }}) Completed</div>
+      <div class="metric-value" style="color: #c084fc;">{{ ytd_count }}</div>
+      <div class="metric-sub">Avg Duration: <strong>{{ ytd_avg_time }}</strong></div>
+    </div>
+    <div class="metric-card" style="border-left: 4px solid #06b6d4;">
+      <div class="metric-title">Active Testing Now</div>
+      <div class="metric-value" style="color: #06b6d4;">{{ active_testing_list|length }}</div>
+      <div class="metric-sub">Tickets Undergoing Testing</div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div class="left-column department-overview-column">
+      <div class="panel" style="flex: 1; min-height: 0;">
+        <h3>Department Overview Charts</h3>
+        <div class="overview-charts-grid chart-mode-grid">
+          <div class="chart-box">{{ unclaimed_vs_assigned_chart | safe }}</div>
+          <div class="chart-box">{{ stock_results_today_chart | safe }}</div>
+          <div class="chart-box">{{ status_dist_today_chart | safe }}</div>
+          <div class="duty-monitor"><h4>Live / Current Day Duties <span style="color:#06b6d4">({{ current_day_duties|length }})</span></h4><div class="duty-list">{% for duty in current_day_duties %}<div class="duty-item {{ duty.priority }}"><strong>{{ duty.title }}</strong><div class="duty-meta">{{ duty.duty_type }}{% if duty.osv_tester %} · {{ duty.osv_tester }}{% endif %}{% if duty.location %} · {{ duty.location }}{% endif %}</div>{% if duty.details %}<p>{{ duty.details }}</p>{% endif %}</div>{% else %}<div class="duty-item"><strong>No duties scheduled today</strong><p>Add duties from Tools &gt; Duties.</p></div>{% endfor %}</div></div>
+        </div>
+        <div class="chart-mode-focus chart-mode-results">{{ stock_results_today_chart | safe }}</div>
+        <div class="chart-mode-focus chart-mode-status">{{ status_dist_today_chart | safe }}</div>
+        <div class="chart-mode-focus chart-mode-unclaimed">{{ unclaimed_vs_assigned_chart | safe }}</div>
+        <div class="chart-mode-focus chart-mode-passfail">{{ pass_fail_today_chart | safe }}</div>
+        <div class="chart-mode-focus chart-mode-workstate">{{ work_state_today_chart | safe }}</div>
+        <div class="chart-mode-focus chart-mode-resultbreakdown">{{ result_breakdown_today_chart | safe }}</div>
+      </div>
+
+      <div class="panel" style="flex: 0 0 auto;">
+        <h3>
+          <span>Today's Technician Claims &amp; Status Breakdown</span>
+          <span style="font-size:12px; color:#38bdf8;">({{ technician_today_stats|length }} Active Techs)</span>
+        </h3>
+        {% if technician_today_stats %}
+        <div class="tech-stats-container">
+          {% for tech in technician_today_stats %}
+          <div class="tech-stat-row">
+            <div class="tech-name">{{ tech.username }}</div>
+            <div class="tech-badges">
+              <span style="color: #94a3b8;">Claimed: <strong style="color: #38bdf8;">{{ tech.tickets_claimed }}</strong></span>
+              <span style="color: #22c55e;">Pass: <strong>{{ tech.passed_count }}</strong></span>
+              <span style="color: #ef4444;">Fail: <strong>{{ tech.failed_count }}</strong></span>
+              <span style="color: #06b6d4;">Testing: <strong>{{ tech.testing_count }}</strong></span>
+              <span style="color: #f59e0b;">Not Tested: <strong>{{ tech.not_tested_count }}</strong></span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div style="display:flex; align-items:center; justify-content:center; height:50px; color:#64748b; font-size:12px;">
+          No technician ticket claims recorded for today yet.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="panel live-testing-panel">
+      <h3>
+        <span>Live Testing Stock Codes &amp; Tickets</span>
+        <span style="font-size:12px; color:#06b6d4;">({{ active_testing_list|length }} Active)</span>
+      </h3>
+      
+      <div class="credits-viewport" id="creditsViewport">
+        {% if active_testing_list %}
+        <div class="credits-track" id="creditsTrack">
+          {% for t in active_testing_list %}
+          <div class="ticket-row-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <div class="ticket-info">
+                <main>{{ t.mrs_ticket }}</main>
+                <sub>Stock: <strong>{{ t.stock_code }}</strong></sub>
+              </div>
+              <div class="ticket-meta">
+                Tech: <span>{{ t.username }}</span><br>
+                <small style="color:#94a3b8;">Started: {{ t.test_started_at }}</small>
+              </div>
+            </div>
+            <div class="ticket-details-pane">
+              <div><strong>Serial Number:</strong> <span style="color:#38bdf8; font-family:Consolas,monospace;">{{ t.serial_number }}</span></div>
+              <div><strong>Part:</strong> {{ t.part_description }} | <strong>Location:</strong> {{ t.wh_location }}</div>
+              <div><strong>Notes / Comments:</strong> {{ t.mrs_comments }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div style="display:flex; align-items:center; justify-content:center; height:100%; color:#64748b; font-size:13px;">
+          No tickets currently undergoing testing.
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>MRS Ticket Dashboard &bull; Live TV Presentation Mode</div>
+    <div id="clock"></div>
+  </footer>
+
+  </div>
+
+  <script>
+    // Automatically fit the complete 1920x1080 dashboard into any screen.
+    // The browser stays at normal 100% zoom; only the dashboard canvas is scaled.
+    function fitLivePresentationToScreen() {
+      const canvas = document.getElementById('tvPresentationCanvas');
+      if (!canvas) return;
+      const designWidth = 1920;
+      const designHeight = 1080;
+      const scale = Math.min(window.innerWidth / designWidth, window.innerHeight / designHeight);
+      canvas.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    fitLivePresentationToScreen();
+    window.addEventListener('resize', fitLivePresentationToScreen);
+    window.addEventListener('orientationchange', fitLivePresentationToScreen);
+
+    function applyChartType(value) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('chart', value);
+      window.location.href = url.toString();
+    }
+    document.getElementById('chartTypeSelect').addEventListener('change', function() {
+      applyChartType(this.value);
+    });
+
+    function applyChartMode(mode) {
+      document.body.dataset.chartMode = mode;
+      const sel = document.getElementById('chartModeSelect');
+      if (sel && sel.value !== mode) sel.value = mode;
+    }
+    try {
+      const stored = localStorage.getItem('mrs-kpi-chart-mode');
+      if (stored) applyChartMode(stored);
+    } catch(e) {}
+    document.getElementById('chartModeSelect').addEventListener('change', function() {
+      try { localStorage.setItem('mrs-kpi-chart-mode', this.value); } catch(e) {}
+    });
+
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').innerText = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000); updateClock();
+
+    let autoRefreshInterval = setInterval(() => { location.reload(); }, 60000);
+    let autoRefreshActive = true;
+    function toggleAutoRefresh() {
+      const btn = document.getElementById('autoBtn');
+      if (autoRefreshActive) {
+        clearInterval(autoRefreshInterval); autoRefreshActive = false;
+        btn.innerText = "Auto-Refresh: OFF"; btn.style.color = "#94a3b8";
+      } else {
+        autoRefreshInterval = setInterval(() => { location.reload(); }, 60000);
+        autoRefreshActive = true;
+        btn.innerText = "Auto-Refresh: ON (60s)"; btn.style.color = "#38bdf8";
+      }
+    }
+
+        function updateTicketExpansion() {
+      const viewport = document.getElementById('creditsViewport');
+      const track = document.getElementById('creditsTrack');
+      if (!viewport || !track) return;
+      
+      const viewportRect = viewport.getBoundingClientRect();
+      const viewportTop = viewportRect.top; 
+      const viewportBottom = viewportRect.bottom;
+      const viewportHeight = viewportRect.height;
+      const viewportCenter = viewportTop + viewportHeight / 2;
+      
+      const cards = track.querySelectorAll('.ticket-row-card');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        let p = 0;
+        if (cardCenter >= viewportCenter && cardCenter <= viewportBottom) {
+            p = (viewportBottom - cardCenter) / (viewportHeight / 2);
+        } else if (cardCenter < viewportCenter && cardCenter >= viewportTop) {
+            p = 1;
+        } else {
+            p = 0;
+        }
+        
+        p = Math.max(0, Math.min(1, p));
+        const height = 74 + p * 56; // Expands from 74px to 130px
+        card.style.height = height + 'px';
+        
+        const detailsPane = card.querySelector('.ticket-details-pane');
+        if (detailsPane) { 
+            detailsPane.style.opacity = p; 
+            detailsPane.style.transform = `translateY(${-6 * (1 - p)}px)`; 
+        }
+        
+        if (p > 0.5) { 
+            if (!card.classList.contains('expanded')) card.classList.add('expanded'); 
+        } else { 
+            if (card.classList.contains('expanded')) card.classList.remove('expanded'); 
+        }
+      });
+      
+      requestAnimationFrame(updateTicketExpansion);
+    }
+    
+    // Start the animation loop
+    requestAnimationFrame(updateTicketExpansion);
+  </script>
+</body>
+</html>
+
+

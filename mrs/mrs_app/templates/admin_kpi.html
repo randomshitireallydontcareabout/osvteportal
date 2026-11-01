@@ -1,0 +1,375 @@
+
+{% extends "base.html" %}{% block content %}
+{% macro insight_panel(comment_id, what, why, concern, advice) -%}
+<div class="kpi-insight" data-insight-id="{{ comment_id }}">
+  <div class="kpi-insight-title">Graph Summary</div>
+  <div class="kpi-insight-grid">
+    <div><strong>Meaning / What</strong><span>{{ what }}</span></div>
+    <div><strong>Why it matters</strong><span>{{ why }}</span></div>
+    <div><strong>Where to be concerned</strong><span>{{ concern }}</span></div>
+    <div><strong>Advice</strong><span>{{ advice }}</span></div>
+  </div>
+  <label class="kpi-comment-label">Temporary PDF Comment
+    <textarea class="kpi-temp-comment" name="comment_{{ comment_id }}" maxlength="2000" placeholder="Add a note for the PDF export only. This note is not saved and clears when you leave this page."></textarea>
+  </label>
+</div>
+{%- endmacro %}
+
+<div class="page-head" style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+  <div>
+    <h1>KPI Presentation & Graphs</h1>
+    <p class="muted" style="margin:0">Department: <strong>OSV</strong> | Management Sign-off: <strong>{{ session.get('username') }}</strong></p>
+  </div>
+  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+    <label style="display:flex;gap:6px;align-items:center;color:#aebbd2;font-size:12.5px;font-weight:700;">Chart Type
+      <select onchange="applyChartType(this.value)" style="background:#0d1729;color:#e6ecf7;border:1px solid #2a3b5f;border-radius:6px;padding:6px 10px;">
+        <option value="pie" {% if chart_type == 'pie' %}selected{% endif %}>Pie Chart</option>
+        <option value="donut" {% if chart_type == 'donut' %}selected{% endif %}>Donut Chart</option>
+        <option value="hbar" {% if chart_type == 'hbar' %}selected{% endif %}>Horizontal Bars</option>
+        <option value="vbar" {% if chart_type == 'vbar' %}selected{% endif %}>Vertical Bars</option>
+        <option value="stat" {% if chart_type == 'stat' %}selected{% endif %}>Stat Cards</option>
+        <option value="treemap" {% if chart_type == 'treemap' %}selected{% endif %}>Treemap</option>
+        <option value="radial" {% if chart_type == 'radial' %}selected{% endif %}>Radial / Rose</option>
+      </select>
+    </label>
+    <a href="{{ url_for('admin_kpi_presentation', chart=chart_type) }}" target="_blank" class="primary btn" style="background:#0284c7; color:#fff; padding:6px 14px; font-size:12.5px; border-radius:6px; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+      🖥️ Launch TV Presentation Mode
+    </a>
+    <a id="kpiPdfExport" class="primary btn" href="{{ url_for('admin_kpi_pdf', **request.args) }}" style="padding:6px 14px; font-size:12.5px; display:inline-flex; align-items:center; gap:6px;">
+      📄 Export OSV KPI PDF
+    </a>
+  </div>
+</div>
+
+<form method="get" class="card section-card" style="padding:10px 14px">
+  <input type="hidden" name="chart" value="{{ chart_type }}">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+    <label style="flex:1 1 160px;margin:0">Technician Filter
+      <select name="tech">
+        <option value="">All Technicians</option>
+        {% for tech in kpi_technicians %}
+          <option value="{{ tech.value }}" {% if tech_id == tech.value %}selected{% endif %}>{{ tech.name }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label style="flex:1 1 130px;margin:0">From Date
+      <input type="date" name="from" value="{{ date_from }}" required>
+    </label>
+    <label style="flex:1 1 130px;margin:0">To Date
+      <input type="date" name="to" value="{{ date_to }}" required>
+    </label>
+    <button class="primary" type="submit">Apply Filter</button>
+    <a class="btn-logout" href="{{ url_for('admin_kpi', chart=chart_type) }}">Reset</a>
+  </div>
+</form>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ total_work }}</span>Total Tickets in Range</div>
+  <div class="stat"><span>{{ completed_work }}</span>Completed Work</div>
+  <div class="stat"><span>{{ wip_work }}</span>Current In-Progress (WIP)</div>
+  <div class="stat"><span>{{ active_techs_count }}</span>Active Technicians</div>
+</div>
+
+<div class="overview-grid kpi-chart-grid" style="grid-template-columns:1fr 1fr; align-items:start;">
+  <div class="chart-card kpi-expandable" data-chart-title="Work Breakdown">
+    <div class="kpi-card-heading"><h2>Work Breakdown (All vs Current WIP vs Completed)</h2><span>Click graph to enlarge</span></div>
+    <div class="kpi-visual">{{ work_pie_chart }}</div>
+    {{ insight_panel('work_breakdown',
+  kpi_insights.work_breakdown.what,
+  kpi_insights.work_breakdown.why,
+  kpi_insights.work_breakdown.concern,
+  kpi_insights.work_breakdown.advice) }}
+  </div>
+  <div class="chart-card kpi-expandable" data-chart-title="Overall Test Results">
+    <div class="kpi-card-heading"><h2>Overall Test Results</h2><span>Click graph to enlarge</span></div>
+    <div class="kpi-visual">{{ overall_results_chart }}</div>
+    {{ insight_panel('overall_results',
+  kpi_insights.overall_results.what,
+  kpi_insights.overall_results.why,
+  kpi_insights.overall_results.concern,
+  kpi_insights.overall_results.advice) }}
+  </div>
+</div>
+
+<div class="overview-grid kpi-chart-grid" style="grid-template-columns:1fr 1fr; align-items:start; margin-top:16px; gap:20px">
+  <div class="chart-card kpi-expandable" data-chart-title="Throughput - Pass / Fail / Not Tested">
+    <div class="kpi-card-heading; font-size:12px;"><h2>Throughput — Pass / Fail / Not Tested</h2><span>Click graph to enlarge</span></div>
+    <p class="muted" style="margin:0 0 10px;font-size:19px;">Stacked bars show total volume per period with outcome split.</p>
+    <div class="kpi-visual; font-size:18px;">{{ stacked_chart_html }}</div>
+    {{ insight_panel('throughput',
+  kpi_insights.throughput.what,
+  kpi_insights.throughput.why,
+  kpi_insights.throughput.concern,
+  kpi_insights.throughput.advice) }}
+  </div>
+
+  <div class="chart-card kpi-expandable" data-chart-title="Pareto - Top Failure Contributors">
+    <div class="kpi-card-heading; font-size:19px;" ><h2>Pareto — Top Failure Contributors</h2><span>Click graph to enlarge</span></div>
+    <p class="muted" style="margin:0 0 10px;font-size:19px;">Failed tickets grouped by Stock Code, with cumulative percentage line.</p>
+    <div class="kpi-visual; font-size:12px;">{{ pareto_chart_html }}</div>
+    {{ insight_panel('pareto',
+  kpi_insights.pareto.what,
+  kpi_insights.pareto.why,
+  kpi_insights.pareto.concern,
+  kpi_insights.pareto.advice) }}
+  </div>
+</div>
+
+<div class="kpi-side-grid">
+  <div class="card kpi-expandable" data-chart-title="Technician Response Time" style="padding:16px; margin:0;">
+    <div class="kpi-card-heading"><h2>Technician Response Time</h2><span>Click graph to enlarge</span></div>
+    <p class="muted" style="margin:4px 0 10px; font-size:12.5px;">Time from ticket check-in (created time) to the technician's first assignment. Transferred tickets excluded.</p>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr); margin-bottom:10px;">
+      <div class="stat" style="padding:8px 10px;"><span>{{ response_stats.count }}</span>Eligible</div>
+      <div class="stat" style="padding:8px 10px;"><span>{{ response_stats.average }}</span>Average</div>
+      <div class="stat" style="padding:8px 10px;"><span>{{ response_stats.median }}</span>Median</div>
+      <div class="stat" style="padding:8px 10px;"><span>{{ response_stats.p90 }}</span>90th %ile</div>
+    </div>
+    {% if response_buckets %}
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        {% for bucket in response_buckets %}
+          <div style="display:grid;grid-template-columns:70px minmax(80px,1fr) 40px;gap:8px;align-items:center;font-size:12px;">
+            <div class="muted" style="text-align:right;">{{ bucket.label }}</div>
+            <div style="height:14px;background:#0d1729;border:1px solid var(--line);border-radius:4px;overflow:hidden;">
+              <div style="height:100%;width:{{ bucket.percent }}%;background:linear-gradient(90deg,#4f8cff,#22c55e);"></div>
+            </div>
+            <div style="font-weight:700;">{{ bucket.count }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty" style="padding:10px;font-size:12px;">No eligible response-time data.</div>
+    {% endif %}
+    {{ insight_panel('response_time',
+  kpi_insights.response_time.what,
+  kpi_insights.response_time.why,
+  kpi_insights.response_time.concern,
+  kpi_insights.response_time.advice) }}
+  </div>
+
+  <div class="card" style="padding:16px; margin:0;">
+    <h2>Technician Test Result Breakdown</h2>
+    <p class="muted" style="margin-bottom:14px; font-size:12.5px;">Respective test result metrics for each technician within the selected date range.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;">
+      {% for tb in tech_results_charts %}
+        <div class="card kpi-expandable" data-chart-title="Technician Results - {{ tb.username }}" style="background:#0d1729; display:flex; flex-direction:column; gap:8px; padding:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:6px;">
+            <span style="font-weight:700; color:var(--text); font-size:14px;">{{ tb.username }}</span>
+            <span class="muted" style="font-size:11.5px;">
+              {% for item in tb.result_summary %}{{ item.label }}: {{ item.count }}{% if not loop.last %} | {% endif %}{% endfor %}
+            </span>
+          </div>
+          <div class="kpi-visual" style="display:flex; justify-content:center;">{{ tb.chart }}</div>
+        </div>
+      {% else %}
+        <div class="empty">No technician test results recorded for this filter criteria.</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<section class="card ctd-panel" id="componentTestDurationPanel" style="margin-top:16px;">
+  <div class="ctd-title-row">
+    <div>
+      <h2>Multi-Stock Comparison Timeline</h2>
+      <p>Compare up to three stock codes, or pick a Brand and Component Type to plot every matching stock code. Click a line or a legend item to toggle visibility. Orange = 4-day warning; red = 5-day limit.</p>
+    </div>
+  </div>
+  <form class="ctd-controls" id="ctdControls">
+    <div class="ctd-mode-toggle">
+      <label><input type="radio" name="ctdMode" value="stock" checked> By Stock Code</label>
+      <label><input type="radio" name="ctdMode" value="brand"> By Brand</label>
+    </div>
+    <div class="ctd-stock-group" style="display:flex;gap:11px;flex-wrap:wrap;align-items:end;">
+      <label>Stock code 1<select class="ctd-stock" data-slot="1"><option value="">Select stock code</option></select></label>
+      <label>Stock code 2<select class="ctd-stock" data-slot="2"><option value="">None</option></select></label>
+      <label>Stock code 3<select class="ctd-stock" data-slot="3"><option value="">None</option></select></label>
+    </div>
+    <div class="ctd-brand-group" style="display:none;flex-direction:column;gap:10px;flex-basis:100%;">
+      <div style="display:flex;gap:11px;flex-wrap:wrap;align-items:end;
+                  padding:10px;border:1px solid var(--line);border-radius:8px;background:#0a1220;">
+        <label style="margin:0;flex:1 1 200px;">Brand
+          <select id="ctdBrandPick">
+            <option value="">Select brand</option>
+          </select>
+        </label>
+        <label style="margin:0;flex:1 1 200px;">Component Type
+          <select id="ctdCompTypePick">
+            <option value="">All component types</option>
+          </select>
+        </label>
+        <span id="ctdBrandSummary" style="font-size:11.5px;color:var(--muted);align-self:center;"></span>
+      </div>
+    </div>
+    <label>From<input type="date" id="ctdFrom"></label>
+    <label>To<input type="date" id="ctdTo"></label>
+    <button class="btn" type="submit">Update graph</button>
+  </form>
+  <div class="ctd-error" id="ctdError"></div>
+  <div class="ctd-legend" id="ctdLegend"></div>
+  <div class="ctd-canvas-wrap"><canvas id="ctdCanvas" height="400"></canvas><div class="ctd-tooltip" id="ctdTooltip" hidden></div></div>
+  <div class="ctd-summary" id="ctdSummary"></div>
+  <div class="ctd-correlation" id="ctdCorrelation"></div>
+</section>
+<link rel="stylesheet" href="{{ url_for('component_test_timeline.static', filename='timeline.css') }}">
+<script src="{{ url_for('component_test_timeline.static', filename='timeline.js') }}"></script>
+
+<details class="card section-card kpi-work-details" style="margin-top:16px;">
+  <summary class="kpi-work-summary">
+    <span class="kpi-work-title"><span class="kpi-work-arrow">&#9654;</span> Active &amp; Historical Work Details ({% if selected_tech_name %}{{ selected_tech_name }}{% else %}All Technicians{% endif %})</span>
+    <span class="kpi-work-toggle">Click to expand</span>
+  </summary>
+  <div class="kpi-work-content">
+  <p class="muted" style="margin:4px 0 14px;">Tickets are grouped by stock code. Expand a stock code, then select View Details to see the complete ticket information.</p>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    {% for group in kpi_stock_groups %}
+      <details class="card" style="background:#0d1729;border:1px solid var(--line);overflow:hidden;">
+        <summary style="cursor:pointer;list-style:none;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+          <span style="display:flex;align-items:center;gap:10px;min-width:0;">
+            <span style="color:var(--accent);font-size:16px;">▸</span>
+            <strong style="word-break:break-word;">{{ group.stock_code }}</strong>
+          </span>
+          <span class="badge" style="background:rgba(79,140,255,.15);color:#93c5fd;white-space:nowrap;">{{ group.count }} ticket{% if group.count != 1 %}s{% endif %}</span>
+        </summary>
+        <div style="border-top:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:12px;">
+          {% for result_group in group.result_groups %}
+            <div style="border:1px solid {{ result_group.border_color }};border-radius:9px;overflow:hidden;background:{{ result_group.background }};">
+              <div style="padding:9px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid {{ result_group.border_color }};">
+                <strong style="color:{{ result_group.text_color }};">{{ result_group.label }}</strong>
+                <span class="badge" style="background:{{ result_group.badge_background }};color:{{ result_group.text_color }};white-space:nowrap;">{{ result_group.count }} ticket{% if result_group.count != 1 %}s{% endif %}</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table style="min-width:760px;">
+                  <thead><tr><th>MRS Ticket</th><th>Serial Number</th><th>Status</th><th>Test Result</th><th>Technician</th><th>Completed At</th><th>Action</th></tr></thead>
+                  <tbody>
+                    {% for t in result_group.tickets %}
+                      <tr style="background:{{ result_group.row_background }};">
+                        <td><strong>{{ t.mrs_ticket or '—' }}</strong></td>
+                        <td><code style="color:#86efac;">{{ t.serial_number or '—' }}</code></td>
+                        <td><span class="badge {{ t.status }}">{{ t.status or '—' }}</span></td>
+                        <td><span class="badge" style="background:{{ result_group.badge_background }};color:{{ result_group.text_color }};">{{ t.test_result or result_group.label }}</span></td>
+                        <td>{{ t.technician or 'Unassigned' }}</td>
+                        <td class="muted">{{ t.completed_at or '—' }}</td>
+                        <td><button type="button" class="primary" style="padding:6px 10px;font-size:12px;" onclick="openKpiTicket({{ t.id }})">View Details</button></td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </details>
+    {% else %}
+      <div class="empty">No work tickets found for this filter criteria.</div>
+    {% endfor %}
+  </div>
+  </div>
+</details>
+
+<div id="kpiChartModal" class="kpi-chart-modal" aria-hidden="true">
+  <div class="kpi-chart-modal-shell" role="dialog" aria-modal="true" aria-labelledby="kpiChartModalTitle">
+    <div class="kpi-chart-modal-head"><h2 id="kpiChartModalTitle">Expanded KPI Graph</h2><button type="button" class="ghost" id="closeKpiChartModal">✕ Close</button></div>
+    <div id="kpiChartModalBody" class="kpi-chart-modal-body"></div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='kpi_interactions.js') }}"></script>
+
+<div id="kpiTicketModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.82);align-items:center;justify-content:center;padding:18px;" role="dialog" aria-modal="true" aria-labelledby="kpiModalTitle">
+  <div class="card" style="width:min(980px,96vw);max-height:90vh;overflow:auto;background:#101b31;border:1px solid #334a78;box-shadow:0 24px 70px rgba(0,0,0,.55);">
+    <div style="position:sticky;top:0;z-index:2;background:#101b31;border-bottom:1px solid var(--line);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+      <div><h2 id="kpiModalTitle" style="margin:0 0 2px;">Ticket Details</h2><div id="kpiModalSubtitle" class="muted"></div></div>
+      <button type="button" class="ghost" onclick="closeKpiTicket()" aria-label="Close ticket details">Close</button>
+    </div>
+    <div id="kpiModalBody" style="padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;"></div>
+  </div>
+</div>
+
+<script id="kpi-ticket-data" type="application/json">{{ kpi_ticket_details|tojson }}</script>
+<script>
+function applyChartType(value) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('chart', value);
+  window.location.href = url.toString();
+}
+const kpiTicketData = JSON.parse(document.getElementById('kpi-ticket-data').textContent || '{}');
+const kpiFieldLabels = [
+  ['stock_code','Stock Code'], ['mrs_ticket','MRS Ticket'], ['serial_number','Serial Number'],
+  ['status','Status'], ['test_result','Test Result'], ['technician','Technician'],
+  ['assigned_at','Claimed At'], ['test_started_at','Test Started At'], ['completed_at','Completed At'],
+  ['created_at','Created At'], ['modified','Modified'], ['return_time','Return Time'],
+  ['wh_location','WH Location'], ['part_type','Part Type'], ['part_description','Part Description'],
+  ['quality_disposition','Quality Disposition'], ['failure_reason','Failure Reason / Notes'],
+  ['mrs_comments','Comments'], ['logs_uploaded','Logs Uploaded'], ['log_path','Log Path'],
+  ['stock_cd','Stock CD'], ['bb_flag','BB Flag'], ['sxm1_flag','SXM1'], ['sxm2_flag','SXM2'],
+  ['sxm3_flag','SXM3'], ['sxm4_flag','SXM4'], ['sxm5_flag','SXM5'], ['sxm6_flag','SXM6'],
+  ['sxm7_flag','SXM7'], ['sxm8_flag','SXM8'], ['csv_id','CSV ID'], ['csv_index','CSV Index']
+];
+function openKpiTicket(ticketId) {
+  const t = kpiTicketData[String(ticketId)];
+  if (!t) return;
+  document.getElementById('kpiModalTitle').textContent = t.mrs_ticket || 'Ticket Details';
+  document.getElementById('kpiModalSubtitle').textContent = `Stock Code: ${t.stock_code || '—'}`;
+  const body = document.getElementById('kpiModalBody'); body.innerHTML = '';
+  kpiFieldLabels.forEach(([key, label]) => {
+    const card = document.createElement('div');
+    const wide = ['part_description','failure_reason','mrs_comments','log_path'].includes(key);
+    card.style.cssText = `background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px;${wide ? 'grid-column:1/-1;' : ''}`;
+    const heading = document.createElement('div'); heading.className = 'muted'; heading.style.marginBottom = '4px'; heading.textContent = label;
+    const value = document.createElement('div'); value.style.whiteSpace = 'pre-wrap'; value.style.wordBreak = 'break-word';
+    const raw = t[key];
+    value.textContent = (raw === null || raw === undefined || raw === '') ? '—' : String(raw);
+    card.appendChild(heading); card.appendChild(value); body.appendChild(card);
+  });
+  document.getElementById('kpiTicketModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeKpiTicket() {
+  document.getElementById('kpiTicketModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('kpiTicketModal').addEventListener('click', function(event) { if (event.target === this) closeKpiTicket(); });
+document.addEventListener('keydown', function(event) { if (event.key === 'Escape') closeKpiTicket(); });
+</script>
+
+<style>
+  /* KPI tab: widen main content area 30% (1450px → 2400px) */
+main { max-width: 80%; }
+.kpi-work-details { padding: 0; overflow: hidden; }
+.kpi-work-summary { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 18px; cursor:pointer; list-style:none; user-select:none; }
+.kpi-work-summary::-webkit-details-marker { display:none; }
+.kpi-work-summary:hover { background:rgba(255,255,255,.04); }
+.kpi-work-title { display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; }
+.kpi-work-arrow { color:var(--accent); font-size:13px; transition:transform .2s ease; }
+.kpi-work-details[open] .kpi-work-arrow { transform:rotate(90deg); }
+.kpi-work-toggle { margin-left:auto; color:#91a4c3; font-size:12px; font-weight:500; }
+.kpi-work-details[open] .kpi-work-toggle { font-size:0; }
+.kpi-work-details[open] .kpi-work-toggle::after { content:"Click to collapse"; font-size:12px; }
+.kpi-work-details[open] .kpi-work-summary { border-bottom:1px solid var(--line); }
+.kpi-work-content { padding:16px; }
+
+.kpi-chart-grid .chart-card{min-height:560px;display:flex;flex-direction:column;gap:10px}
+.kpi-card-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.kpi-card-heading h2{margin:0}.kpi-card-heading span{font-size:11px;color:#7dd3fc;font-weight:700;white-space:nowrap}
+.kpi-expandable{cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.kpi-expandable:hover{transform:translateY(-2px);border-color:#4f8cff;box-shadow:0 14px 34px rgba(2,6,23,.35)}
+.kpi-expandable input,.kpi-expandable select,.kpi-expandable textarea,.kpi-expandable button,.kpi-expandable a{cursor:auto}
+.kpi-expandable .kpi-visual{min-height:260px;display:flex;align-items:center;justify-content:center;border-radius:10px;padding:8px}
+.kpi-expandable.kpi-focused{cursor:default;transform:none!important;box-shadow:none!important;width:100%;max-width:none;margin:0!important;min-height:100%}
+.kpi-expandable .kpi-visual svg{width:100%!important;max-width:100%!important;height:auto;min-height:250px}
+.kpi-insight{margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
+.kpi-insight-title{font-weight:800;color:#7dd3fc;margin-bottom:8px}
+.kpi-insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kpi-insight-grid>div{background:#0d1729;border:1px solid #263a5f;border-radius:8px;padding:9px 10px;display:flex;flex-direction:column;gap:4px}
+.kpi-insight-grid strong{font-size:11px;color:#93c5fd;text-transform:uppercase;letter-spacing:.04em}.kpi-insight-grid span{font-size:12.5px;line-height:1.45;color:#d8e2f3}
+.kpi-comment-label{display:block;margin-top:10px;font-size:11px;font-weight:800;color:#aebbd2;text-transform:uppercase;letter-spacing:.04em}
+.kpi-temp-comment{display:block;width:100%;min-height:68px;margin-top:6px;resize:vertical;background:#091322;color:#e6ecf7;border:1px solid #31517d;border-radius:8px;padding:9px 10px;font:inherit;text-transform:none;letter-spacing:normal;box-sizing:border-box}
+.kpi-chart-modal{display:none;position:fixed;inset:0;z-index:20000;background:rgba(2,6,23,.88);align-items:center;justify-content:center;padding:3vh 3vw}
+.kpi-chart-modal.open{display:flex}.kpi-chart-modal-shell{width:min(92vw,1700px);height:min(90vh,1000px);background:#101c31;border:1px solid #3c5f91;border-radius:14px;box-shadow:0 30px 100px rgba(0,0,0,.7);display:flex;flex-direction:column;overflow:hidden}
+.kpi-chart-modal-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid #2a4368}.kpi-chart-modal-head h2{margin:0}
+.kpi-chart-modal-body{padding:18px;overflow:auto;display:block;flex:1}.kpi-chart-modal-body .kpi-visual{width:100%;display:flex;align-items:center;justify-content:center}.kpi-chart-modal-body .kpi-focused svg{width:100%!important;max-width:1500px!important;height:auto!important;min-height:360px}.kpi-chart-modal-body .kpi-focused .kpi-insight{margin-top:18px}
+@media(max-width:900px){.kpi-insight-grid{grid-template-columns:1fr}.kpi-chart-grid{grid-template-columns:1fr!important}.kpi-chart-grid .chart-card{min-height:auto}.kpi-chart-modal{padding:0}.kpi-chart-modal-shell{width:100vw;height:100dvh;border-radius:0}.kpi-chart-modal-body svg{min-height:360px;height:70vh!important}}
+</style>
+{% endblock %}
+
+

@@ -1,0 +1,465 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="page-head" style="margin-bottom:10px;">
+  <div>
+    <h1>{% if session.get('is_admin') %}My Dashboard (Admin — All Assigned Tickets){% else %}My Dashboard (Active WIP){% endif %}</h1>
+    <p class="muted" style="margin:0">
+      {% if session.get('is_admin') %}
+        You are viewing every assigned ticket across all accounts. Admin can Start Test, NTF, Fail, Not Tested, Release, Transfer, add Notes and Delete any ticket.
+      {% else %}
+        Your claimed stock codes, tickets, and serial numbers. Click Start Test to enable NTF, Fail, and Not Tested actions.
+      {% endif %}
+    </p>
+    </div>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+  <a class="btn-logout" href="{{ url_for('overview') }}">+ Claim a new stock code</a>
+  {% if session.get('is_admin') %}
+  <form method="post" action="{{ url_for('my_tickets_delete_all') }}"
+        onsubmit="return confirm('DEV: Delete ALL tickets (available, assigned, completed)? This cannot be undone.');"
+        style="margin:0;">
+    <button type="submit" class="danger" style="padding:6px 12px;font-size:12.5px;">Delete All Tickets (DEV)</button>
+  </form>
+  {% endif %}
+</div>
+</div>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ in_progress_count }}</span>{% if session.get('is_admin') %}Assigned tickets (all techs){% else %}In progress{% endif %}</div>
+  <div class="stat"><span>{{ total_count }}</span>Total active {% if session.get('is_admin') %}(all accounts){% else %}yours{% endif %}</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+  {% for g in grouped_tickets %}
+    <div class="card stock-container-card" style="cursor:pointer;padding:10px 14px;" onclick="toggleStockCard(this, event)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:16px;font-weight:700;color:var(--text);">{{ g.stock_code }}</span>
+          <span class="badge available">{{ g.tickets|length }} ticket{% if g.tickets|length > 1 %}s{% endif %}</span>
+          <span class="badge assigned">{{ g.tickets|length }} active WIP</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="muted" style="font-size:12px;">Click to expand / collapse ▾</span>
+        </div>
+      </div>
+
+      <div class="stock-details-panel">
+        <div style="display:flex;flex-direction:column;gap:10px;" id="stock-tickets-list-{{ g.stock_code|replace(' ', '_') }}">
+          {% for t in g.tickets %}
+            <div class="ticket-row-item" id="ticket-item-{{ t.id }}" style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <strong style="font-family:Consolas,monospace;font-size:14px;color:#93bbff;">{{ t.mrs_ticket }}</strong>
+                  {% if t.serial_number %}
+                    <span style="font-family:Consolas,monospace;background:rgba(34,197,94,0.1);color:#86efac;padding:2px 6px;border-radius:4px;font-size:12px;">SN: {{ t.serial_number }}</span>
+                  {% endif %}
+                  <span class="badge {{ t.status }}" id="badge-status-{{ t.id }}">{{ t.status }}</span>
+                  {% if t.test_result %}
+                    <span class="badge {{ t.test_result }}" id="badge-result-{{ t.id }}">{{ t.test_result }}</span>
+                  {% endif %}
+                </div>
+                <div class="muted" style="font-size:11.5px;" id="ticket-meta-{{ t.id }}">
+                  {% if session.get('is_admin') and t.assigned_technician %}
+                    <span style="color:#fbbf24;font-weight:700;">Assigned to: {{ t.assigned_technician }}</span> &nbsp;|&nbsp;
+                  {% endif %}
+                  Claimed: {{ t.assigned_at or '-' }} | Test Started: <span id="test-started-val-{{ t.id }}">{{ t.test_started_at or 'Not started' }}</span>
+                </div>
+              </div>
+
+              {% if t.mrs_comments %}
+                <div style="background:rgba(79,140,255,0.08);border:1px solid rgba(79,140,255,0.25);border-radius:6px;padding:10px;font-size:12.5px;color:var(--text);word-break:break-word;">
+                  <strong style="color:var(--accent);display:block;margin-bottom:8px;border-bottom:1px solid rgba(79,140,255,0.2);padding-bottom:4px;">MRS Ticket Comments & Handoff Notes:</strong>
+                  <div style="display:flex;flex-direction:column;gap:8px;">
+                    {% for line in t.mrs_comments.split('\n') %}
+                      {% if line.strip() %}
+                        <div style="padding-left:10px; border-left:3px solid var(--accent); line-height:1.4;">
+                          {{ line }}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <div class="muted" style="font-size:11.5px;font-style:italic;">No comments provided for this ticket.</div>
+              {% endif %}
+
+              <div class="actions" style="margin-top:2px;" onclick="event.stopPropagation();">
+                <div id="actions-wrap-{{ t.id }}" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+                  {% if not t.test_started_at %}
+                    <button class="ghost start-test-btn" type="button" data-tid="{{ t.id }}" onclick="startTest({{ t.id }})">Start Test</button>
+                    <button class="ghost note-btn" type="button" onclick="openNoteModal({{ t.id }}, '{{ t.mrs_ticket }}')">📝 Leave Note</button>
+                    <button class="success pass-btn" type="button" data-tid="{{ t.id }}" id="pass-btn-{{ t.id }}" disabled style="opacity:0.4;cursor:not-allowed;" data-ticket='{{ t|tojson|forceescape }}' onclick="openNtfModalFromElement(this)">NTF and Completed</button>
+                    <button class="danger fail-btn" type="button" data-tid="{{ t.id }}" id="fail-btn-{{ t.id }}" disabled style="opacity:0.4;cursor:not-allowed;" onclick="openFailModal({{ t.id }}, '{{ t.mrs_ticket }}')">Fail</button>
+                    <button class="ghost not-tested-btn" type="button" data-tid="{{ t.id }}" id="not-tested-btn-{{ t.id }}" disabled style="opacity:0.4;cursor:not-allowed;" onclick="openNotTestedModal({{ t.id }}, '{{ t.mrs_ticket }}')">Not Tested</button>
+                  {% else %}
+                    <button class="success pass-btn" type="button" data-tid="{{ t.id }}" id="pass-btn-{{ t.id }}" data-ticket='{{ t|tojson|forceescape }}' onclick="openNtfModalFromElement(this)">NTF and Completed</button>
+                    <button class="danger fail-btn" type="button" data-tid="{{ t.id }}" id="fail-btn-{{ t.id }}" onclick="openFailModal({{ t.id }}, '{{ t.mrs_ticket }}')">Fail</button>
+                    <button class="ghost not-tested-btn" type="button" data-tid="{{ t.id }}" id="not-tested-btn-{{ t.id }}" onclick="openNotTestedModal({{ t.id }}, '{{ t.mrs_ticket }}')">Not Tested</button>
+                    <button class="ghost note-btn" type="button" onclick="openNoteModal({{ t.id }}, '{{ t.mrs_ticket }}')">📝 Leave Note</button>
+                  {% endif %}
+                  <button class="ghost release-btn" type="button" data-tid="{{ t.id }}" onclick="releaseTicket({{ t.id }})">Release</button>
+                  <button class="ghost transfer-btn" type="button" data-tid="{{ t.id }}" onclick="openTransferModal({{ t.id }}, '{{ t.mrs_ticket }}')">Transfer</button>
+                  {% if session.get('is_admin') %}
+                    <button class="danger delete-btn" type="button" onclick="deleteTicket({{ t.id }}, '{{ t.mrs_ticket }}')">Delete</button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="card empty" style="padding:24px;">
+      {% if session.get('is_admin') %}
+        No assigned tickets in the system right now. <a href="{{ url_for('overview') }}">Browse available stock</a>.
+      {% else %}
+        No active in-progress tickets assigned to you. <a href="{{ url_for('overview') }}">Browse and claim stock codes</a>.
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Fail Reason Modal Popup -->
+<div id="failModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;">
+  <div class="card" style="width:100%;max-width:400px;padding:20px;">
+    <h2 style="margin-bottom:6px;color:var(--err);">Test Failed - Reason Required</h2>
+    <p class="muted" style="margin-bottom:12px;font-size:12.5px;" id="failModalTicketLabel">Provide a detailed failure reason for this ticket.</p>
+    <form id="failForm" onsubmit="submitFail(event)">
+      <input type="hidden" id="failTid" name="tid">
+      <label for="failure_reason">Failure Reason / Notes</label>
+      <textarea id="failure_reason" name="failure_reason" required placeholder="Describe why the test failed..." style="margin-bottom:12px;"></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <button type="button" class="ghost" onclick="closeFailModal()">Cancel</button>
+        <button type="submit" class="danger">Submit Failure</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Not Tested Reason Modal Popup -->
+<div id="notTestedModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;">
+  <div class="card" style="width:100%;max-width:400px;padding:20px;">
+    <h2 style="margin-bottom:6px;color:var(--warn);">Ticket Not Tested - Reason Required</h2>
+    <p class="muted" style="margin-bottom:12px;font-size:12.5px;" id="notTestedModalTicketLabel">Provide a reason why this ticket was not tested.</p>
+    <form id="notTestedForm" onsubmit="submitNotTested(event)">
+      <input type="hidden" id="notTestedTid" name="tid">
+      <label for="not_tested_reason">Reason / Comments</label>
+      <textarea id="not_tested_reason" name="not_tested_reason" required placeholder="Describe why testing was skipped..." style="margin-bottom:12px;"></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <button type="button" class="ghost" onclick="closeNotTestedModal()">Cancel</button>
+        <button type="submit" class="primary" style="background:var(--warn);color:#000;font-weight:600;">Submit Not Tested</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Transfer Modal Popup -->
+<div id="transferModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;">
+  <div class="card" style="width:100%;max-width:400px;padding:20px;">
+    <h2 style="margin-bottom:6px;color:var(--accent);">Transfer Ticket</h2>
+    <p class="muted" style="margin-bottom:12px;font-size:12.5px;" id="transferModalTicketLabel">Select an available technician to transfer this ticket to.</p>
+    <form id="transferForm" onsubmit="submitTransfer(event)">
+      <input type="hidden" id="transferTid" name="tid">
+      <label for="target_user_id">Available Technicians</label>
+      <select id="target_user_id" name="target_user_id" required style="margin-bottom:12px;">
+        <option value="">-- Select Technician --</option>
+        {% for u in users %}
+          {% if u.id != session.get('user_id') %}
+            <option value="{{ u.id }}">{{ u.username }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <button type="button" class="ghost" onclick="closeTransferModal()">Cancel</button>
+        <button type="submit" class="primary">Transfer Ticket</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Leave Note Popup Modal -->
+<div id="noteModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;">
+  <div class="card" style="width:100%;max-width:420px;padding:20px;">
+    <h2 style="margin-bottom:6px;color:var(--accent);">Leave Handoff Note</h2>
+    <p class="muted" style="margin-bottom:12px;font-size:12.5px;" id="noteModalTicketLabel">Leave notes for other technicians if unable to complete work today.</p>
+    <form id="noteForm" onsubmit="submitNote(event)">
+      <input type="hidden" id="noteTid" name="tid">
+      <label for="note_text">Handoff Notes / Status Update</label>
+      <textarea id="note_text" name="note" required placeholder="Describe what was done and what remains unfinished..." style="margin-bottom:12px; min-height:90px;"></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <button type="button" class="ghost" onclick="closeNoteModal()">Cancel</button>
+        <button type="submit" class="primary">Save Note</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+.ntf-shell{width:min(1180px,96vw);max-height:94vh;overflow:hidden;padding:0!important;border:1px solid #31558a;background:#111f38;box-shadow:0 28px 90px rgba(0,0,0,.55)}.ntf-head{display:flex;justify-content:space-between;align-items:flex-start;padding:20px 24px;border-bottom:1px solid #2a4368;background:linear-gradient(135deg,#162744,#11203a)}.ntf-body{padding:20px 24px;max-height:calc(94vh - 145px);overflow:auto}.ntf-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.ntf-field{display:grid;gap:5px}.ntf-field.wide{grid-column:span 2}.ntf-field.full{grid-column:1/-1}.ntf-field label{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#9bb2d3}.ntf-field input,.ntf-field select,.ntf-field textarea{width:100%;background:#0b172b;border:1px solid #304d76;color:var(--text);border-radius:7px;padding:9px 10px}.ntf-field textarea{min-height:70px;resize:vertical}.ntf-section{grid-column:1/-1;color:#67a5ff;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid #294367;padding:5px 0}.ntf-foot{display:flex;justify-content:flex-end;gap:9px;padding:14px 24px;border-top:1px solid #2a4368;background:#0d192e}@media(max-width:900px){.ntf-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ntf-grid{grid-template-columns:1fr}.ntf-field.wide{grid-column:auto}}
+</style>
+<div id="ntf-modal" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.84);z-index:9999;align-items:center;justify-content:center;padding:12px;" onclick="if(event.target===this) closeNtfModal()">
+<form id="ntf-form" onsubmit="submitNtfCompletion(event)" class="card ntf-shell" onclick="event.stopPropagation()"><input type="hidden" id="ntf-ticket-id">
+<div class="ntf-head"><div><div style="color:#67a5ff;font-size:11px;font-weight:900;letter-spacing:.12em;">COMPLETE TICKET</div><h2 style="margin:4px 0 2px;">NTF and Completed</h2><div class="muted">Review and complete every ticket data field. Suggested choices come from the Admin Database Builder.</div></div><button type="button" class="ghost" onclick="closeNtfModal()">✕ Close</button></div>
+<div class="ntf-body"><div id="ntf-fields" class="ntf-grid"></div></div><div class="ntf-foot"><button type="button" class="ghost" onclick="closeNtfModal()">Cancel</button><button type="submit" class="success">Save NTF and Complete Ticket</button></div></form></div>
+<script>
+function toggleStockCard(cardEl, event) {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.closest('form') || event.target.closest('.actions')) {
+    return;
+  }
+  const panel = cardEl.querySelector('.stock-details-panel');
+  if (panel.style.display === 'block') {
+    panel.style.display = 'none';
+    cardEl.style.borderColor = 'var(--line)';
+  } else {
+    panel.style.display = 'block';
+    cardEl.style.borderColor = 'var(--accent)';
+  }
+}
+
+function openNoteModal(tid, ticketName) {
+  document.getElementById('noteTid').value = tid;
+  document.getElementById('noteModalTicketLabel').textContent = `Leave a handoff note for ticket ${ticketName}:`;
+  document.getElementById('noteModal').style.display = 'flex';
+  document.getElementById('note_text').focus();
+}
+
+function closeNoteModal() {
+  document.getElementById('noteModal').style.display = 'none';
+  document.getElementById('note_text').value = '';
+}
+
+async function submitNote(e) {
+  e.preventDefault();
+  const tid = document.getElementById('noteTid').value;
+  const noteText = document.getElementById('note_text').value;
+  try {
+    const formData = new URLSearchParams();
+    formData.append('note', noteText);
+    const resp = await fetch(`/ticket/${tid}/add-note-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+    const data = await resp.json();
+    if (data.success) {
+      closeNoteModal();
+      alert("Note saved successfully!");
+      location.reload();
+    } else {
+      alert(data.message || "Failed to save note.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred while saving the note.");
+  }
+}
+
+async function startTest(tid) {
+  try {
+    const resp = await fetch(`/ticket/${tid}/start-test-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest" }
+    });
+    const data = await resp.json();
+    if (data.success) {
+      const startedSpan = document.getElementById(`test-started-val-${tid}`);
+      if (startedSpan) startedSpan.textContent = data.test_started_at;
+      const startBtn = document.querySelector(`button.start-test-btn[data-tid="${tid}"]`);
+      if (startBtn) startBtn.remove();
+
+      const passBtn = document.getElementById(`pass-btn-${tid}`);
+      const failBtn = document.getElementById(`fail-btn-${tid}`);
+      const ntBtn = document.getElementById(`not-tested-btn-${tid}`);
+      if (passBtn) { passBtn.disabled = false; passBtn.style.opacity = "1"; passBtn.style.cursor = "pointer"; }
+      if (failBtn) { failBtn.disabled = false; failBtn.style.opacity = "1"; failBtn.style.cursor = "pointer"; }
+      if (ntBtn) { ntBtn.disabled = false; ntBtn.style.opacity = "1"; ntBtn.style.cursor = "pointer"; }
+    } else {
+      alert(data.message || "Failed to start test.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred starting test.");
+  }
+}
+
+const NTF_OPTIONS = {{ history_options|tojson }};
+const NTF_FIELDS = [
+ ['Ticket Identification','section'],['Title','mrs_ticket'],['Part SN','serial_number'],['WH Location','wh_location'],['Technician','technician_name'],['Stock Code','stock_code'],['Part Type','part_type'],['Part Description','part_description','wide'],
+ ['Timing and Result','section'],['Assigned Time','assigned_at'],['Test Start Time','test_started_at'],['Test End Time','completed_at'],['Return Time','return_time'],['Result','test_result'],['Test Failure','failure_reason','wide'],['Quality Disposition','quality_disposition'],['Logs Uploaded','logs_uploaded'],['Log Path','log_path','wide'],['Comments','mrs_comments','full'],
+ ['System and CSV Fields','section'],['Stock_cd','stock_cd'],['BB Flag','bb_flag'],['SXM1 Flag','sxm1_flag'],['SXM2 Flag','sxm2_flag'],['SXM3 Flag','sxm3_flag'],['SXM4 Flag','sxm4_flag'],['SXM5 Flag','sxm5_flag'],['SXM6 Flag','sxm6_flag'],['SXM7 Flag','sxm7_flag'],['SXM8 Flag','sxm8_flag'],['ID','csv_id'],['Index','csv_index'],['Modified','modified']];
+function openNtfModalFromElement(el){openNtfModal(JSON.parse(el.getAttribute('data-ticket')));}
+function openNtfModal(t) {
+ document.getElementById('ntf-ticket-id').value=t.id; const host=document.getElementById('ntf-fields'); host.innerHTML='';
+ const aliases={technician_name:t.assigned_technician,test_result:'NTF',completed_at:new Date().toLocaleString(),logs_uploaded:t.logs_uploaded||'no'};
+ NTF_FIELDS.forEach(([label,name,size])=>{if(name==='section'){host.insertAdjacentHTML('beforeend',`<div class="ntf-section">${label}</div>`);return;} const wrap=document.createElement('div');wrap.className='ntf-field '+(size||''); const id='ntf-'+name; const list='list-'+name; let value=aliases[name] ?? t[name] ?? ''; if(name.endsWith('_flag')) value=value ? '1':'0'; const multiline=['part_description','failure_reason','mrs_comments'].includes(name); wrap.innerHTML=`<label for="${id}">${label}</label>${multiline?`<textarea id="${id}" name="${name}" list="${list}"></textarea>`:`<input id="${id}" name="${name}" list="${list}">`}<datalist id="${list}">${(NTF_OPTIONS[label]||[]).map(v=>`<option value="${String(v).replace(/"/g,'&quot;')}">`).join('')}</datalist>`; wrap.querySelector(`[name="${name}"]`).value=value;host.appendChild(wrap);});
+ const lu=document.getElementById('ntf-logs_uploaded');lu.addEventListener('change',toggleNtfLogPath);toggleNtfLogPath();document.getElementById('ntf-modal').style.display='flex';
+}
+function closeNtfModal(){document.getElementById('ntf-modal').style.display='none';}
+function toggleNtfLogPath(){const lu=document.getElementById('ntf-logs_uploaded'),path=document.getElementById('ntf-log_path');if(!lu||!path)return;const yes=lu.value.toLowerCase()==='yes';path.required=yes;if(!yes)path.value='no Log';else if(path.value==='no Log')path.value='';}
+async function submitNtfCompletion(event){event.preventDefault();const tid=document.getElementById('ntf-ticket-id').value;const resp=await fetch(`/ticket/${tid}/complete-pass-ajax`,{method:'POST',headers:{'X-Requested-With':'XMLHttpRequest'},body:new FormData(event.target)});const data=await resp.json();if(!resp.ok||!data.success){alert(data.message||'Unable to complete ticket.');return;}closeNtfModal();location.reload();}
+
+function openFailModal(tid, ticketName) {
+  document.getElementById('failTid').value = tid;
+  document.getElementById('failModalTicketLabel').textContent = `Provide reason for failing ticket ${ticketName}:`;
+  document.getElementById('failModal').style.display = 'flex';
+  document.getElementById('failure_reason').focus();
+}
+
+function closeFailModal() {
+  document.getElementById('failModal').style.display = 'none';
+  document.getElementById('failure_reason').value = '';
+}
+
+async function submitFail(e) {
+  e.preventDefault();
+  const tid = document.getElementById('failTid').value;
+  const reason = document.getElementById('failure_reason').value;
+  try {
+    const formData = new URLSearchParams();
+    formData.append('failure_reason', reason);
+    const resp = await fetch(`/ticket/${tid}/complete-fail-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+    const data = await resp.json();
+    if (data.success) {
+      closeFailModal();
+      removeTicketCard(tid);
+    } else {
+      alert(data.message || "Failed to submit failure.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred.");
+  }
+}
+
+function openNotTestedModal(tid, ticketName) {
+  document.getElementById('notTestedTid').value = tid;
+  document.getElementById('notTestedModalTicketLabel').textContent = `Provide reason for not testing ticket ${ticketName}:`;
+  document.getElementById('notTestedModal').style.display = 'flex';
+  document.getElementById('not_tested_reason').focus();
+}
+
+function closeNotTestedModal() {
+  document.getElementById('notTestedModal').style.display = 'none';
+  document.getElementById('not_tested_reason').value = '';
+}
+
+async function submitNotTested(e) {
+  e.preventDefault();
+  const tid = document.getElementById('notTestedTid').value;
+  const reason = document.getElementById('not_tested_reason').value;
+  try {
+    const formData = new URLSearchParams();
+    formData.append('not_tested_reason', reason);
+    const resp = await fetch(`/ticket/${tid}/complete-not-tested-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+    const data = await resp.json();
+    if (data.success) {
+      closeNotTestedModal();
+      removeTicketCard(tid);
+    } else {
+      alert(data.message || "Failed to submit not tested reason.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred.");
+  }
+}
+
+async function releaseTicket(tid) {
+  if (!confirm("Release this ticket back to available stock?")) return;
+  try {
+    const resp = await fetch(`/ticket/${tid}/release-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest" }
+    });
+    const data = await resp.json();
+    if (data.success) {
+      removeTicketCard(tid);
+    } else {
+      alert(data.message || "Failed to release.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred.");
+  }
+}
+
+function openTransferModal(tid, ticketName) {
+  document.getElementById('transferTid').value = tid;
+  document.getElementById('transferModalTicketLabel').textContent = `Select a technician to transfer ticket ${ticketName} to:`;
+  document.getElementById('transferModal').style.display = 'flex';
+}
+
+function closeTransferModal() {
+  document.getElementById('transferModal').style.display = 'none';
+  document.getElementById('target_user_id').value = '';
+}
+
+async function submitTransfer(e) {
+  e.preventDefault();
+  const tid = document.getElementById('transferTid').value;
+  const targetUserId = document.getElementById('target_user_id').value;
+  try {
+    const formData = new URLSearchParams();
+    formData.append('target_user_id', targetUserId);
+    const resp = await fetch(`/ticket/${tid}/transfer-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest", "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
+    });
+    const data = await resp.json();
+    if (data.success) {
+      closeTransferModal();
+      removeTicketCard(tid);
+      alert(data.message);
+    } else {
+      alert(data.message || "Failed to transfer ticket.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred during transfer.");
+  }
+}
+
+async function deleteTicket(tid, ticketName) {
+  if (!confirm(`Delete ticket ${ticketName}? This cannot be undone.`)) return;
+  try {
+    const resp = await fetch(`/ticket/${tid}/delete-ajax`, {
+      method: "POST",
+      headers: { "X-Requested-With": "XMLHttpRequest" }
+    });
+    const data = await resp.json();
+    if (data.success) {
+      removeTicketCard(tid);
+    } else {
+      alert(data.message || "Failed to delete ticket.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred while deleting the ticket.");
+  }
+}
+
+function removeTicketCard(tid) {
+  const item = document.getElementById(`ticket-item-${tid}`);
+  if (item) {
+    const container = item.closest('.stock-container-card');
+    item.remove();
+    if (container && container.querySelectorAll('.ticket-row-item').length === 0) {
+      container.remove();
+      if (document.querySelectorAll('.stock-container-card').length === 0) {
+        location.reload();
+      }
+    }
+  }
+}
+</script>
+
+{% endblock %}

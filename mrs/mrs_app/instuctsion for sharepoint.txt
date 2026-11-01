@@ -1,0 +1,7 @@
+use this for the site ID
+
+/_api/site/id
+
+list id
+
+https://ztgroup.sharepoint.com/sites/GTXTestEngineering/_api/web/lists/getByTitle('OSV%20Tracker%20List')/Id

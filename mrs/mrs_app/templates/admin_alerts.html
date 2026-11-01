@@ -1,0 +1,106 @@
+{% extends "base.html" %}{% block content %}
+<div class="page-head" style="margin-bottom:10px;">
+  <div>
+    <h1>Admin Weekly Volume Alerts</h1>
+    <p class="muted" style="margin:0">Analyze stock-code recurrence for a Monday-based work week and its trailing 2-week, 3-week, and 1-month windows.</p>
+  </div>
+  <a class="primary" href="{{ url_for('admin_alerts_pdf') }}" style="padding:7px 14px;font-size:13px;">Download Alerts PDF Report</a>
+</div>
+
+<form method="get" class="card section-card" style="padding:12px 14px;margin-bottom:12px;">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;">
+    <label style="flex:1 1 240px;margin:0;">Work Week Starting Monday
+      <input type="date" name="week" value="{{ selected_week }}" required>
+    </label>
+    <button class="primary" type="submit">Analyze Work Week</button>
+    <a class="btn-logout" href="{{ url_for('admin_alerts') }}">Current Week</a>
+  </div>
+  <div class="muted" style="margin-top:8px;">Selected week: <strong>{{ week_label }}</strong> through <strong>{{ week_end_label }}</strong>. Any selected date is automatically aligned to Monday.</div>
+</form>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ alerts|length }}</span>Stock Codes Requiring Review</div>
+  <div class="stat"><span>{{ analyzed_stock_count }}</span>Stock Codes Analyzed</div>
+  <div class="stat"><span>{{ selected_week_ticket_count }}</span>Tickets in Selected Work Week</div>
+</div>
+
+<div class="card" style="padding:12px 14px;margin-bottom:14px;border-left:4px solid var(--warn);">
+  <strong style="color:var(--warn);">Notice criteria</strong>
+  <div class="muted" style="margin-top:5px;">20+ occurrences Monday-Friday of the selected week, 30+ in the trailing 2 weeks, 40+ in the trailing 3 weeks, or 50+ in the trailing 1 month. Counts are based on MRS ticket occurrences for each stock code.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+{% for alert in alerts %}
+  <details class="card" style="border-left:4px solid var(--warn);overflow:hidden;">
+    <summary style="cursor:pointer;list-style:none;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;">
+        <strong style="font-size:16px;">{{ alert.stock_code }}</strong>
+        <span class="badge warn">Review for Bigger Case</span>
+        <span class="badge" style="background:rgba(34,197,94,.18);color:#86efac;">NTF {{ alert.ntf_count }}</span>
+        <span class="badge" style="background:rgba(239,68,68,.20);color:#fca5a5;">Failed {{ alert.failed_count }}</span>
+        {% if alert.other_count %}<span class="badge" style="background:rgba(168,85,247,.18);color:#c4b5fd;">Other {{ alert.other_count }}</span>{% endif %}
+      </div>
+      <span class="muted">{{ alert.display_tickets|length }} tickets in analysis window ▾</span>
+    </summary>
+
+    <div style="border-top:1px solid var(--line);padding:12px 14px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-bottom:12px;">
+        {% for metric in alert.metrics %}
+          <div style="background:#0d1729;border:1px solid {% if metric.triggered %}rgba(245,158,11,.65){% else %}var(--line){% endif %};border-radius:8px;padding:9px 10px;">
+            <div class="muted">{{ metric.label }}</div>
+            <div style="font-size:19px;font-weight:700;color:{% if metric.triggered %}var(--warn){% else %}var(--text){% endif %};">{{ metric.count }} / {{ metric.threshold }}</div>
+            <div class="muted">{{ metric.start }} to {{ metric.end }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% for result_group in alert.result_groups %}
+        <div style="border:1px solid {{ result_group.border }};border-radius:9px;overflow:hidden;background:{{ result_group.background }};margin-top:10px;">
+          <div style="padding:9px 11px;border-bottom:1px solid {{ result_group.border }};display:flex;justify-content:space-between;">
+            <strong style="color:{{ result_group.color }};">{{ result_group.label }}</strong>
+            <span class="badge" style="background:{{ result_group.badge }};color:{{ result_group.color }};">{{ result_group.tickets|length }}</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table style="min-width:760px;">
+              <thead><tr><th>MRS Ticket</th><th>Serial Number</th><th>Result</th><th>Technician</th><th>Completed At</th><th>Action</th></tr></thead>
+              <tbody>
+              {% for t in result_group.tickets %}
+                <tr style="background:{{ result_group.row }} ;">
+                  <td><strong>{{ t.mrs_ticket or '—' }}</strong></td>
+                  <td><code style="color:#86efac;">{{ t.serial_number or '—' }}</code></td>
+                  <td><span class="badge" style="background:{{ result_group.badge }};color:{{ result_group.color }};">{{ t.test_result or result_group.label }}</span></td>
+                  <td>{{ t.technician or 'Unassigned' }}</td>
+                  <td class="muted">{{ t.completed_at or '—' }}</td>
+                  <td><button type="button" class="primary" style="padding:6px 10px;font-size:12px;" onclick="openAlertTicket({{ t.id }})">View Details</button></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </details>
+{% else %}
+  <div class="card empty" style="padding:28px;">No stock code crossed an alert threshold for the selected work week and trailing analysis windows.</div>
+{% endfor %}
+</div>
+
+<div id="alertTicketModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.82);align-items:center;justify-content:center;padding:18px;" role="dialog" aria-modal="true">
+  <div class="card" style="width:min(980px,96vw);max-height:90vh;overflow:auto;background:#101b31;border:1px solid #334a78;box-shadow:0 24px 70px rgba(0,0,0,.55);">
+    <div style="position:sticky;top:0;z-index:2;background:#101b31;border-bottom:1px solid var(--line);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+      <div><h2 id="alertModalTitle" style="margin:0;">Ticket Details</h2><div id="alertModalSubtitle" class="muted"></div></div>
+      <button type="button" class="ghost" onclick="closeAlertTicket()">Close</button>
+    </div>
+    <div id="alertModalBody" style="padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;"></div>
+  </div>
+</div>
+<script id="alert-ticket-data" type="application/json">{{ alert_ticket_details|tojson }}</script>
+<script>
+const alertTicketData = JSON.parse(document.getElementById('alert-ticket-data').textContent || '{}');
+const alertFields = [['stock_code','Stock Code'],['mrs_ticket','MRS Ticket'],['serial_number','Serial Number'],['status','Status'],['test_result','Test Result'],['technician','Technician'],['assigned_at','Claimed At'],['test_started_at','Test Started At'],['completed_at','Completed At'],['created_at','Created At'],['modified','Modified'],['return_time','Return Time'],['wh_location','WH Location'],['part_type','Part Type'],['part_description','Part Description'],['quality_disposition','Quality Disposition'],['failure_reason','Failure Reason / Notes'],['mrs_comments','Comments'],['logs_uploaded','Logs Uploaded'],['log_path','Log Path'],['stock_cd','Stock CD'],['csv_id','CSV ID'],['csv_index','CSV Index']];
+function openAlertTicket(id){const t=alertTicketData[String(id)];if(!t)return;document.getElementById('alertModalTitle').textContent=t.mrs_ticket||'Ticket Details';document.getElementById('alertModalSubtitle').textContent=`Stock Code: ${t.stock_code||'—'}`;const body=document.getElementById('alertModalBody');body.innerHTML='';alertFields.forEach(([key,label])=>{const card=document.createElement('div');if(['part_description','failure_reason','mrs_comments','log_path'].includes(key))card.style.gridColumn='1/-1';card.style.background='#0d1729';card.style.border='1px solid var(--line)';card.style.borderRadius='8px';card.style.padding='10px';const h=document.createElement('div');h.className='muted';h.textContent=label;const v=document.createElement('div');v.style.whiteSpace='pre-wrap';v.style.wordBreak='break-word';v.textContent=(t[key]===null||t[key]===undefined||t[key]==='')?'—':String(t[key]);card.append(h,v);body.appendChild(card)});document.getElementById('alertTicketModal').style.display='flex';document.body.style.overflow='hidden'}
+function closeAlertTicket(){document.getElementById('alertTicketModal').style.display='none';document.body.style.overflow=''}
+document.getElementById('alertTicketModal').addEventListener('click',function(e){if(e.target===this)closeAlertTicket()});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAlertTicket()});
+</script>
+{% endblock %}

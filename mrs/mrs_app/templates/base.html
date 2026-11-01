@@ -1,0 +1,57 @@
+
+
+
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MRS Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% if session.get('user_id') %}<script src="{{ url_for('static', filename='activity_audit.js') }}" defer></script>{% endif %}
+</head><body>
+{% if request.endpoint == 'main_menu' %}
+<header class="topbar portal-main-topbar">
+  <div class="brand"><span class="dot"></span> Engineering Team Portal</div>
+</header>
+{% elif session.get('user_id') %}
+<header class="topbar">
+  <div class="brand"><span class="dot"></span> {% if session.get('active_section') == 'te' %}Test Engineering Portal{% else %}OSV Ticket Dashboard{% endif %}</div>
+  <nav>
+    {% if session.get('active_section') == 'osv' %}
+      {% if user_can('overview') %}<a href="{{ url_for('overview') }}">Overview</a>{% endif %}
+      {% if user_can('my_tickets') %}<a href="{{ url_for('my_tickets') }}">My Dashboard</a>{% endif %}
+      {% if user_can('my_completed') %}<a href="{{ url_for('my_completed') }}">Completed Tickets</a>{% endif %}
+      {% if user_can('history') %}<a href="{{ url_for('history') }}">History</a>{% endif %}
+      {% if user_can('kpi') %}<a href="{{ url_for('admin_kpi') }}">KPI Presentation</a>{% endif %}
+      {% if user_can('alerts') %}<a href="{{ url_for('admin_alerts') }}">Alerts</a>{% endif %}
+      {% if user_can('manage_tickets') %}<a href="{{ url_for('admin_tickets') }}">Manage Tickets</a>{% endif %}
+      {% if user_can('stockcode_db') %}<a href="{{ url_for('stockcode_db.index') }}">StockCode DB</a>{% endif %}
+      {% if user_can('tester_db') %}<a href="{{ url_for('tester_db.index') }}">Tester DB</a>{% endif %}
+      {% if user_can('tools') %}<a href="{{ url_for('tools_portal.index') }}">Tools</a>{% endif %}
+      {% if user_can('manage_users') %}<a href="{{ url_for('admin_users') }}">Manage Users</a>{% endif %}
+    {% elif session.get('active_section') == 'te' %}
+      {% if user_can_te('te_pie_tickets') %}<a href="{{ url_for('te_pie_tickets.index') }}">PIE Tickets</a>{% endif %}
+      {% if user_can_te('te_history') %}<a href="{{ url_for('te_history.index') }}">History</a>{% endif %}
+      {% if user_can_te('te_dashboard') %}<a href="{{ url_for('te_dashboard.index') }}">Test Dashboard</a>{% endif %}
+      {% if user_can_te('te_alerts') %}<a href="{{ url_for('te_alerts.index') }}">Alerts</a>{% endif %}
+      {% if user_can_te('te_kpi') %}<a href="{{ url_for('te_kpi.index') }}">KPI</a>{% endif %}
+      {% if user_can_te('te_jira') %}<a href="{{ url_for('te_jira.index') }}">JIRA</a>{% endif %}
+      {% if user_can_te('te_tools') %}<a href="{{ url_for('tools_portal.index') }}">Tools</a>{% endif %}
+      {% if session.get('is_admin') %}<a href="{{ url_for('admin_users') }}">Manage Users</a>{% endif %}
+    {% endif %}
+    <a class="section-switch" href="{{ url_for('main_menu') }}">Switch Section</a>
+    <span class="who">{{ session.get('username') }}{% if session.get('is_admin') %} - admin{% endif %}</span>
+    <a class="btn-logout" href="{{ url_for('logout') }}">Sign out</a>
+  </nav>
+</header>
+{% endif %}
+<main class="{% if not session.get('user_id') or request.endpoint == 'main_menu' %}centered{% endif %}">
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}<div class="flash-wrap">
+    {% for cat, msg in messages %}<div class="flash {{ cat }}">{{ msg }}</div>{% endfor %}
+  </div>{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</main></body></html>
+
+
+

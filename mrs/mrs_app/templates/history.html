@@ -1,0 +1,287 @@
+
+{% extends "base.html" %}{% block content %}
+
+<div class="page-head" style="margin-bottom:10px;">
+  <div>
+    <h1>History & Completed Tickets</h1>
+    <p class="muted" style="margin:0">
+      Showing completed entries between <strong>{{ date_from }}</strong> and <strong>{{ date_to }}</strong> (default past 7 days). Click any ticket row to view all details.
+    </p>
+  </div>
+  <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+    <a class="btn-logout"
+       href="{{ url_for('history_export') }}?from={{ date_from }}&to={{ date_to }}&tech={{ tech_id }}&q={{ q }}&f_stock={{ f_stock }}&f_tech={{ f_tech }}&f_result={{ f_result }}&f_part_type={{ f_part_type }}&f_wh={{ f_wh }}&f_qd={{ f_qd }}">
+      Export CSV
+    </a>
+    {% if is_admin %}
+      <form method="post" action="{{ url_for('history_delete_all') }}" onsubmit="return confirm('WARNING: This will delete ALL completed history entries permanently. Continue?');" style="display:inline; margin:0;">
+        <button type="submit" class="danger" style="padding:4px 10px; font-size:12.5px;">Delete All Entries</button>
+      </form>
+    {% endif %}
+  </div>
+</div>
+
+{% if is_admin %}
+<div class="card section-card" style="padding:10px 14px; margin-bottom:12px; background:rgba(79,140,255,0.05); border-color:var(--accent);">
+  <h2 style="margin-bottom:6px; color:var(--accent);">Import OSV Tracker CSV</h2>
+  <form method="post" action="{{ url_for('history_import_csv') }}" enctype="multipart/form-data" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+    <input type="file" name="csv_file" accept=".csv" required style="flex:1; min-width:240px; padding:6px; font-size:13px;">
+    <button class="primary" type="submit" style="padding:6px 14px; font-size:13px;">Import History CSV</button>
+  </form>
+</div>
+{% endif %}
+
+<form method="get" class="card section-card" style="padding:12px 14px;">
+  <h2 style="margin-bottom:8px; color:var(--accent);">Excel-Like Column Filters & Date Range</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end;">
+    <label style="flex:1 1 120px; margin:0;">From Date
+      <input type="text" name="from" value="{{ date_from }}" placeholder="YYYY/MM/DD">
+    </label>
+    <label style="flex:1 1 120px; margin:0;">To Date
+      <input type="text" name="to" value="{{ date_to }}" placeholder="YYYY/MM/DD">
+    </label>
+    <label style="flex:1 1 140px; margin:0;">Stock Code Filter
+      <input type="text" name="f_stock" value="{{ f_stock }}" placeholder="e.g. STK-1001 or [empty]">
+    </label>
+    <label style="flex:1 1 140px; margin:0;">Technician Filter
+      <input type="text" name="f_tech" value="{{ f_tech }}" placeholder="Tech name or [empty]">
+    </label>
+    <label style="flex:1 1 150px; margin:0;">Test Result
+      <select name="f_result">
+        <option value="">All Results</option>
+        <option value="passed" {% if f_result == 'passed' %}selected{% endif %}>Passed</option>
+        <option value="failed" {% if f_result == 'failed' %}selected{% endif %}>Failed</option>
+        <option value="not_tested" {% if f_result == 'not_tested' %}selected{% endif %}>Not Tested (NTF)</option>
+        <option value="__FAIL_OR_NTF__" {% if f_result == '__FAIL_OR_NTF__' %}selected{% endif %}>Failed & NTF Combined</option>
+        <option value="__EMPTY__" {% if f_result == '__EMPTY__' %}selected{% endif %}>[Empty / Blank]</option>
+      </select>
+    </label>
+    <label style="flex:1 1 130px; margin:0;">Part Type
+      <input type="text" name="f_part_type" value="{{ f_part_type }}" placeholder="Part type or [empty]">
+    </label>
+    <label style="flex:1 1 130px; margin:0;">WH Location
+      <input type="text" name="f_wh" value="{{ f_wh }}" placeholder="Location or [empty]">
+    </label>
+    <label style="flex:1 1 130px; margin:0;">Quality Disposition
+      <input type="text" name="f_qd" value="{{ f_qd }}" placeholder="Disposition or [empty]">
+    </label>
+    <label style="flex:1 1 160px; margin:0;">General Keyword Search
+      <input name="q" value="{{ q }}" placeholder="Stock, MRS, SN, comments...">
+    </label>
+    <div style="display:flex; gap:6px; align-items:center;">
+      <button class="primary" type="submit" style="padding:8px 14px;">Apply Filters</button>
+      <a class="btn-logout" href="{{ url_for('history') }}" style="padding:8px 12px;">Reset</a>
+    </div>
+  </div>
+  <div class="muted" style="margin-top:6px; font-size:11.5px;">
+    Tip: Type <code>[empty]</code> in any text filter box to search specifically for entries where that column is blank or unassigned.
+  </div>
+</form>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ total }}</span>Completed in view</div>
+  <div class="stat"><span>{{ techs_count }}</span>Technicians involved</div>
+  <div class="stat"><span>{{ stocks_count }}</span>Distinct stock codes</div>
+</div>
+
+<div class="overview-grid" style="grid-template-columns:minmax(0,1fr) 340px">
+  <div class="overview-left">
+    <div class="card section-card" style="padding:12px 14px 0">
+      <h2 style="margin:0 0 10px">Completed Stock Codes & Tickets</h2>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      {% for g in grouped_tickets %}
+        <div class="card stock-container-card" style="cursor:pointer;padding:10px 14px;" onclick="toggleStockCard(this, event)">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-size:16px;font-weight:700;color:var(--text);">{{ g.stock_code }}</span>
+              <span class="badge completed">{{ g.tickets|length }} ticket{% if g.tickets|length > 1 %}s{% endif %} Completed</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="muted" style="font-size:12px;">Click to expand / collapse ▾</span>
+            </div>
+          </div>
+
+          <div class="stock-details-panel">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              {% for t in g.tickets %}
+                <div style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer;transition:border-color .15s;"
+                     onmouseover="this.style.borderColor='var(--accent)';" onmouseout="this.style.borderColor='var(--line)';"
+                     data-ticket='{{ t | tojson | safe }}'
+                     onclick="openTicketModalFromElement(this)">
+                  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                    <strong style="font-family:Consolas,monospace;font-size:14px;color:#93bbff;">{{ t.mrs_ticket }}</strong>
+                    {% if t.serial_number %}
+                      <span style="font-family:Consolas,monospace;background:rgba(34,197,94,0.1);color:#86efac;padding:2px 6px;border-radius:4px;font-size:12px;">SN: {{ t.serial_number }}</span>
+                    {% endif %}
+                    {% if t.test_result %}
+                      <span class="badge {{ t.test_result|lower|replace(' ', '_') }}">{{ t.test_result }}</span>
+                    {% endif %}
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                    <span class="muted" style="font-size:12px;">Tech: <strong>{{ t.technician or '—' }}</strong></span>
+                    <span class="muted" style="font-size:12px;">Completed: {{ t.completed_at or '—' }}</span>
+                    <button class="ghost" type="button" style="padding:3px 8px;font-size:11.5px;">View Details ↗</button>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="card empty" style="padding:24px;">
+          No completed tickets found in this date range or matching filter criteria. Adjust filters or expand date range above.
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="overview-right">
+    {% if tech_pie %}
+      <div class="chart-card">
+        <h2>Completed by technician</h2>
+        {{ tech_pie }}
+      </div>
+    {% endif %}
+    <div class="chart-card">
+      <h2>Summary</h2>
+      <p class="muted" style="margin:0;line-height:1.7">
+        Date Range: <strong>{{ date_from }}</strong> → <strong>{{ date_to }}</strong><br>
+        Filtered records: <strong>{{ total }}</strong><br>
+        {% if q %}Search: <strong>{{ q }}</strong><br>{% endif %}
+        {% if is_admin and tech_id %}Tech ID: <strong>{{ tech_id }}</strong><br>{% endif %}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="ticketModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;padding:20px;">
+  <div class="card" style="width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:24px;position:relative;">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px;">
+      <div>
+        <h2 id="modalStockCode" style="margin:0;color:var(--accent);font-size:16px;">Stock Code</h2>
+        <h1 id="modalMrsTicket" style="margin:2px 0 0;font-size:20px;font-family:Consolas,monospace;">MRS-00000</h1>
+      </div>
+      <button class="ghost" onclick="closeTicketModal()" style="padding:6px 12px;font-size:13px;">✕ Close</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;font-size:13px;">
+      <div><span class="muted">Serial Number (SN):</span><br><code id="modalSerial" style="color:#86efac;font-size:13.5px;">—</code></div>
+      <div><span class="muted">Test Result:</span><br><span id="modalResult" class="badge">—</span></div>
+      <div><span class="muted">Technician:</span><br><strong id="modalTechnician">—</strong></div>
+      <div><span class="muted">WH Location:</span><br><span id="modalWh">—</span></div>
+      <div><span class="muted">Part Type:</span><br><span id="modalPartType">—</span></div>
+      <div><span class="muted">Quality Disposition:</span><br><span id="modalQd">—</span></div>
+      <div><span class="muted">Checked-In Time:</span><br><span id="modalCreatedAt" class="muted">—</span></div>
+      <div><span class="muted">Assigned Time:</span><br><span id="modalAssignedAt" class="muted">—</span></div>
+      <div><span class="muted">Test Started Time:</span><br><span id="modalTestStartedAt" class="muted">—</span></div>
+      <div><span class="muted">Completion Time:</span><br><span id="modalCompletedAt" class="muted">—</span></div>
+      <div><span class="muted">Turnaround Duration:</span><br><span id="modalTurnaround" style="color:var(--accent);font-weight:600;">—</span></div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+      <div>
+        <span class="muted" style="font-size:11.5px;text-transform:uppercase;font-weight:700;">Part Description:</span>
+        <div id="modalPartDesc" style="background:#0d1729;border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin-top:3px;word-break:break-word;color:var(--text);">—</div>
+      </div>
+      <div>
+        <span class="muted" style="font-size:11.5px;text-transform:uppercase;font-weight:700;">MRS Ticket Comments:</span>
+        <div id="modalComments" style="background:rgba(79,140,255,0.06);border:1px solid rgba(79,140,255,0.2);border-radius:6px;padding:8px 10px;margin-top:3px;word-break:break-word;color:var(--text);">—</div>
+      </div>
+      <div id="modalFailureContainer" style="display:none;">
+        <span class="muted" style="font-size:11.5px;text-transform:uppercase;font-weight:700;color:var(--err);">Test Failure / Notes:</span>
+        <div id="modalFailureReason" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:6px;padding:8px 10px;margin-top:3px;word-break:break-word;color:#fca5a5;">—</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:12.5px;border-top:1px solid var(--line);padding-top:10px;">
+      <div><span class="muted">Logs Uploaded:</span> <span id="modalLogsUploaded">—</span></div>
+      <div><span class="muted">Log Path:</span> <code id="modalLogPath" style="word-break:break-all;">—</code></div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleStockCard(cardEl, event) {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'INPUT' || event.target.tagName === 'SELECT' || event.target.closest('form') || event.target.closest('button')) {
+    return;
+  }
+  const panel = cardEl.querySelector('.stock-details-panel');
+  if (panel.style.display === 'block') {
+    panel.style.display = 'none';
+    cardEl.style.borderColor = 'var(--line)';
+  } else {
+    panel.style.display = 'block';
+    cardEl.style.borderColor = 'var(--accent)';
+  }
+}
+
+function openTicketModalFromElement(el) {
+  const jsonStr = el.getAttribute('data-ticket');
+  try {
+    const t = JSON.parse(jsonStr);
+    openTicketModal(t);
+  } catch (err) {
+    console.error("Failed to parse ticket JSON data:", err);
+  }
+}
+
+function openTicketModal(t) {
+  document.getElementById('modalStockCode').textContent = `Stock Code: ${t.stock_code}`;
+  document.getElementById('modalMrsTicket').textContent = t.mrs_ticket;
+  document.getElementById('modalSerial').textContent = t.serial_number || '—';
+  
+  const resEl = document.getElementById('modalResult');
+  if (t.test_result) {
+    resEl.textContent = t.test_result;
+    resEl.className = `badge ${t.test_result.toLowerCase().replace(/ /g, '_')}`;
+    resEl.style.display = 'inline-block';
+  } else {
+    resEl.textContent = '—';
+    resEl.className = 'muted';
+  }
+
+  document.getElementById('modalTechnician').textContent = t.technician || '—';
+  document.getElementById('modalWh').textContent = t.wh_location || '—';
+  document.getElementById('modalPartType').textContent = t.part_type || '—';
+  document.getElementById('modalQd').textContent = t.quality_disposition || '—';
+  document.getElementById('modalCreatedAt').textContent = t.created_at || '—';
+  document.getElementById('modalAssignedAt').textContent = t.assigned_at || '—';
+  document.getElementById('modalTestStartedAt').textContent = t.test_started_at || '—';
+  document.getElementById('modalCompletedAt').textContent = t.completed_at || '—';
+  document.getElementById('modalTurnaround').textContent = t.turnaround || '—';
+  
+  document.getElementById('modalPartDesc').textContent = t.part_description || '—';
+  document.getElementById('modalComments').textContent = t.mrs_comments || '—';
+
+  const failContainer = document.getElementById('modalFailureContainer');
+  const failReason = document.getElementById('modalFailureReason');
+  const normalizedResult = String(t.test_result || '').trim().toUpperCase();
+  if (t.failure_reason && normalizedResult !== 'NTF') {
+    failReason.textContent = t.failure_reason;
+    failContainer.style.display = 'block';
+  } else {
+    failReason.textContent = '';
+    failContainer.style.display = 'none';
+  }
+
+  document.getElementById('modalLogsUploaded').textContent = t.logs_uploaded || '—';
+  document.getElementById('modalLogPath').textContent = t.log_path || '—';
+
+  document.getElementById('ticketModal').style.display = 'flex';
+}
+
+function closeTicketModal() {
+  document.getElementById('ticketModal').style.display = 'none';
+}
+
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('ticketModal');
+  if (e.target === modal) {
+    closeTicketModal();
+  }
+});
+</script>
+
+{% endblock %}

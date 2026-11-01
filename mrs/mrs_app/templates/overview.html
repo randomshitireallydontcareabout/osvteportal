@@ -1,0 +1,165 @@
+{% extends "base.html" %}{% block content %}
+
+<div class="page-head" style="margin-bottom:10px;">
+  <div>
+    <h1>Overview {% if session.get('is_admin') %}<span class="badge admin" style="margin-left:6px;">TV Display Mode</span>{% endif %}</h1>
+    <p class="muted" style="margin:0">
+      Live KPI for <strong>{{ day }}</strong>{% if is_today %} (today){% endif %} ·
+      <span id="available-count-label">{{ total_available_count }}</span> ticket(s) across <span id="grouped-count-label">{{ grouped_tickets|length }}</span> stock code(s) available.
+    </p>
+  </div>
+  <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+    <form method="get" style="display:flex;gap:6px;align-items:center;">
+      <a class="btn-logout" href="{{ url_for('overview', date=prev_day) }}" style="padding:4px 8px;">&larr;</a>
+      <input type="date" name="date" value="{{ raw_date_val }}" style="width:auto;padding:5px 8px;font-size:12.5px;">
+      <button class="primary" type="submit" style="padding:5px 12px;font-size:12.5px;">Go</button>
+      <a class="btn-logout" href="{{ url_for('overview', date=next_day) }}" style="padding:4px 8px;">&rarr;</a>
+      {% if not is_today %}<a class="btn-logout" href="{{ url_for('overview') }}" style="padding:5px 10px;">Today</a>{% endif %}
+    </form>
+    {% if session.get('is_admin') %}
+    <!-- DEV ONLY: Remove this button and its route before production -->
+    <form method="post" action="{{ url_for('overview_delete_available') }}"
+          onsubmit="return confirm('DEV: Delete ALL available (unclaimed) tickets? This cannot be undone.');"
+          style="display:inline;">
+      <button type="submit" class="danger" style="padding:5px 10px;font-size:12px;">Delete All Available (DEV)</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ received }}</span>Received</div>
+  <div class="stat"><span>{{ completed_on_day }}</span>Completed</div>
+  <div class="stat"><span>{{ available_today }}</span>Available</div>
+  <div class="stat"><span>{{ assigned_today }}</span>In progress</div>
+</div>
+
+<div class="card section-card" style="padding:10px 14px 0">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+    <h2 style="margin:0">Available stock codes {% if session.get('is_admin') %}& ticket counts{% else %} & MRS tickets & Serial Numbers{% endif %}</h2>
+    <form method="get" class="filters" style="margin:0">
+      <input name="q" value="{{ q }}" placeholder="Search stock code, MRS ticket, or SN" style="padding:5px 8px;font-size:12.5px;min-width:160px">
+      {% if day != today %}<input type="hidden" name="date" value="{{ raw_date_val }}">{% endif %}
+      <button class="primary" type="submit" style="padding:5px 10px;font-size:12.5px">Search</button>
+      {% if q %}<a class="btn-logout" href="{{ url_for('overview', date=raw_date_val) }}">Clear</a>{% endif %}
+    </form>
+  </div>
+</div>
+
+<div class="ticket-scroll" style="padding:10px;background:#0e1829">
+  <div id="stock-cards-container" style="display:flex;flex-direction:column;gap:8px;">
+  {% for g in grouped_tickets %}
+    <div class="card stock-container-card stock-card-item" id="stock-card-{{ g.stock_code|replace(' ', '_') }}" style="cursor:pointer;padding:10px 14px;" onclick="toggleStockCard(this, event)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="font-size:15px;font-weight:700;color:var(--text);">{{ g.stock_code }}</span>
+          <span class="badge available">{{ g.count }} ticket{% if g.count > 1 %}s{% endif %} available</span>
+          {% if g.category %}<span class="badge" style="background:rgba(168,85,247,0.18);color:#d8b4fe;">{{ g.category }}</span>{% endif %}
+          {% if g.total_est_hours %}
+            <span class="badge" style="background:rgba(34,197,94,0.18);color:#86efac;">Est: {{ g.total_est_hours }} hours (for {{ g.count }} tickets)</span>
+          {% endif %}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button class="primary claim-btn" data-stock="{{ g.stock_code }}" style="padding:5px 10px;font-size:12px;">Claim Stock Code</button>
+          <span class="muted" style="font-size:12px;">Expand ▾</span>
+        </div>
+      </div>
+      <div class="stock-details-panel">
+        <div style="font-size:11.5px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Available Tickets & Detailed Attributes:</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          {% for t in g.tickets %}
+            <div style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <strong style="font-family:Consolas,monospace;font-size:14px;color:#93bbff;">{{ t.mrs_ticket }}</strong>
+                  {% if t.serial_number %}
+                    <span style="font-family:Consolas,monospace;background:rgba(34,197,94,0.1);color:#86efac;padding:2px 6px;border-radius:4px;font-size:12px;">SN: {{ t.serial_number }}</span>
+                  {% endif %}
+                </div>
+                <div class="muted" style="font-size:11.5px;">Checked-In: {{ t.created_at or '—' }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px;font-size:12.5px;background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:6px;">
+                <div><span class="muted">Part Type:</span> <strong>{{ t.part_type or '—' }}</strong></div>
+                <div><span class="muted">WH Location:</span> <strong>{{ t.wh_location or '—' }}</strong></div>
+                <div style="grid-column:1/-1;"><span class="muted">Part Description:</span> {{ t.part_description or '—' }}</div>
+              </div>
+                {% if t.mrs_comments %}
+                <div style="font-size:12.5px;color:var(--text);background:rgba(79,140,255,0.06);padding:10px;border-radius:6px;border:1px solid rgba(79,140,255,0.2);word-break:break-word;">
+                  <strong style="color:var(--accent);display:block;margin-bottom:6px;">MRS Ticket Comments:</strong>
+                  <div style="display:flex;flex-direction:column;gap:6px;">
+                    {% for line in t.mrs_comments.split('\n') %}
+                      {% if line.strip() %}
+                        <div style="padding-left:8px; border-left:2px solid var(--accent); line-height:1.4;">{{ line }}</div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% else %}
+                <div class="muted" style="font-size:11.5px;font-style:italic;">No comments provided for this ticket.</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div id="empty-stock-msg" style="text-align:center;color:var(--muted);padding:24px;">
+      {% if q %}No stock codes match your search.{% else %}All tickets are currently claimed. Check back later.{% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<script>
+function toggleStockCard(cardEl, event) {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.closest('form') || event.target.closest('button')) return;
+  const panel = cardEl.querySelector('.stock-details-panel');
+  if (panel.style.display === 'block') { panel.style.display = 'none'; cardEl.style.borderColor = 'var(--line)'; }
+  else { panel.style.display = 'block'; cardEl.style.borderColor = 'var(--accent)'; }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".claim-btn").forEach(btn => {
+    btn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const stockCode = btn.getAttribute("data-stock");
+      btn.disabled = true; btn.textContent = "Claiming...";
+      try {
+        const resp = await fetch(`/stock/${encodeURIComponent(stockCode)}/assign`, {
+          method: "POST", headers: { "X-Requested-With": "XMLHttpRequest" }
+        });
+        const data = await resp.json();
+        if (data.success) {
+          const cardId = "stock-card-" + stockCode.replace(/ /g, "_");
+          const cardEl = document.getElementById(cardId);
+          if (cardEl) {
+            cardEl.style.transition = "opacity 0.3s ease"; cardEl.style.opacity = "0";
+            setTimeout(() => {
+              cardEl.remove();
+              const container = document.getElementById("stock-cards-container");
+              if (container && container.querySelectorAll(".stock-card-item").length === 0) {
+                container.innerHTML = '<div id="empty-stock-msg" style="text-align:center;color:var(--muted);padding:24px;">All tickets are currently claimed. Check back later.</div>';
+              }
+            }, 300);
+          }
+          let flashWrap = document.querySelector(".flash-wrap");
+          if (!flashWrap) {
+            flashWrap = document.createElement("div"); flashWrap.className = "flash-wrap";
+            const mainEl = document.querySelector("main"); mainEl.insertBefore(flashWrap, mainEl.firstChild);
+          }
+          const flashDiv = document.createElement("div"); flashDiv.className = "flash success";
+          flashDiv.textContent = data.message; flashWrap.appendChild(flashDiv);
+          setTimeout(() => flashDiv.remove(), 4000);
+        } else {
+          alert(data.message || "Failed to claim stock.");
+          btn.disabled = false; btn.textContent = "Claim Stock Code";
+        }
+      } catch (err) {
+        console.error(err); alert("An error occurred while claiming.");
+        btn.disabled = false; btn.textContent = "Claim Stock Code";
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

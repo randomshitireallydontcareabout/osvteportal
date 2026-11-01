@@ -1,0 +1,95 @@
+{% extends "base.html" %}{% block content %}
+<h1>Manage Tickets</h1>
+<section class="card section-card"><h2>Add a ticket</h2>
+  <form method="post" action="{{ url_for('admin_tickets_add') }}" style="display:flex;flex-direction:column;gap:10px;">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <label style="flex:1 1 180px;">Stock Code <input name="stock_code" type="text" required placeholder="STK-1001"></label>
+      <label style="flex:1 1 180px;">MRS Ticket <input name="mrs_ticket" type="text" required placeholder="MRS-50001"></label>
+      <label style="flex:1 1 180px;">Serial Number <input name="serial_number" type="text" required placeholder="SN-SRV-001"></label>
+    </div>
+    <label>MRS Ticket Comments <textarea name="mrs_comments" placeholder="Enter comments, testing instructions, or notes for technicians..." style="min-height:70px;"></textarea></label>
+    <div><button class="primary" type="submit">Add Ticket</button></div>
+  </form>
+</section>
+
+<section class="card section-card"><h2>Bulk Import (StockCode, MrsTicket, SerialNumber, MrsTicket Comments)</h2>
+  <form method="post" action="{{ url_for('admin_tickets_bulk') }}">
+    <label>One entry per line - Format: <code>StockCode, MrsTicket, SerialNumber, MrsTicket Comments</code></label>
+    <textarea name="bulk" spellcheck="false" placeholder="STK-1001, MRS-50001, SN-SRV-001, Standard power check required&#10;STK-1002, MRS-50002, SN-SRV-002, Check thermal pads"></textarea>
+    <div style="margin-top:10px"><button class="primary" type="submit">Import Tickets</button></div>
+  </form>
+</section>
+
+<section class="card section-card">
+  <h2>All stock codes & tickets ({{ total_tickets_count }} tickets across {{ grouped_tickets|length }} stock codes)</h2>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:10px;">
+    {% for g in grouped_tickets %}
+      <div class="card stock-container-card" style="cursor:pointer;padding:10px 14px;" onclick="toggleStockCard(this, event)">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;font-weight:700;color:var(--text);">{{ g.stock_code }}</span>
+            <span class="badge available">{{ g.tickets|length }} ticket{% if g.tickets|length > 1 %}s{% endif %}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="muted" style="font-size:12px;">Click to expand / collapse ▾</span>
+          </div>
+        </div>
+
+        <div class="stock-details-panel">
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            {% for t in g.tickets %}
+              <div style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
+                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                    <strong style="font-family:Consolas,monospace;font-size:14px;color:#93bbff;">{{ t.mrs_ticket }}</strong>
+                    {% if t.serial_number %}
+                      <span style="font-family:Consolas,monospace;background:rgba(34,197,94,0.1);color:#86efac;padding:2px 6px;border-radius:4px;font-size:12px;">SN: {{ t.serial_number }}</span>
+                    {% endif %}
+                    <span class="badge {{ t.status }}">{{ t.status }}</span>
+                    {% if t.test_result %}
+                      <span class="badge {{ t.test_result }}">{{ t.test_result }}</span>
+                    {% endif %}
+                  </div>
+                  <div class="muted" style="font-size:11.5px;">
+                    Technician: {% if t.technician %}{{ t.technician }}{% else %}Unassigned{% endif %} | Created: {{ t.created_at }}
+                  </div>
+                </div>
+                {% if t.mrs_comments %}
+                  <div style="font-size:12.5px;color:var(--text);background:rgba(79,140,255,0.06);padding:6px 10px;border-radius:6px;word-break:break-word;">
+                    <strong>Comments:</strong> {{ t.mrs_comments }}
+                  </div>
+                {% endif %}
+                <div class="actions" style="margin-top:4px;" onclick="event.stopPropagation();">
+                  <form method="post" action="{{ url_for('admin_tickets_delete', tid=t.id) }}"
+                        onsubmit="return confirm('Delete {{ t.mrs_ticket }}?');">
+                    <button class="danger" type="submit">Delete Ticket</button>
+                  </form>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <div class="card empty" style="padding:24px;">No tickets yet.</div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+function toggleStockCard(cardEl, event) {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.closest('form' || event.target.closest('.actions'))) {
+    return;
+  }
+  const panel = cardEl.querySelector('.stock-details-panel');
+  if (panel.style.display === 'block') {
+    panel.style.display = 'none';
+    cardEl.style.borderColor = 'var(--line)';
+  } else {
+    panel.style.display = 'block';
+    cardEl.style.borderColor = 'var(--accent)';
+  }
+}
+</script>
+
+{% endblock %}

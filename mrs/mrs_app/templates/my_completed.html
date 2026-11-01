@@ -1,0 +1,123 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="page-head" style="margin-bottom:10px;">
+  <div>
+    <h1>My Completed Tickets</h1>
+    <p class="muted" style="margin:0">Your completed stock codes, tickets, and serial numbers with comments, organized by stock code containers.</p>
+  </div>
+  <a class="btn-logout" href="{{ url_for('my_tickets') }}">← Back to Active Dashboard</a>
+</div>
+
+<div class="stats" style="margin-bottom:12px;">
+  <div class="stat"><span>{{ completed_count }}</span>Completed Tickets</div>
+  <div class="stat"><span>{{ grouped_tickets|length }}</span>Completed Stock Codes</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+  {% for g in grouped_tickets %}
+    <div class="card stock-container-card" style="cursor:pointer;padding:10px 14px;" onclick="toggleStockCard(this, event)">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:16px;font-weight:700;color:var(--text);">{{ g.stock_code }}</span>
+          <span class="badge completed">{{ g.tickets|length }} ticket{% if g.tickets|length > 1 %}s{% endif %} Completed</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="muted" style="font-size:12px;">Click to expand / collapse ▾</span>
+        </div>
+      </div>
+
+      <div class="stock-details-panel">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          {% for t in g.tickets %}
+            <div style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <strong style="font-family:Consolas,monospace;font-size:14px;color:#93bbff;">{{ t.mrs_ticket }}</strong>
+                  {% if t.serial_number %}
+                    <span style="font-family:Consolas,monospace;background:rgba(34,197,94,0.1);color:#86efac;padding:2px 6px;border-radius:4px;font-size:12px;">SN: {{ t.serial_number }}</span>
+                  {% endif %}
+                  <span class="badge {{ t.status }}">{{ t.status }}</span>
+                  {% if t.test_result %}
+                    <span class="badge {{ t.test_result }}">{{ t.test_result }}</span>
+                  {% endif %}
+                </div>
+                <div class="muted" style="font-size:11.5px;">
+                  Claimed: {{ t.assigned_at or '-' }} | Completed: {{ t.completed_at or '-' }}
+                </div>
+              </div>
+
+                {% if t.mrs_comments %}
+                <div style="background:rgba(79,140,255,0.08);border:1px solid rgba(79,140,255,0.25);border-radius:6px;padding:10px;font-size:12.5px;color:var(--text);word-break:break-word;">
+                  <strong style="color:var(--accent);display:block;margin-bottom:8px;border-bottom:1px solid rgba(79,140,255,0.2);padding-bottom:4px;">MRS Ticket Comments & Handoff Notes:</strong>
+                  <div style="display:flex;flex-direction:column;gap:8px;">
+                    {% for line in t.mrs_comments.split('\n') %}
+                      {% if line.strip() %}
+                        <div style="padding-left:10px; border-left:3px solid var(--accent); line-height:1.4;">
+                          {{ line }}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if t.failure_reason %}
+                <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:6px;padding:8px 10px;font-size:12.5px;color:#fca5a5;word-break:break-word;">
+                  <strong>Reason / Notes:</strong> {{ t.failure_reason }}
+                </div>
+              {% endif %}
+
+              <div class="actions" style="margin-top:2px;" onclick="event.stopPropagation();">
+                <button class="ghost" type="button" onclick="openTicketDetails({{ t.id }});event.stopPropagation();">View All Details</button>
+                <a class="btn-logout" target="_blank" href="{{ url_for('print_ticket_label', tid=t.id) }}" onclick="event.stopPropagation();">Print 59 × 104 mm Label</a>
+                <form method="post" action="{{ url_for('reopen_ticket', tid=t.id) }}">
+                  <button class="ghost" type="submit">Reopen</button>
+                </form>
+                <template id="ticket-details-{{ t.id }}">
+                  <div class="detail-title"><div><div class="detail-stock">STOCK CODE: {{ t.stock_code or '—' }}</div><div class="detail-ticket">{{ t.mrs_ticket }}</div></div><span class="badge {{ (t.test_result or '')|lower|replace(' ','_') }}">{{ 'NTF' if (t.test_result or '')|lower in ['passed','ntf'] else (t.test_result or '—') }}</span></div>
+                  <div class="detail-grid">
+                  {% for label, value in [('Part SN',t.serial_number),('Result',t.test_result),('Technician',t.technician_name),('WH Location',t.wh_location),('Part Type',t.part_type),('Quality Disposition',t.quality_disposition),('Assigned Time',t.assigned_at),('Test Start Time',t.test_started_at),('Test End Time',t.completed_at),('Return Time',t.return_time),('Stock_cd',t.stock_cd),('BB Flag',t.bb_flag),('SXM1 Flag',t.sxm1_flag),('SXM2 Flag',t.sxm2_flag),('SXM3 Flag',t.sxm3_flag),('SXM4 Flag',t.sxm4_flag),('SXM5 Flag',t.sxm5_flag),('SXM6 Flag',t.sxm6_flag),('SXM7 Flag',t.sxm7_flag),('SXM8 Flag',t.sxm8_flag),('ID',t.csv_id),('Index',t.csv_index),('Modified',t.modified)] %}<div class="detail-item"><span>{{ label }}</span><strong>{{ value if value not in [None,''] else '—' }}</strong></div>{% endfor %}
+                  </div>
+                  {% for label,value,kind in [('Part Description',t.part_description,'normal'),('Comments',t.mrs_comments,'accent'),('Test Failure',t.failure_reason,'danger')] %}<div class="detail-block {{ kind }}"><label>{{ label }}</label><div>{{ value if value not in [None,''] else '—' }}</div></div>{% endfor %}
+                  <div class="detail-footer"><div><span>Logs Uploaded</span><strong>{{ t.logs_uploaded or '—' }}</strong></div><div><span>Log Path</span><code>{{ t.log_path or '—' }}</code></div></div>
+                </template>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="card empty" style="padding:24px;">
+      No completed tickets yet. <a href="{{ url_for('my_tickets') }}">View your active tickets</a>.
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+.detail-modal-card{width:min(920px,96vw);max-height:92vh;overflow:auto;padding:0!important;border:1px solid #31558a;background:#111f38;box-shadow:0 28px 90px rgba(0,0,0,.55)}.detail-modal-head{display:flex;justify-content:space-between;align-items:center;padding:17px 20px;border-bottom:1px solid #2a4368;background:linear-gradient(135deg,#172844,#101e35)}.detail-modal-body{padding:20px}.detail-title{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #294367;padding-bottom:13px;margin-bottom:15px}.detail-stock{color:#67a5ff;font-weight:900;letter-spacing:.08em;font-size:13px}.detail-ticket{font-size:20px;font-weight:900;margin-top:4px}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 30px}.detail-item{display:grid;grid-template-columns:150px 1fr;gap:10px}.detail-item span,.detail-footer span{color:#9bb2d3}.detail-item strong{word-break:break-word}.detail-block{margin-top:14px}.detail-block label{display:block;text-transform:uppercase;font-size:11px;font-weight:900;color:#9bb2d3;margin-bottom:5px}.detail-block div{background:#0b172b;border:1px solid #304d76;border-radius:7px;padding:10px;min-height:39px;word-break:break-word}.detail-block.accent div{background:rgba(79,140,255,.08)}.detail-block.danger div{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.32)}.detail-footer{display:grid;grid-template-columns:1fr 2fr;gap:20px;border-top:1px solid #294367;margin-top:14px;padding-top:13px}.detail-footer div{display:grid;gap:4px}.detail-footer code{word-break:break-all}@media(max-width:680px){.detail-grid{grid-template-columns:1fr}.detail-item{grid-template-columns:130px 1fr}.detail-footer{grid-template-columns:1fr}}
+</style><div id="ticket-detail-modal" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.84);z-index:9999;align-items:center;justify-content:center;padding:12px;" onclick="if(event.target===this) closeTicketDetails()"><div class="card detail-modal-card" onclick="event.stopPropagation()"><div class="detail-modal-head"><div><div style="color:#67a5ff;font-size:11px;font-weight:900;letter-spacing:.11em;">COMPLETED TICKET</div><h2 style="margin:3px 0 0;">Ticket Details</h2></div><button class="ghost" onclick="closeTicketDetails()">✕ Close</button></div><div id="ticket-detail-content" class="detail-modal-body"></div></div></div>
+<script>
+function openTicketDetails(id) {
+  const tpl=document.getElementById('ticket-details-'+id);
+  document.getElementById('ticket-detail-content').innerHTML=tpl.innerHTML;
+  document.getElementById('ticket-detail-modal').style.display='flex';
+}
+function closeTicketDetails(){document.getElementById('ticket-detail-modal').style.display='none';}
+
+function toggleStockCard(cardEl, event) {
+  if (event.target.tagName === 'BUTTON' || event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.closest('form' || event.target.closest('.actions'))) {
+    return;
+  }
+  const panel = cardEl.querySelector('.stock-details-panel');
+  if (panel.style.display === 'block') {
+    panel.style.display = 'none';
+    cardEl.style.borderColor = 'var(--line)';
+  } else {
+    panel.style.display = 'block';
+    cardEl.style.borderColor = 'var(--accent)';
+  }
+}
+</script>
+
+{% endblock %}

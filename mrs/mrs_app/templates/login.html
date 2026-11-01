@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="card login-card">
+  <span class="section-kicker">{{ selected_section_label }}</span>
+  <h1>Sign in with YubiKey</h1>
+  <p class="muted" style="margin:-4px 0 14px">Password login is disabled. A registered YubiKey OTP is required for every account.</p>
+  <form method="post" action="{{ url_for('yubikey_otp_login') }}" autocomplete="off">
+    <label for="otp-user">Username</label>
+    <input id="otp-user" name="username" type="text" autocomplete="username" required autofocus>
+    <label for="otp-value">YubiKey OTP</label>
+    <input id="otp-value" name="otp" type="password" autocomplete="off" required placeholder="Click here, then touch the YubiKey OTP slot">
+    <button type="submit" style="width:100%;background:#22c55e;color:#052e16;font-weight:700;">Sign in with YubiKey OTP</button>
+  </form>
+  <a class="login-back-link" href="{{ url_for('main_menu') }}">&larr; Back to workspace selection</a>
+  <p class="muted" style="margin-top:10px;">Insert the YubiKey, click the OTP field, then briefly touch the OTP-enabled slot. A fresh OTP is required for every sign-in.</p>
+</div>
+{% endblock %}
+
+
