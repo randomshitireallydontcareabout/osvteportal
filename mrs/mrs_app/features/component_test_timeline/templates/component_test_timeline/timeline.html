@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('component_test_timeline.static', filename='timeline.css') }}">
+<section class="ctd-page">
+  <div class="ctd-heading">
+    <div><h1>Component Test Duration Timeline</h1><p>Compare work duration trends and daily correlation for up to three stock codes.</p></div>
+  </div>
+  <form class="ctd-filter card" method="get">
+    <div class="ctd-stock-grid">
+      {% for slot in range(3) %}
+      <label>Stock code {{ slot + 1 }}
+        <select name="stock">
+          <option value="">{% if slot == 0 %}Select a stock code{% else %}None{% endif %}</option>
+          {% for stock in stock_codes %}<option value="{{ stock }}" {% if selected|length > slot and selected[slot] == stock %}selected{% endif %}>{{ stock }}</option>{% endfor %}
+        </select>
+      </label>
+      {% endfor %}
+    </div>
+    <label>From<input type="date" name="from" value="{{ date_from }}"></label>
+    <label>To<input type="date" name="to" value="{{ date_to }}"></label>
+    <button class="btn" type="submit">Update graph</button>
+    <a class="btn secondary" href="{{ url_for('component_test_timeline.timeline') }}">Reset</a>
+  </form>
+  <div class="ctd-message" id="ctdSelectionMessage"></div>
+  <section class="card ctd-chart-card">
+    <div class="ctd-legend">{% for item in datasets %}<span><i style="background:{{ item.color }}"></i>{{ item.stock }}</span>{% endfor %}</div>
+    <canvas id="durationTimeline" height="390" aria-label="Stock code duration timeline"></canvas>
+    <div id="ctdTooltip" class="ctd-tooltip" hidden></div>
+  </section>
+  <div class="ctd-stats">
+    {% for item in stats %}
+    <article class="card ctd-stat" style="border-top-color:{{ item.color }}"><h3>{{ item.stock }}</h3><strong>{{ item.average if item.average is not none else '—' }} min average</strong><div>{{ item.count }} tests</div><small>Median {{ item.median if item.median is not none else '—' }}m · Min {{ item.minimum if item.minimum is not none else '—' }}m · Max {{ item.maximum if item.maximum is not none else '—' }}m</small></article>
+    {% endfor %}
+  </div>
+  {% if correlations %}<section class="card ctd-correlation"><h2>Duration Correlation</h2><p class="muted">Pearson correlation uses daily average durations on dates shared by both stock codes.</p>
+  <div class="ctd-correlation-grid">{% for item in correlations %}<article><b>{{ item.left }} ↔ {{ item.right }}</b><strong>{{ '%.3f'|format(item.value) if item.value is not none else 'N/A' }}</strong><span>{{ item.label }}</span><small>{{ item.samples }} matching date{{ '' if item.samples == 1 else 's' }}</small></article>{% endfor %}</div></section>{% endif %}
+</section>
+<script id="ctdData" type="application/json">{{ datasets|tojson }}</script>
+<script src="{{ url_for('component_test_timeline.static', filename='timeline.js') }}"></script>
+{% endblock %}
