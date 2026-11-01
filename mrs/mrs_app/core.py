@@ -97,6 +97,36 @@ def ensure_packages():
 
 ensure_packages()
 
+
+# To fetch data at startup or when a user reloads a page
+from mrs_app.github_db import read_database
+current_data = read_database()
+
+# To save changes when a user submits an action
+from mrs_app.github_db import write_database
+import json
+write_database(json.dumps({"updated": True}))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import os, re, csv, ssl, math, socket, sqlite3, secrets, datetime, base64, json
 import urllib.parse, urllib.request, urllib.error, hmac, hashlib, threading, webbrowser, io
 import tempfile
