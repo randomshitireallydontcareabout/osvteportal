@@ -1,0 +1,143 @@
+{
+  "component": {
+    "control_no": "WI-008",
+    "revision": "C01",
+    "title": "Inventec Motherboard Tester"
+  },
+  "steps": [
+    {
+      "type": "SAFETY",
+      "title": "Inspect the Motherboard",
+      "subtitle": "Complete the incoming physical inspection under ESD controls.",
+      "items": [
+        "Wear the required PPE, gloves, and ESD wrist strap.",
+        "Remove the motherboard from its ESD bag and inspect it thoroughly.",
+        "Look for bent pins, damaged connectors, missing components, contamination, cracks, or other physical damage.",
+        "If damage is found, mark the location with a yellow arrow sticker and return the motherboard to ZTP."
+      ],
+      "warning": "Do not install or test a physically damaged motherboard."
+    },
+    {
+      "type": "IDENTIFICATION",
+      "title": "Verify Identity and Test History",
+      "subtitle": "Scan the motherboard and confirm it is eligible for testing.",
+      "items": [
+        "Scan the MRS ticket into OSV Portal.",
+        "Scan or enter the motherboard serial number.",
+        "Confirm the tag serial number matches the serial number physically attached to the motherboard.",
+        "Check whether the motherboard was previously tested.",
+        "If it was previously tested, notify ZTP and do not test it again."
+      ],
+      "warning": "Do not continue with a mismatched serial number, incorrect MRS ticket, or duplicate test record."
+    },
+    {
+      "type": "TESTER SETUP",
+      "title": "Check Tester Connections",
+      "subtitle": "Confirm all required tester peripherals are present and connected.",
+      "items": [
+        "Keyboard for Linux input.",
+        "Mouse for script selection and log transfer.",
+        "Scanner for motherboard and ticket information.",
+        "OS USB for booting and running the approved scripts.",
+        "USB-to-RJ45 adapter for network access and ping testing.",
+        "Inspect each connection for looseness or visible damage."
+      ],
+      "warning": "Correct missing, loose, or damaged connections before installing the motherboard."
+    },
+    {
+      "type": "HARDWARE",
+      "title": "Install Golden Components",
+      "subtitle": "Build the approved motherboard test configuration in the required order.",
+      "items": [
+        "Install all approved golden DIMMs.",
+        "Install the approved golden CPU and heatsink.",
+        "Install the approved M.2 device and any other required golden components.",
+        "Place the motherboard on tester position 1, the motherboard tray, and push it into position.",
+        "Install and fully seat the FPGA and riser.",
+        "Complete tester positions 1 through 5 in the numbered order shown by the approved tester layout."
+      ],
+      "warning": "Do not power on the tester if any component, riser, cable, or motherboard edge is not fully seated."
+    },
+    {
+      "type": "POWER ON",
+      "title": "Power On and Monitor LEDs",
+      "subtitle": "Observe tester startup and motherboard status indicators.",
+      "items": [
+        "Turn on the tester power switch.",
+        "Allow approximately 15 minutes for the motherboard to complete boot-up.",
+        "Monitor the four LEDs near the CP card area.",
+        "Confirm all four LEDs continue flashing green."
+      ],
+      "warning": "If the LEDs flash red or only three LEDs flash, power off the tester and wait until the Power LED is completely off before restarting."
+    },
+    {
+      "type": "TEST EXECUTION",
+      "title": "Run the Motherboard Test",
+      "subtitle": "Launch the approved Linux test selections in sequence.",
+      "items": [
+        "After the operating system boots, run EC_OSV.SH from the desktop.",
+        "Select C2789_Gridcoin.",
+        "Select 7UMB_Fixture.",
+        "Start the test.",
+        "Allow the test to run until the application reports the final result."
+      ],
+      "warning": "Use the exact approved script and menu sequence."
+    },
+    {
+      "type": "RESULT REVIEW",
+      "title": "Review the Test Result",
+      "subtitle": "Validate a passing result or document the specific failure evidence.",
+      "items": [
+        "For PASS, confirm the test logs were copied to the designated test logs folder.",
+        "For FAIL, highlight the failed test and select View Log.",
+        "Review the log and identify the actual failed test or failure message.",
+        "Record the specific failure, such as Test Inventory FW Version.",
+        "Retain the applicable logs with the MRS or local test record."
+      ],
+      "warning": "Do not document only the word Failed. Record the actual failed test and evidence shown in the log."
+    },
+    {
+      "type": "RESTORATION",
+      "title": "Remove Components and Reinspect",
+      "subtitle": "Return the test setup and motherboard safely after testing.",
+      "items": [
+        "Power down using the approved process.",
+        "Remove all golden components.",
+        "Return each golden component to its correct storage location.",
+        "Inspect the motherboard again for test-related damage.",
+        "If damage is found, notify OSV leadership, update OSV Portal, and create the required physical-damage ticket."
+      ],
+      "warning": "Maintain ESD controls throughout component removal and final inspection."
+    },
+    {
+      "type": "DISPOSITION",
+      "title": "Complete the Tag and Disposition",
+      "subtitle": "Verify identification, result information, and motherboard packaging.",
+      "items": [
+        "Verify the technician Name/ID.",
+        "Verify the test date.",
+        "Verify the motherboard serial number.",
+        "Verify the ZT stock code.",
+        "Verify the detailed test result and failure description when applicable.",
+        "Place the ticket in the traveler sleeve.",
+        "Return the motherboard to the correct ESD bag.",
+        "Place it on the ESD cart for ZTP pickup."
+      ],
+      "warning": "Always verify that the motherboard is returned to its matching ESD bag."
+    },
+    {
+      "type": "SHIFT CLOSEOUT",
+      "title": "Complete Shift Records",
+      "subtitle": "Provide the required Test Lab Records check-in/check-out evidence.",
+      "items": [
+        "Export the Test Lab Records list from MES.",
+        "Filter the list to the components tested during the shift.",
+        "Capture the filtered results using Windows+Shift+S.",
+        "Post the screenshot in the Test Lab Records Check-in/out chat.",
+        "Verify ZTP closes the records by close of business the next day.",
+        "If records remain open, request that ZTP close them."
+      ],
+      "warning": "Confirm every motherboard tested during the shift is included in the evidence and eventually closed."
+    }
+  ]
+}

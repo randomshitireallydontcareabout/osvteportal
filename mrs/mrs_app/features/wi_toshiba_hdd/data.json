@@ -1,0 +1,280 @@
+{
+  "component": {
+    "name": "Toshiba HDD",
+    "title": "Toshiba HDD",
+    "control_no": "WI-DRAFT",
+    "revision": "DRAFT"
+  },
+  "steps": [
+    {
+      "type": "PROCEDURE",
+      "title": "Gtx Osv",
+      "subtitle": "Complete the gtx osv requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Work Instruction",
+      "subtitle": "Complete the work instruction requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "Toshiba HDD Vendor Test",
+          "images": []
+        },
+        {
+          "text": "Drive detection, diagnostic dump collection, and log handling",
+          "images": []
+        },
+        {
+          "text": "Source basis: GTXE-Toshiba HDD Vendor SOP-190826-153209.pdf, pages 1-3.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Document Control",
+      "subtitle": "Complete the document control requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Scope",
+      "subtitle": "Complete the scope requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "This work instruction applies to the GTX OSV Toshiba HDD vendor test process using the designated blade, JBOD, rack manager, Toshiba TSBDRV software, and the toshiba_test.sh script.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Responsibilities",
+      "subtitle": "Complete the responsibilities requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Required Access And Equipment",
+      "subtitle": "Complete the required access and equipment requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "Rack manager access at 192.168.0.124",
+          "images": []
+        },
+        {
+          "text": "Target test blade ID for rack-manager power control",
+          "images": []
+        },
+        {
+          "text": "Blade #19 access at 192.168.0.167 through MobaXterm",
+          "images": []
+        },
+        {
+          "text": "JBOD enclosure",
+          "images": []
+        },
+        {
+          "text": "Toshiba hard drives to be tested",
+          "images": []
+        },
+        {
+          "text": "Toshiba TSBDRV tools and test script installed on the blade",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Key Paths And Commands",
+      "subtitle": "Complete the key paths and commands requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Work Procedure",
+      "subtitle": "Complete the work procedure requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Power Down And Install Drives",
+      "subtitle": "Complete the power down and install drives requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "Source procedure reference",
+          "images": []
+        },
+        {
+          "text": "Review the attached picture.",
+          "images": [
+            "static/assets/image_001.png"
+          ]
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Access The Blade And Run The Test",
+      "subtitle": "Complete the access the blade and run the test requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "What the Script Does",
+          "images": []
+        },
+        {
+          "text": "Checks whether Toshiba drives are detected.",
+          "images": []
+        },
+        {
+          "text": "Reads and displays device serial numbers.",
+          "images": []
+        },
+        {
+          "text": "Creates a folder for each hard drive under /home/Logs.",
+          "images": []
+        },
+        {
+          "text": "Runs the TSBDRV devdump command for each detected drive.",
+          "images": []
+        },
+        {
+          "text": "Generates and moves each drive output file into its corresponding serial-number folder.",
+          "images": []
+        },
+        {
+          "text": "Command and terminal output reference",
+          "images": []
+        },
+        {
+          "text": "Review the attached picture.",
+          "images": [
+            "static/assets/image_002.png"
+          ]
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Interpret Results",
+      "subtitle": "Complete the interpret results requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Log Locations",
+      "subtitle": "Complete the log locations requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        },
+        {
+          "text": "/home/Logs/<drive serial number>/ for the drive-specific output file.",
+          "images": []
+        },
+        {
+          "text": "/var/log/toshiba/tsbdrv/ for detailed TSBDRV logs when the tool reports an error.",
+          "images": []
+        },
+        {
+          "text": "Failure and log-movement reference",
+          "images": []
+        },
+        {
+          "text": "Review the attached picture.",
+          "images": [
+            "static/assets/image_003.png"
+          ]
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Completion Checklist",
+      "subtitle": "Complete the completion checklist requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    },
+    {
+      "type": "PROCEDURE",
+      "title": "Test Record",
+      "subtitle": "Complete the test record requirements.",
+      "items": [
+        {
+          "text": "Review the reference picture.",
+          "images": []
+        }
+      ],
+      "warning": "Follow the approved safety, ESD, and tester requirements."
+    }
+  ]
+}

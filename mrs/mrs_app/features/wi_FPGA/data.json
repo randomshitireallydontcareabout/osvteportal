@@ -1,0 +1,115 @@
+{
+  "component": {
+    "control_no": "FPGA SOP",
+    "revision": "Controlled Working Copy",
+    "title": "Quanta Celestial Peak FPGA Test SOP"
+  },
+  "steps": [
+    {
+      "type": "PRECHECK",
+      "title": "Verify Preconditions",
+      "subtitle": "Prepare the tester and confirm required access before starting.",
+      "items": [
+        "Confirm the tester is powered on and has completed boot-up.",
+        "Confirm PuTTY access is available and the Linux root shell can be reached.",
+        "Record the tester or unit identifier using the local production process."
+      ],
+      "warning": "Do not begin if approved tester access or identification is unavailable."
+    },
+    {
+      "type": "FIRMWARE",
+      "title": "Verify BMC and BIOS",
+      "subtitle": "Both firmware versions must match the controlled requirement exactly.",
+      "items": [
+        "Required BMC: C2390.BC.0310.00",
+        "Required BIOS: C2390.BS.3A10.GN1",
+        "Check the BMC in the management interface or system information page.",
+        "Check the BIOS in BIOS Setup or the available system information page."
+      ],
+      "warning": "If either version differs, stop and follow the approved firmware update process before continuing."
+    },
+    {
+      "type": "CONNECT",
+      "title": "Connect to the Tester",
+      "subtitle": "Open PuTTY and verify the Linux root prompt.",
+      "items": [
+        "Start PuTTY and connect using the approved tester connection information.",
+        "Log in and confirm the root shell prompt is available: root@localhost:~#."
+      ],
+      "warning": "Capture the exact connection error before escalating an access problem."
+    },
+    {
+      "type": "DRIVER",
+      "title": "Load the Catapult Driver",
+      "subtitle": "Load the required FPGA card driver from the root shell.",
+      "items": [
+        "Run: modprobe catapult",
+        "Confirm the command completes without an error.",
+        "The console may identify catapult.ko driver version v5.32.1.1."
+      ],
+      "warning": "Stop and capture the exact message if modprobe reports an error."
+    },
+    {
+      "type": "DETECTION",
+      "title": "Detect the FPGA",
+      "subtitle": "List the installed FPGA and record its actual chip ID.",
+      "items": [
+        "Run: fpgadiagnostics -list",
+        "Confirm the utility reports: Found 1 FPGAs.",
+        "Copy the complete numeric value shown in the Chip ID column.",
+        "Check that no digits are missing or added."
+      ],
+      "warning": "The example chip ID in the SOP is not universal. Always use the chip ID returned by the current tester."
+    },
+    {
+      "type": "RECONFIGURE",
+      "title": "Load the Application Image",
+      "subtitle": "Reconfigure the detected FPGA to application flash slot 1.",
+      "items": [
+        "Run: fpgadiagnostics -chip <CHIP_ID> -reconfigApp",
+        "Replace <CHIP_ID> with the full numeric value returned by fpgadiagnostics -list.",
+        "Allow the command to disable and re-enable PCIe devices, reload the flash image, and retrain the PCIe link."
+      ],
+      "warning": "Do not interrupt the command and do not substitute the example chip ID from the document."
+    },
+    {
+      "type": "VERIFICATION",
+      "title": "Verify Reconfiguration",
+      "subtitle": "Confirm all required success indicators before continuing.",
+      "items": [
+        "Found management function. Search complete.",
+        "Found role function. Search complete.",
+        "PCIe link retrained to gen3x8.",
+        "Reconfiguration Completed.",
+        "App Slot Number 1.",
+        "RECONFIGURATION SUCCEEDED.",
+        "Confirm the root shell prompt returns with no final error."
+      ],
+      "warning": "If an indicator is missing, retain the complete command output and escalate."
+    },
+    {
+      "type": "FINAL TEST",
+      "title": "Run FPGAFactory Test",
+      "subtitle": "Use the approved production test method for the station.",
+      "items": [
+        "Start the normal FPGAFactory test using the approved station method.",
+        "Confirm the final test result is PASS.",
+        "If it fails, reconfirm the BMC version, BIOS version, FPGA detection, chip ID, and reconfiguration indicators."
+      ],
+      "warning": "The source WI does not define the FPGAFactory launch command. Do not invent or substitute a command."
+    },
+    {
+      "type": "CLOSEOUT",
+      "title": "Document and Escalate",
+      "subtitle": "Preserve the specific evidence for any unsuccessful result.",
+      "items": [
+        "Firmware mismatch: stop and use the approved BMC/BIOS update process.",
+        "No FPGA found: capture the complete fpgadiagnostics -list output.",
+        "Driver load error: capture the exact modprobe error.",
+        "Reconfiguration failure: capture the command, chip ID, ASMI/RSU messages, PCIe link status, and final error.",
+        "FPGAFactory failure: record the failure code or log and reconfirm all prerequisites."
+      ],
+      "warning": "Do not release the tester as passing unless the FPGAFactory result is PASS."
+    }
+  ]
+}

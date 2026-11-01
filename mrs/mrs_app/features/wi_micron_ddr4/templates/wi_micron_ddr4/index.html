@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('wi_micron_ddr4.static',filename='wi.css') }}">
+<div class="wi-shell" id="wi-app" data-total="{{ steps|length }}">
+<aside class="wi-side"><a class="wi-back" href="{{ url_for('tools_portal.work_instructions') }}">&larr; Work Instructions</a><div class="wi-rev">{{ component.revision|upper }}</div><h1>MICRON DDR4<br>TEST GUIDE</h1><p>Interactive trainee reference</p><div id="progress-text"></div><div class="progress"><i id="progress-bar"></i></div><nav id="step-nav">{% for step in steps %}<button type="button" data-step="{{ loop.index0 }}"><b>{{ '%02d'|format(loop.index) }}</b><span>{{ step.title }}</span></button>{% endfor %}</nav><button class="reset" id="reset-progress">RESET PROGRESS</button></aside>
+<main class="wi-main"><header><div><h2>MICRON DRAM (MD) OSV TESTER</h2><p>Use this guide with the current controlled work instruction</p></div><span id="step-counter"></span></header><section id="step-content"></section><footer><button id="prev">&larr; PREVIOUS</button><button id="complete">MARK STEP COMPLETE</button><button id="next">NEXT &rarr;</button></footer></main></div>
+<script id="wi-data" type="application/json">{{ steps|tojson }}</script><script src="{{ url_for('wi_micron_ddr4.static',filename='wi.js') }}"></script>
+{% endblock %}

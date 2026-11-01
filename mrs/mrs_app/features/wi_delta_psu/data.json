@@ -1,0 +1,183 @@
+{
+  "component": {
+    "control_no": "WI-005",
+    "revision": "C01",
+    "title": "Delta PSU Tester"
+  },
+  "steps": [
+    {
+      "type": "INSPECTION",
+      "title": "Inspect and Verify the PSU",
+      "subtitle": "Inspect the Delta PSU and confirm its identity before testing.",
+      "items": [
+        {
+          "text": "Wear required PPE and ESD protection."
+        },
+        {
+          "text": "Remove the PSU from its ESD bag and inspect the unit, connector pins, and contacts for burns or damage."
+        },
+        {
+          "text": "If damaged, mark the location with a yellow arrow sticker and return it to ZTP without testing."
+        },
+        {
+          "text": "Scan the MRS ticket and serial number into OSV Portal."
+        },
+        {
+          "text": "Confirm the tag serial matches the PSU and verify the unit has not already been tested."
+        }
+      ],
+      "warning": "Do not test a damaged or previously tested PSU."
+    },
+    {
+      "type": "FIXTURE SETUP",
+      "title": "Prepare the Delta Fixture",
+      "subtitle": "Connect the fixture and install the PSU in the approved order.",
+      "items": [
+        {
+          "text": "Insert the AC power cord into the fixture AC connection.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_01.jpg"
+          ]
+        },
+        {
+          "text": "Turn on the fixture AC button.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_02.jpg"
+          ]
+        },
+        {
+          "text": "Insert the fixture power cord.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_03.jpg"
+          ]
+        },
+        {
+          "text": "Place the PSU on the fixture.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_04.jpg"
+          ]
+        },
+        {
+          "text": "Connect the PSU using the handlebar.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_05.jpg"
+          ]
+        },
+        {
+          "text": "Insert the power cord into the PSU.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_06.jpg"
+          ]
+        }
+      ],
+      "warning": "Verify every connection is fully seated before applying PSU output power."
+    },
+    {
+      "type": "12V TEST",
+      "title": "Check the 12V Output",
+      "subtitle": "Verify the first green output indicator.",
+      "items": [
+        {
+          "text": "Turn on AC ON power.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_07.jpg"
+          ]
+        },
+        {
+          "text": "Confirm the green 12V LED illuminates.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_08.jpg"
+          ]
+        },
+        {
+          "text": "If the 12V LED does not illuminate, classify the PSU as failed and create a failed tag."
+        }
+      ],
+      "warning": "Do not continue to a pass decision when the 12V LED is off."
+    },
+    {
+      "type": "54V TEST",
+      "title": "Check the 54V Output",
+      "subtitle": "Verify both output indicators remain green for 30 seconds.",
+      "items": [
+        {
+          "text": "Turn on the 54V / PS ON power control.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_09.jpg"
+          ]
+        },
+        {
+          "text": "Confirm the green 54V LED illuminates.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_10.jpg"
+          ]
+        },
+        {
+          "text": "Observe both the 12V and 54V LEDs continuously for 30 seconds."
+        },
+        {
+          "text": "If both LEDs remain on, classify the PSU as good and mark it Passed."
+        },
+        {
+          "text": "If either LED is off, classify the PSU as failed and create a failed tag."
+        }
+      ],
+      "warning": "Both 12V and 54V indicators must stay green for the full 30-second observation."
+    },
+    {
+      "type": "POST-TEST",
+      "title": "Inspect and Record the Result",
+      "subtitle": "Complete the required result documentation.",
+      "items": [
+        {
+          "text": "Inspect the PSU after testing to verify no damage was caused."
+        },
+        {
+          "text": "For test-related damage, notify OSV leadership, update OSV Portal, and create a physical-damage ticket."
+        },
+        {
+          "text": "Verify Name/ID, test date, PSU serial number, stock code GP-00061-001G, and detailed test result."
+        },
+        {
+          "text": "Use the actual failure reason, not only the word Failed.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_14.jpg"
+          ]
+        }
+      ],
+      "warning": "All tag fields must be accurate."
+    },
+    {
+      "type": "CLOSEOUT",
+      "title": "Package and Complete Shift Records",
+      "subtitle": "Return the PSU and provide MES evidence.",
+      "items": [
+        {
+          "text": "Place the ticket in the traveler sleeve."
+        },
+        {
+          "text": "Return the PSU to its matching ESD bag and place it on the ESD cart for ZTP pickup."
+        },
+        {
+          "text": "Export Test Lab Records from MES and filter to components tested during the shift.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_17.jpg"
+          ]
+        },
+        {
+          "text": "Capture the list using Windows+Shift+S and post it in the Test Lab Records Check-in/out chat.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_18.jpg"
+          ]
+        },
+        {
+          "text": "Verify ZTP closes the records by close of business the next day; request closure if needed.",
+          "images": [
+            "/static/wi_delta_psu/assets/image_19.jpg"
+          ]
+        }
+      ],
+      "warning": "Always verify the PSU is returned to the correct ESD bag."
+    }
+  ]
+}

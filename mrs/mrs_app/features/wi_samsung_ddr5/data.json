@@ -1,0 +1,231 @@
+{
+  "component": {
+    "control_no": "WI-SAMSUNG-DDR5-OSV",
+    "revision": "Revision A",
+    "title": "Samsung DDR5 OSV"
+  },
+  "steps": [
+    {
+      "type": "PREPARATION",
+      "title": "Prepare the Station",
+      "subtitle": "Set up, inspect, clean, and document the Samsung DDR5 test station.",
+      "items": [
+        {
+          "text": "Place the tester on a flat ESD-protected surface. Connect monitor, keyboard, VGA, and approved power.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_01.jpg"
+          ]
+        },
+        {
+          "text": "Verify ventilation and keep the tester top panel installed during operation."
+        },
+        {
+          "text": "Inspect the tester, connectors, and slots. Clean slots with approved dry air."
+        },
+        {
+          "text": "Record date, technician, part number, serial numbers, quantity, and planned aging duration."
+        }
+      ],
+      "warning": "Stop for socket damage, broken DIMM hardware, contamination, smoke, odor, or repeated electrical/boot abnormalities."
+    },
+    {
+      "type": "LOADING",
+      "title": "Load Samsung DDR5 Modules",
+      "subtitle": "Load only Samsung DDR5 modules with power disconnected.",
+      "items": [
+        {
+          "text": "Unplug tester power and wait at least 30 seconds before loading."
+        },
+        {
+          "text": "Handle each module by its edges. Align it to the assigned slot and press evenly with both hands until fully seated.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_02.jpg"
+          ]
+        },
+        {
+          "text": "Load 1 to 8 modules, maximum one module per channel."
+        },
+        {
+          "text": "Record and verify each serial number against its channel and slot."
+        }
+      ],
+      "warning": "Do not rock, twist, or force a module. Never insert or remove memory while power is connected."
+    },
+    {
+      "type": "BIOS SETUP",
+      "title": "Verify BIOS Settings",
+      "subtitle": "Complete on initial setup or after BIOS settings have been reset.",
+      "items": [
+        {
+          "text": "Apply power and press Del during boot to enter BIOS."
+        },
+        {
+          "text": "Set the current date and time."
+        },
+        {
+          "text": "In Memory Test, select Samsung Test and enable TestPattern 1 through 9."
+        },
+        {
+          "text": "In Boot, confirm CentOS is Boot Option 1."
+        },
+        {
+          "text": "Press F4 to save and exit."
+        }
+      ],
+      "warning": "Start BIOS-level testing with no USB drive connected."
+    },
+    {
+      "type": "BIOS TEST 1",
+      "title": "Run BIOS-Level Test 1",
+      "subtitle": "Run all nine Samsung STEP BIOS patterns.",
+      "items": [
+        {
+          "text": "Confirm no USB drive is connected, then apply power. The BIOS test starts automatically."
+        },
+        {
+          "text": "Review the on-screen result by channel when the test completes.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_03.jpg"
+          ]
+        },
+        {
+          "text": "Mark every failed module immediately and record the failed item."
+        },
+        {
+          "text": "Unplug power and wait at least 30 seconds."
+        },
+        {
+          "text": "Remove only modules that failed Test 1 by releasing the socket sides and lifting by the edges."
+        }
+      ],
+      "warning": "A failure in any required BIOS or OS test is a module failure under the one-strike rule."
+    },
+    {
+      "type": "BIOS TEST 2",
+      "title": "Run BIOS-Level Test 2",
+      "subtitle": "Retest all modules that passed the first BIOS test.",
+      "items": [
+        {
+          "text": "Leave previously passed modules installed and confirm no USB drive is connected."
+        },
+        {
+          "text": "Reapply power and allow the second automatic BIOS test to finish."
+        },
+        {
+          "text": "Record and mark any newly failed module."
+        },
+        {
+          "text": "Unplug power, wait 30 seconds, and remove newly failed modules."
+        },
+        {
+          "text": "Verify BIOS logs in /root/LOG_BIOS. Expected filename pattern: SAMSUNG_OSV_time.log."
+        }
+      ],
+      "warning": "Confirm the log includes channel, pass/fail, failed item, and serial number."
+    },
+    {
+      "type": "OS AGING",
+      "title": "Run OS-Level Aging",
+      "subtitle": "Use the duration approved for the number of modules loaded.",
+      "items": [
+        {
+          "text": "At the operating-system prompt run an approved aging command.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_04.jpg"
+          ]
+        },
+        {
+          "text": "Recommended duration: 1-2 modules = 5 minutes; 3-4 = 10 minutes; 5-6 = 20 minutes; 7-8 = 30 minutes."
+        },
+        {
+          "text": "Use only a command available on the tester and approved for the module density and lot."
+        },
+        {
+          "text": "Review the final result and identify failed channels or slots."
+        },
+        {
+          "text": "Mark and segregate every failed module."
+        },
+        {
+          "text": "Verify aging logs in /root/LOG_AGING. Expected filename pattern: SAMSUNG_DEC_time.log."
+        }
+      ],
+      "warning": "Only modules passing both BIOS runs and OS aging may return to production."
+    },
+    {
+      "type": "LOGS",
+      "title": "Copy Logs and Finish",
+      "subtitle": "Copy all required evidence after testing is complete.",
+      "items": [
+        {
+          "text": "Insert a FAT32-formatted USB drive only after testing is complete."
+        },
+        {
+          "text": "Run ./usb at the prompt.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_05.jpg"
+          ]
+        },
+        {
+          "text": "Verify both BIOS and aging logs are present on the USB."
+        },
+        {
+          "text": "Unplug power, wait 30 seconds, then remove all modules and the USB."
+        },
+        {
+          "text": "Archive logs on the controlled workstation by test date, update the OSV report, and submit through the approved internal method."
+        }
+      ],
+      "warning": "Do not remove modules before disconnecting power and completing the 30-second wait."
+    },
+    {
+      "type": "RECOVERY",
+      "title": "Recover from Hang or No Video",
+      "subtitle": "Isolate abnormal BIOS or OS aging behavior.",
+      "items": [
+        {
+          "text": "For red error text, frozen display, black screen over 10 minutes, or LED off: unplug power and wait 30 seconds."
+        },
+        {
+          "text": "If multiple modules were loaded, test one module at a time to isolate the failure."
+        },
+        {
+          "text": "Treat missing module information in the BIOS log as a possible no-video failure."
+        },
+        {
+          "text": "For an OS aging hang, reboot safely and run ./hang at the OS prompt.",
+          "images": [
+            "/static/wi_samsung_ddr5/assets/image_06.jpg"
+          ]
+        },
+        {
+          "text": "Use the generated /root/LOG_AGING hang log to identify the failing module. If no information appears, repeat the test once."
+        }
+      ],
+      "warning": "Stop if physical socket or module damage is found."
+    },
+    {
+      "type": "DISPOSITION",
+      "title": "Classify and Disposition",
+      "subtitle": "Apply the one-strike acceptance rule.",
+      "items": [
+        {
+          "text": "Pass BIOS Test 1, BIOS Test 2, and OS aging: return to production subject to site release requirements."
+        },
+        {
+          "text": "Any BIOS or OS failure: segregate for Samsung RMA or failure analysis."
+        },
+        {
+          "text": "Physical damage: stop testing and route through the site damage process."
+        },
+        {
+          "text": "Unresolved hang or no-video: keep segregated and escalate with logs, identity, channel, and test history."
+        },
+        {
+          "text": "Complete the technician checklist and test record before closeout."
+        }
+      ],
+      "warning": "Do not apply this procedure to SK hynix, Micron, DDR4, or another vendor platform."
+    }
+  ]
+}
