@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "tenant_id": "00000000-0000-0000-0000-000000000000",
+  "primary_domain": "contoso.onmicrosoft.com",
+  "client_id": "00000000-0000-0000-0000-000000000000",
+  "client_secret": "PASTE-CLIENT-SECRET-VALUE-HERE",
+  "site_id": "contoso.sharepoint.com,site-collection-guid,web-guid",
+  "list_id": "00000000-0000-0000-0000-000000000000",
+  "poll_seconds": 3,
+  "max_attempts": 12
+}

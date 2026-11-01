@@ -1,0 +1,17 @@
+SELECT @@SERVERNAME;
+
+
+SELECT 
+    @@SERVERNAME AS [ServerName],
+    DB_NAME() AS [DatabaseName],
+    CASE 
+        WHEN DATABASEPROPERTYEX(DB_NAME(), 'Updateability') IS NOT NULL 
+        THEN @@VERSION 
+    END AS [VersionInfo];
+
+SELECT ORIGINAL_LOGIN() AS [AuthenticationTypeOrLogin];
+
+SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE 
+FROM INFORMATION_SCHEMA.TABLES;
+
+1433
