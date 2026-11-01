@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('tools_portal.static', filename='remote_launcher.css') }}">
+<section class="card rdp-launcher-page">
+  <a href="{{ url_for('tools_portal.index') }}">&larr; All Tools</a>
+  <span class="section-kicker">REMOTE CONNECTIONS</span>
+  <h1>OSV Remote Access</h1>
+  <p>Launch Windows Remote Desktop on this computer through the locally installed OSV launcher.</p>
+
+  <div class="launcher-status" id="launcher-status">
+    <strong>Setup:</strong> Install the launcher once, then enter a target below.
+  </div>
+
+  <form id="rdp-form" class="rdp-form">
+    <label for="rdp-host">Host name or private IP address</label>
+    <input id="rdp-host" autocomplete="off" placeholder="192.168.0.220" required>
+    <div class="rdp-row">
+      <div><label for="rdp-port">Port</label><input id="rdp-port" type="number" min="1" max="65535" value="3389" required></div>
+      <div><label for="rdp-mode">Display</label><select id="rdp-mode"><option value="fullscreen">Full screen</option><option value="windowed">Windowed</option></select></div>
+    </div>
+    <label class="rdp-check"><input id="rdp-multimon" type="checkbox"> Use all monitors</label>
+    <label class="rdp-check"><input id="rdp-admin" type="checkbox"> Administrative session</label>
+    <div class="rdp-actions"><button class="btn primary" type="submit">Launch Remote Desktop</button></div>
+  </form>
+</section>
+
+<section class="card launcher-install">
+  <h2>Install the launcher once</h2>
+  <ol>
+    <li>Download the launcher ZIP.</li>
+    <li>Extract the ZIP. Do not run the script from inside the ZIP preview.</li>
+    <li>Open PowerShell in the extracted folder.</li>
+    <li>Run the command shown below.</li>
+  </ol>
+  <a class="btn primary" href="{{ url_for('tools_portal.static', filename='launcher/OSV_RDP_Launcher.zip') }}" download>Download Launcher ZIP</a>
+  <pre><code>powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\test.ps1 -Install</code></pre>
+  <p class="muted">The launcher installs for the current user and does not store RDP passwords.</p>
+</section>
+
+<script>
+(() => {
+  const status = document.getElementById('launcher-status');
+  document.getElementById('rdp-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const host = document.getElementById('rdp-host').value.trim();
+    const port = document.getElementById('rdp-port').value;
+    if (!/^[A-Za-z0-9.-]{1,253}$/.test(host)) {
+      status.innerHTML = '<strong>Cannot launch:</strong> Enter a valid hostname or private IPv4 address.';
+      return;
+    }
+    if (!/^\d+$/.test(port) || Number(port) < 1 || Number(port) > 65535) {
+      status.innerHTML = '<strong>Cannot launch:</strong> Enter a valid RDP port.';
+      return;
+    }
+    const params = new URLSearchParams({host, port, mode: document.getElementById('rdp-mode').value});
+    if (document.getElementById('rdp-multimon').checked) params.set('multimon', '1');
+    if (document.getElementById('rdp-admin').checked) params.set('admin', '1');
+    status.innerHTML = '<strong>Launch requested.</strong> Approve the browser prompt to open OSV Remote Access Launcher.';
+    window.location.assign(`osvrdp://connect?${params.toString()}`);
+  });
+})();
+</script>
+{% endblock %}

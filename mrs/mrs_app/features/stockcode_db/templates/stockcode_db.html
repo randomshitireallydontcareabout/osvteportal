@@ -1,0 +1,170 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+<style>
+.stockcode-page-wide{width:min(1880px,calc(100vw - 28px));max-width:none;margin-left:50%;transform:translateX(-50%)}
+.stockcode-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.stockcode-table-wrap{overflow:auto;max-height:72vh;border:1px solid var(--line);border-radius:8px}
+.stockcode-table-wrap table{min-width:1900px;width:100%;border-collapse:separate;border-spacing:0}
+.stockcode-table-wrap thead th{position:sticky;top:0;z-index:3;background:#111d31;white-space:nowrap}
+.stockcode-table-wrap td{vertical-align:top;line-height:1.35}
+.stockcode-modal{display:none;position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;z-index:10000;background:rgba(2,6,23,.84);align-items:center;justify-content:center;padding:clamp(10px,2vw,24px);box-sizing:border-box;overflow:auto;overscroll-behavior:contain}
+.stockcode-modal.open{display:flex}
+.stockcode-modal-card{width:min(1040px,calc(100vw - 32px));max-height:min(94vh,calc(100dvh - 32px));margin:auto;position:relative;inset:auto;transform:none;overflow:hidden;padding:0!important;border:1px solid #31558a;background:#111f38;box-shadow:0 28px 90px rgba(0,0,0,.58)}
+.stockcode-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:19px 22px;border-bottom:1px solid #2a4368;background:linear-gradient(135deg,#172844,#101e35)}
+.stockcode-modal-body{padding:20px 22px;max-height:calc(94vh - 145px);overflow:auto}
+.stockcode-form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stockcode-form-grid label{display:grid;gap:5px;color:#9bb2d3;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.stockcode-form-grid input,.stockcode-form-grid select,.stockcode-form-grid textarea{width:100%;background:#0b172b;border:1px solid #304d76;color:var(--text);border-radius:7px;padding:9px 10px;text-transform:none;letter-spacing:normal;font-weight:400}
+.stockcode-form-wide{grid-column:span 2}.stockcode-form-full{grid-column:1/-1}.stockcode-form-section{grid-column:1/-1;padding:8px 0 4px;border-bottom:1px solid #294367;color:#67a5ff;font-size:12px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.stockcode-modal-foot{display:flex;justify-content:flex-end;gap:9px;padding:14px 22px;border-top:1px solid #2a4368;background:#0d192e}
+@media(max-width:850px){.stockcode-form-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stockcode-form-grid{grid-template-columns:1fr}.stockcode-form-wide{grid-column:auto}}
+.stock-search{display:flex;align-items:center;gap:10px;background:#0b172b;border:1px solid #304d76;border-radius:9px;padding:8px 12px;min-width:min(540px,100%)}
+.stock-search input{flex:1;border:0!important;background:transparent!important;padding:3px!important;outline:none;color:var(--text)}
+.stock-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;padding:12px 16px 16px 42px;background:#08111f}
+.stock-entry{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid #294568;border-radius:8px;background:#0f1d33;color:var(--text);cursor:pointer;text-align:left;transition:.15s}.stock-entry:hover{border-color:#5b94e8;background:#142743;transform:translateY(-1px)}
+.stock-entry-code{font-family:Consolas,monospace;font-weight:900;color:#8ab7ff}.stock-entry-desc{font-size:11px;color:#9bb2d3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}.search-empty{display:none;padding:24px;text-align:center;color:var(--muted)}
+.stock-detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.stock-detail-item{background:#0b172b;border:1px solid #294568;border-radius:8px;padding:10px;min-width:0}.stock-detail-item.wide{grid-column:span 2}.stock-detail-item.full{grid-column:1/-1}.stock-detail-item span{display:block;color:#8ea6c8;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px}.stock-detail-item strong{display:block;word-break:break-word}.stock-detail-title{font-family:Consolas,monospace;color:#8ab7ff;font-size:22px;font-weight:900}
+@media(max-width:760px){.stock-detail-grid{grid-template-columns:1fr}.stock-detail-item.wide{grid-column:auto}.stock-list{padding-left:16px}}
+</style>
+<div class="stockcode-page-wide">
+<div class="page-head" style="margin-bottom:14px;">
+  <div>
+    <h1>StockCode Database & Test Estimates</h1>
+    <p class="muted" style="margin:0">Manage all stock-code capability fields while keeping the existing brand, component, tester, and estimate settings.</p>
+  </div>
+</div>
+
+<!-- Import Section -->
+<details class="card section-card" style="padding:14px;margin-bottom:14px;">
+  <summary style="cursor:pointer;list-style:none;font-weight:700;font-size:14px;color:var(--accent);">📥 Import Stock Code Data (CSV or SQLite .db) ▾</summary>
+  <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <form method="post" action="{{ url_for('stockcode_db.import_csv') }}" enctype="multipart/form-data"
+          style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+      <h3 style="margin:0;font-size:13px;color:var(--text);">Import from CSV</h3>
+      <p class="muted" style="margin:0;font-size:11.5px;">Recognised columns include all current fields plus Testing Capabilities, Validation, When, Stock Code Prefix, Validation Scope, Status, Description, and High Value.</p>
+      <input type="file" name="csv_file" accept=".csv" required style="padding:5px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="primary" type="submit" style="padding:6px 12px;font-size:12px;">Import CSV</button>
+        <a class="btn-logout" href="{{ url_for('stockcode_db.template_csv') }}" style="padding:6px 12px;font-size:12px;">Download Template</a>
+      </div>
+    </form>
+    <form method="post" action="{{ url_for('stockcode_db.import_db') }}" enctype="multipart/form-data"
+          style="background:#0d1729;border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+      <h3 style="margin:0;font-size:13px;color:var(--text);">Import from SQLite .db</h3>
+      <p class="muted" style="margin:0;font-size:11.5px;">Upload a backup .db. Rows are merged using stock_code as the unique key.</p>
+      <input type="file" name="db_file" accept=".db,.sqlite,.sqlite3" required style="padding:5px;">
+      <button class="primary" type="submit" style="padding:6px 12px;font-size:12px;">Import .db</button>
+    </form>
+  </div>
+  <p class="muted" style="margin:10px 0 0;font-size:11.5px;">Imports merge by stock_code — existing rows are updated, missing rows are inserted. Zero-value est_hours does not overwrite.</p>
+</details>
+
+<div id="stockCodeModal" class="stockcode-modal" onclick="if(event.target===this) closeStockCodeModal()">
+  <div class="card stockcode-modal-card" onclick="event.stopPropagation()">
+    <div class="stockcode-modal-head"><div><div style="color:#67a5ff;font-size:11px;font-weight:900;letter-spacing:.12em;">STOCKCODE DATABASE</div><h2 id="formTitle" style="margin:4px 0 2px;">Add Stock Code</h2><div class="muted">Create or update a complete StockCode capability record.</div></div><button class="ghost" type="button" onclick="closeStockCodeModal()">✕ Close</button></div>
+    <div class="stockcode-modal-body">    <form method="post" action="{{ url_for('stockcode_db.save') }}" id="stockCodeForm">
+      <input type="hidden" id="entryId" name="id"><div class="stockcode-form-grid"><div class="stockcode-form-section">Core Information</div>
+      <label>Stock Code <input type="text" id="stockCode" name="stock_code" required placeholder="STK-001"></label>
+      <label>Brand
+        <input type="text" id="brand" name="brand" list="brandSuggestions" placeholder="e.g. Samsung, Intel, Supermicro">
+        <datalist id="brandSuggestions">
+          {% for b in brands %}<option value="{{ b }}">{% endfor %}
+        </datalist>
+      </label>
+      <label>Category <input type="text" id="category" name="category" placeholder="DIMM, PSU, etc."></label>
+      <label class="stockcode-form-wide">Type of Component <input type="text" id="componentType" name="component_type" placeholder="e.g. DDR5 32GB RAM"></label>
+      <label>Tester Name <input type="text" id="testerName" name="tester_name" placeholder="Technician Name"></label>
+      <label>Est. Time to Test / Component (Hours) <input type="number" step="0.1" id="estHours" name="est_hours" placeholder="3.0"></label>
+      <div class="stockcode-form-section">OSV Capability Fields</div>
+      <label class="stockcode-form-wide">Testing Capabilities <input id="testingCapabilities" name="testing_capabilities" placeholder="e.g. GTX Capability"></label>
+      <label>Validation <select id="validation" name="validation"><option value=""></option><option>Yes</option><option>No</option></select></label>
+      <label>When <input id="availability" name="availability" placeholder="e.g. Available"></label>
+      <label>Stock Code Prefix <input id="stockCodePrefix" name="stock_code_prefix" placeholder="e.g. RD"></label>
+      <label>Validation Scope <select id="validationScope" name="validation_scope"><option value=""></option><option>Include</option><option>Exclude</option></select></label>
+      <label>Status <input id="status" name="status" placeholder="Active or Obsolete"></label>
+      <label class="stockcode-form-full">Description <textarea id="description" name="description" rows="3" placeholder="Component description"></textarea></label>
+      <label>High Value <select id="highValue" name="high_value"><option value=""></option><option>TRUE</option><option>FALSE</option></select></label>
+      </div>
+elBtn" style="display:none;">Cancel</button>
+      </div>
+    </form></div>
+    <div class="stockcode-modal-foot"><button type="button" class="ghost" onclick="closeStockCodeModal()">Cancel</button><button class="primary" type="submit" form="stockCodeForm" id="submitBtn">Save Entry</button></div>
+  </div>
+</div>
+
+<div>
+  <div class="card section-card" style="padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px;flex-wrap:wrap;">
+      <div><h2 style="margin:0;">Stock Code Records ({{ entries|length }})</h2><div class="muted" style="font-size:12px;margin-top:3px;">Brand › Component Type › Stock Code</div></div>
+      <div class="stock-search"><span style="font-size:18px;">⌕</span><input id="stockSearch" type="search" placeholder="Search stock code, component type, or brand..." oninput="filterStockCodes()"><button class="ghost" type="button" onclick="clearStockSearch()" style="padding:4px 8px;">Clear</button></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button class="primary" type="button" onclick="openAddStockCodeModal()" style="padding:6px 12px;">+ Add Stock Code</button>
+        <button class="ghost" type="button" onclick="toggleAllGroups(true)"  style="padding:4px 10px;font-size:12px;">Expand All</button>
+        <button class="ghost" type="button" onclick="toggleAllGroups(false)" style="padding:4px 10px;font-size:12px;">Collapse All</button>
+      </div>
+    </div>
+
+    <div id="stockHierarchy">
+    {% for brand, brand_data in grouped.items() %}
+      <details class="brand-group" data-brand="{{ brand|lower }}" style="margin-bottom:10px;border:1px solid var(--line);border-radius:8px;overflow:hidden;">
+        <summary style="padding:11px 14px;background:#0d1729;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-weight:800;font-size:15px;color:#d8b4fe;">{{ brand }}</span><span class="badge" style="background:rgba(168,85,247,.18);color:#d8b4fe;">{{ brand_data.component_types|length }} component type{% if brand_data.component_types|length != 1 %}s{% endif %}</span><span class="badge available">{{ brand_data.total }} stock code{% if brand_data.total != 1 %}s{% endif %}</span></div><span class="muted">▾</span>
+        </summary>
+        {% for comp_type, comp_entries in brand_data.component_types.items() %}
+          <details class="component-group" data-component="{{ comp_type|lower }}" style="border-top:1px solid var(--line);">
+            <summary style="padding:9px 14px 9px 28px;background:#0a1220;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;"><div style="display:flex;align-items:center;gap:10px;"><span style="font-weight:700;color:#93bbff;">{{ comp_type }}</span><span class="badge available">{{ comp_entries|length }}</span></div><span class="muted">▾</span></summary>
+            <div class="stock-list">
+            {% for e in comp_entries %}
+              <button type="button" class="stock-entry" data-search="{{ (brand ~ ' ' ~ comp_type ~ ' ' ~ e.stock_code ~ ' ' ~ (e.description or '') ~ ' ' ~ (e.category or ''))|lower }}" data-entry='{{ dict(e)|tojson|forceescape }}' onclick="openStockDetail(this)"><div style="min-width:0;"><div class="stock-entry-code">{{ e.stock_code }}</div><div class="stock-entry-desc">{{ e.description or e.category or 'View details' }}</div></div><span style="color:#71a8fa;font-size:18px;">›</span></button>
+            {% endfor %}
+            </div>
+          </details>
+        {% endfor %}
+      </details>
+    {% else %}<div class="empty" style="padding:24px;text-align:center;color:var(--muted);">No stock code records registered yet.</div>{% endfor %}
+    </div><div id="searchEmpty" class="search-empty">No matching Brand, Component Type, or Stock Code found.</div>
+  </div>
+</div>
+
+<div id="stockDetailModal" class="stockcode-modal" onclick="if(event.target===this) closeStockDetail()"><div class="card stockcode-modal-card" onclick="event.stopPropagation()"><div class="stockcode-modal-head"><div><div style="color:#67a5ff;font-size:11px;font-weight:900;letter-spacing:.12em;">STOCK CODE DETAILS</div><div id="detailStockCode" class="stock-detail-title">Stock Code</div><div id="detailPath" class="muted"></div></div><button class="ghost" type="button" onclick="closeStockDetail()">✕ Close</button></div><div class="stockcode-modal-body"><div id="stockDetailContent" class="stock-detail-grid"></div></div><div class="stockcode-modal-foot"><button class="ghost" type="button" onclick="closeStockDetail()">Close</button><button class="primary" type="button" id="detailEditButton">Edit Record</button></div></div></div>
+
+<script>
+const STOCK_DETAIL_FIELDS=[['Testing Capabilities','testing_capabilities','wide'],['Validation','validation'],['When','availability'],['Stock Code Prefix','stock_code_prefix'],['Validation Scope','validation_scope'],['Category','category'],['Status','status'],['Description','description','full'],['High Value','high_value'],['Brand','brand'],['Component Type','component_type'],['Tester','tester_name'],['Estimated Hours','est_hours'],['Created At','created_at','wide']];
+function openStockDetail(button){const e=JSON.parse(button.getAttribute('data-entry'));document.getElementById('detailStockCode').textContent=e.stock_code||'Stock Code';document.getElementById('detailPath').textContent=`${e.brand||'(No Brand)'} › ${e.component_type||'(No Component Type)'}`;document.getElementById('stockDetailContent').innerHTML=STOCK_DETAIL_FIELDS.map(([label,key,size])=>`<div class="stock-detail-item ${size||''}"><span>${label}</span><strong>${e[key]===null||e[key]===''||e[key]===undefined?'—':e[key]}</strong></div>`).join('');const edit=document.getElementById('detailEditButton');edit.onclick=()=>{closeStockDetail();editEntry(button);};document.getElementById('stockDetailModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeStockDetail(){document.getElementById('stockDetailModal').classList.remove('open');document.body.style.overflow='';}
+function filterStockCodes(){const q=document.getElementById('stockSearch').value.trim().toLowerCase();let total=0;document.querySelectorAll('.brand-group').forEach(brand=>{let brandMatches=0;brand.querySelectorAll('.component-group').forEach(comp=>{let compMatches=0;comp.querySelectorAll('.stock-entry').forEach(entry=>{const match=!q||entry.dataset.search.includes(q);entry.style.display=match?'flex':'none';if(match)compMatches++;});comp.style.display=compMatches?'block':'none';if(q&&compMatches)comp.open=true;brandMatches+=compMatches;});brand.style.display=brandMatches?'block':'none';if(q&&brandMatches)brand.open=true;total+=brandMatches;});document.getElementById('searchEmpty').style.display=total?'none':'block';}
+function clearStockSearch(){document.getElementById('stockSearch').value='';filterStockCodes();toggleAllGroups(false);document.getElementById('stockSearch').focus();}
+
+function editEntry(button) {
+  const e = JSON.parse(button.getAttribute('data-entry'));
+  const map = {entryId:'id',stockCode:'stock_code',brand:'brand',category:'category',componentType:'component_type',testerName:'tester_name',estHours:'est_hours',testingCapabilities:'testing_capabilities',validation:'validation',availability:'availability',stockCodePrefix:'stock_code_prefix',validationScope:'validation_scope',status:'status',description:'description',highValue:'high_value'};
+  Object.entries(map).forEach(([id,key]) => { document.getElementById(id).value = e[key] ?? ''; });
+  document.getElementById('formTitle').textContent = 'Edit Stock Code Record';
+  document.getElementById('submitBtn').textContent = 'Update Entry';
+  openStockCodeModal();
+}
+function resetForm() {
+  document.getElementById('stockCodeForm').reset();
+  document.getElementById('entryId').value = '';
+  document.getElementById('formTitle').textContent = 'Add Stock Code';
+  document.getElementById('submitBtn').textContent = 'Save Entry';
+}
+function openStockCodeModal(){document.getElementById('stockCodeModal').classList.add('open');document.body.style.overflow='hidden';}
+function openAddStockCodeModal(){resetForm();openStockCodeModal();setTimeout(()=>document.getElementById('stockCode').focus(),50);}
+function closeStockCodeModal(){document.getElementById('stockCodeModal').classList.remove('open');document.body.style.overflow='';resetForm();}
+document.addEventListener('DOMContentLoaded',()=>{['stockCodeModal','stockDetailModal'].forEach(id=>{const modal=document.getElementById(id);if(modal&&modal.parentElement!==document.body)document.body.appendChild(modal);});});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeStockCodeModal();closeStockDetail();}});
+
+
+function toggleAllGroups(open) {
+  document.querySelectorAll('.brand-group, .component-group').forEach(el => { el.open = open; });
+}
+</script>
+</div>
+{% endblock %}
+
+
+

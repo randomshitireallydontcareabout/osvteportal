@@ -1,0 +1,341 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .wi-library {
+    --wi-blue: #4f8cff;
+    --wi-cyan: #29c6e8;
+    --wi-purple: #9b7cff;
+    --wi-green: #35c98f;
+    --wi-orange: #f4a340;
+    --wi-pink: #ee6fa7;
+    position: relative;
+    overflow: hidden;
+    padding: 28px;
+    border: 1px solid rgba(120, 151, 204, .22);
+    background:
+      radial-gradient(circle at 88% 5%, rgba(79, 140, 255, .14), transparent 28%),
+      linear-gradient(145deg, rgba(17, 29, 51, .98), rgba(11, 20, 37, .98));
+  }
+
+  .wi-library::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(to bottom, black, transparent 70%);
+  }
+
+  .wi-library > * { position: relative; z-index: 1; }
+
+  .wi-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .wi-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #aebbd0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    transition: color .18s ease, transform .18s ease;
+  }
+
+  .wi-back:hover { color: #fff; transform: translateX(-3px); }
+
+  .wi-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 11px;
+    border: 1px solid rgba(130, 155, 200, .22);
+    border-radius: 999px;
+    color: #aebbd0;
+    background: rgba(9, 17, 31, .56);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .wi-count::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--wi-green);
+    box-shadow: 0 0 12px rgba(53, 201, 143, .8);
+  }
+
+  .wi-hero { max-width: 720px; margin-bottom: 25px; }
+
+  .wi-hero .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(79, 140, 255, .12);
+    color: #8fb8ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .14em;
+  }
+
+  .wi-hero h1 {
+    margin: 12px 0 8px;
+    color: #f5f8ff;
+    font-size: clamp(26px, 4vw, 39px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+
+  .wi-hero > p {
+    margin: 0;
+    color: #9cabc1;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .wi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .wi-card {
+    --accent: var(--wi-blue);
+    --accent-rgb: 79, 140, 255;
+    position: relative;
+    display: flex;
+    min-height: 288px;
+    flex-direction: column;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(122, 149, 194, .22);
+    border-radius: 15px;
+    color: inherit;
+    text-decoration: none;
+    background: linear-gradient(155deg, rgba(25, 40, 66, .91), rgba(12, 22, 39, .96));
+    box-shadow: 0 14px 28px rgba(0, 0, 0, .18);
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+
+  .wi-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), transparent 78%);
+  }
+
+  .wi-card::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(var(--accent-rgb), .12);
+    filter: blur(2px);
+    transition: transform .25s ease, background .25s ease;
+  }
+
+  .wi-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(var(--accent-rgb), .68);
+    box-shadow: 0 20px 38px rgba(0,0,0,.28), 0 0 0 1px rgba(var(--accent-rgb), .08);
+  }
+
+  .wi-card:hover::after { transform: scale(1.12); background: rgba(var(--accent-rgb), .18); }
+  .wi-card--fpga { --accent: var(--wi-cyan); --accent-rgb: 41, 198, 232; }
+  .wi-card--board { --accent: var(--wi-purple); --accent-rgb: 155, 124, 255; }
+  .wi-card--samsung { --accent: var(--wi-green); --accent-rgb: 53, 201, 143; }
+  .wi-card--delta { --accent: var(--wi-orange); --accent-rgb: 244, 163, 64; }
+  .wi-card--liteon { --accent: var(--wi-pink); --accent-rgb: 238, 111, 167; }
+  .wi-editor-panel { margin-top:22px; padding:18px; border:1px solid rgba(125,153,197,.24); border-radius:14px; background:rgba(8,17,31,.58); }
+  .wi-editor-panel h2 { margin:0 0 5px; color:#f4f8ff; font-size:18px; }
+  .wi-editor-panel p { margin:0 0 14px; color:#9cabc1; }
+  .wi-editor-actions { display:flex; flex-wrap:wrap; gap:8px; }
+  .wi-edit-btn { padding:8px 11px; border:1px solid #3a5880; border-radius:8px; color:#dce9fb; background:#142640; text-decoration:none; font-size:12px; font-weight:700; }
+  .wi-edit-btn:hover { border-color:#6c9ada; background:#1a3152; }
+
+  .wi-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .wi-icon {
+    display: grid;
+    width: 47px;
+    height: 47px;
+    place-items: center;
+    border: 1px solid rgba(var(--accent-rgb), .30);
+    border-radius: 12px;
+    color: var(--accent);
+    background: rgba(var(--accent-rgb), .11);
+  }
+
+  .wi-icon svg { width: 25px; height: 25px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+
+  .wi-badge {
+    max-width: 155px;
+    padding: 6px 9px;
+    border: 1px solid rgba(var(--accent-rgb), .26);
+    border-radius: 999px;
+    color: var(--accent);
+    background: rgba(var(--accent-rgb), .09);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .055em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .wi-card h2 {
+    margin: 0 0 10px;
+    color: #f5f8ff;
+    font-size: 20px;
+    line-height: 1.24;
+    letter-spacing: -.015em;
+  }
+
+  .wi-card p {
+    margin: 0;
+    color: #9baac0;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .wi-open {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 22px;
+    color: #dce7f8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .065em;
+  }
+
+  .wi-open i {
+    display: grid;
+    width: 31px;
+    height: 31px;
+    place-items: center;
+    border-radius: 50%;
+    color: #08111f;
+    background: var(--accent);
+    font-size: 17px;
+    font-style: normal;
+    transition: transform .2s ease;
+  }
+
+  .wi-card:hover .wi-open i { transform: translateX(3px); }
+
+  @media (max-width: 1050px) { .wi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 700px) {
+    .wi-library { padding: 20px 16px; }
+    .wi-topbar { align-items: flex-start; }
+    .wi-grid { grid-template-columns: 1fr; }
+    .wi-card { min-height: 255px; }
+  }
+</style>
+
+<section class="card tool-page wi-library">
+  <div class="wi-topbar">
+    <a class="wi-back" href="{{ url_for('tools_portal.index') }}">&larr; All Tools</a>
+    <span class="wi-count">{{ 6 + uploaded_wis|length }} instructions available</span>
+  </div>
+
+  <header class="wi-hero">
+    <span class="section-kicker">TRAINING LIBRARY</span>
+    <h1>Work Instructions</h1>
+    <p>Select a procedure below to open its interactive, step-by-step presentation.</p>
+  </header>
+
+  <div class="wi-grid">
+    <a class="wi-card" href="{{ url_for('wi_micron_ddr4.index') }}">
+      <div class="wi-card-head">
+        <span class="wi-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="11" rx="2"/><path d="M6 17v2m3-2v2m3-2v2m3-2v2m3-2v2M7 10h10m-10 3h7"/></svg>
+        </span>
+        <span class="wi-badge">WI-007 · REV C01</span>
+      </div>
+      <h2>Micron DDR4 DIMM</h2>
+      <p>Inspection, testing, log review, and closeout for the Micron DDR4 workflow.</p>
+      <span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+
+    <a class="wi-card wi-card--fpga" href="{{ url_for('wi_fpga.index') }}">
+      <div class="wi-card-head">
+        <span class="wi-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/></svg>
+        </span>
+        <span class="wi-badge">Controlled Copy</span>
+      </div>
+      <h2>Quanta Celestial Peak FPGA</h2>
+      <p>Firmware verification, driver loading, FPGA detection, reconfiguration, and validation.</p>
+      <span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+
+    <a class="wi-card wi-card--board" href="{{ url_for('wi_inventec_mb.index') }}">
+      <div class="wi-card-head">
+        <span class="wi-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M13 7h4m-4 3h4M7 14h10v4H7z"/></svg>
+        </span>
+        <span class="wi-badge">WI-008 · REV C01</span>
+      </div>
+      <h2>Inventec Motherboard Tester</h2>
+      <p>Physical inspection, tester setup, test execution, result review, and closeout.</p>
+      <span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+
+    <a class="wi-card wi-card--samsung" href="{{ url_for('wi_samsung_ddr5.index') }}">
+      <div class="wi-card-head"><span class="wi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="11" rx="2"/><path d="M6 17v2m3-2v2m3-2v2m3-2v2m3-2v2M7 9h3v5H7zm5 0h5v5h-5z"/></svg></span><span class="wi-badge">Samsung DDR5 · REV A</span></div>
+      <h2>Samsung DDR5 OSV</h2><p>Two BIOS tests, OS aging, log collection, recovery, and final disposition.</p><span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+
+    <a class="wi-card wi-card--delta" href="{{ url_for('wi_delta_psu.index') }}">
+      <div class="wi-card-head"><span class="wi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 5 13h6l-1 9 9-13h-6z"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></span><span class="wi-badge">WI-005 · REV C01</span></div>
+      <h2>Delta PSU Tester</h2><p>Fixture setup, 12V and 54V verification, documentation, and closeout.</p><span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+
+    <a class="wi-card wi-card--liteon" href="{{ url_for('wi_liteon_psu.index') }}">
+      <div class="wi-card-head"><span class="wi-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 5 13h6l-1 9 9-13h-6z"/><path d="M3 7h3m12 0h3M3 17h3m12 0h3"/></svg></span><span class="wi-badge">WI-006 · REV C01</span></div>
+      <h2>Liteon PSU Tester</h2><p>Function testing, firmware recovery, five-cycle retest, and disposition.</p><span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span>
+    </a>
+    {% for wi in uploaded_wis %}
+    <a class="wi-card" style="--accent:{{ wi.accent }};--accent-rgb:{{ wi.accent_rgb }}" href="{{ url_for('tools_portal.uploaded_work_instruction',wi_key=wi.key) }}"><div class="wi-card-head"><span class="wi-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="wi-badge">{{ wi.control_no }} · {{ wi.revision }}</span></div><h2>{{ wi.title }}</h2><p>{{ wi.category }} · Uploaded Work Instruction</p><span class="wi-open">OPEN INSTRUCTION <i>&rarr;</i></span></a>
+    {% endfor %}
+  </div>
+
+  {% if can_edit_wi %}
+  <section class="wi-editor-panel"><h2>Work Instruction Editor</h2><p>Administrators and selected users can edit steps, instruction points, and pictures.</p><div class="wi-editor-actions"><a class="wi-edit-btn" href="{{ url_for('tools_portal.add_work_instruction') }}">+ Upload and Build New WI</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='micron') }}">Edit Micron DDR4</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='fpga') }}">Edit FPGA</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='inventec') }}">Edit Inventec</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='samsung_ddr5') }}">Edit Samsung DDR5</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='delta_psu') }}">Edit Delta PSU</a>
+    <a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key='liteon_psu') }}">Edit Liteon PSU</a>
+    {% for wi in uploaded_wis %}<a class="wi-edit-btn" href="{{ url_for('tools_portal.edit_work_instruction',wi_key=wi.key) }}">Edit {{ wi.title }}</a>{% endfor %}
+  </div></section>
+  {% endif %}
+</section>
+{% endblock %}

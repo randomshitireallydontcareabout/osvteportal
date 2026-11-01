@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card dimm-tool"><a href="{{ url_for('tools_portal.index') }}">&larr; All Tools</a>
+  <span class="section-kicker">TOOLS / MEMORY DIAGNOSTICS</span>
+  <h1>DIMM Logs Analyzer</h1>
+  <p class="muted">Upload tester logs from this computer. Analysis runs securely on the web-app host and results return in this browser.</p>
+  <form method="post" enctype="multipart/form-data" class="dimm-upload">
+    <label class="drop-zone">
+      <strong>Select log files or a ZIP folder</strong>
+      <span>.txt, .log, .xml, or .zip. Multiple files are supported.</span>
+      <input type="file" name="files" accept=".txt,.log,.xml,.zip" multiple required>
+    </label>
+    <button class="btn primary" type="submit">Analyze Logs</button>
+  </form>
+  <div class="dimm-note"><strong>Mapping protection:</strong> Micron mapping is used only for detected Micron DIMMs. It is never applied to Hynix DIMMs.</div>
+</section>
+<link rel="stylesheet" href="{{ url_for('tools_portal.static', filename='analyzer.css') }}">
+{% endblock %}

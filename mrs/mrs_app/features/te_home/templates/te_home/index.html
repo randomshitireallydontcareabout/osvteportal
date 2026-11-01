@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="te-hero card">
+  <div>
+    <span class="section-kicker">TE SECTION</span>
+    <h1>Test Engineering</h1>
+    <p class="muted">A modular workspace for Test Engineering tools, workflows, dashboards, and databases.</p>
+  </div>
+  <span class="badge available">Secure YubiKey session</span>
+</section>
+
+<section class="te-module-grid">
+  <article class="card te-module-card te-module-ready">
+    <div class="te-module-icon">TE</div>
+    <div>
+      <h2>TE Portal Foundation</h2>
+      <p>The Test Engineering section is active and separated from the existing OSV application.</p>
+    </div>
+    <span class="badge completed">Ready</span>
+  </article>
+
+  <article class="card te-module-card te-module-placeholder">
+    <div class="te-module-icon">+</div>
+    <div>
+      <h2>Future TE Feature</h2>
+      <p>Add each feature as its own folder, Blueprint, templates, static assets, and database setup.</p>
+    </div>
+    <span class="badge assigned">Modular slot</span>
+  </article>
+</section>
+
+<section class="card te-architecture-note">
+  <h2>Modular Design</h2>
+  <p>New TE features should be placed in <code>mrs_app/features/&lt;feature_name&gt;/</code>. A failure in an optional feature remains isolated and does not replace the OSV code or another TE feature.</p>
+</section>
+{% endblock %}

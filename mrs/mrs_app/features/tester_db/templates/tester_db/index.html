@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-head" style="margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+  <div>
+    <h1>Tester Database</h1>
+    <p class="muted" style="margin:0">Manage hardware tester profiles, firmware versions, and work instructions.</p>
+  </div>
+  <div>
+    <button class="primary btn" onclick="openAddTesterModal()">+ Add New Tester</button>
+  </div>
+</div>
+
+<!-- Import section -->
+<details style="background:#1e293b; border-radius:8px; margin-bottom:16px; padding:14px; border:1px solid #334155;">
+  <summary style="cursor:pointer;list-style:none;font-weight:700;color:#38bdf8;font-size:14px;">📥 Import Tester Data (CSV or SQLite .db) ▾</summary>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+    <form method="post" action="{{ url_for('tester_db.import_csv') }}" enctype="multipart/form-data"
+          style="background:#0f172a;padding:12px;border-radius:6px;border:1px solid #334155;display:flex;flex-direction:column;gap:8px;">
+      <strong style="color:#e2e8f0;font-size:13px;">Import from CSV</strong>
+      <p style="color:#94a3b8;font-size:11.5px;margin:0;">Recognised columns: Tester Name, Brand, Component Type, Stock Codes, OS, BIOS, BMC, Test Version, Work Instruction.</p>
+      <input type="file" name="csv_file" accept=".csv" required style="padding:5px;background:#1e293b;border:1px solid #334155;border-radius:4px;color:#e2e8f0;font-size:12px;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button type="submit" class="btn" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:4px;font-size:12px;">Import CSV</button>
+        <a href="{{ url_for('tester_db.template_csv') }}" class="btn" style="background:#64748b;color:#fff;padding:6px 12px;border-radius:4px;font-size:12px;text-decoration:none;">Download Template</a>
+      </div>
+    </form>
+    <form method="post" action="{{ url_for('tester_db.import_db') }}" enctype="multipart/form-data"
+          style="background:#0f172a;padding:12px;border-radius:6px;border:1px solid #334155;display:flex;flex-direction:column;gap:8px;">
+      <strong style="color:#e2e8f0;font-size:13px;">Import from SQLite .db</strong>
+      <p style="color:#94a3b8;font-size:11.5px;margin:0;">Upload a backup .db. Rows are merged using tester_name as the unique key.</p>
+      <input type="file" name="db_file" accept=".db,.sqlite,.sqlite3" required style="padding:5px;background:#1e293b;border:1px solid #334155;border-radius:4px;color:#e2e8f0;font-size:12px;">
+      <button type="submit" class="btn" style="background:#3b82f6;color:#fff;padding:6px 12px;border-radius:4px;font-size:12px;">Import .db</button>
+    </form>
+  </div>
+</details>
+
+<!-- Search Bar -->
+<div style="background:#1e293b; padding:12px; border-radius:8px; margin-bottom:16px; display:flex; gap:10px;">
+  <form method="get" action="{{ url_for('tester_db.index') }}" style="display:flex; gap:10px; width:100%;">
+    <input type="text" name="q" value="{{ search_query }}" placeholder="Search by tester, brand, component, or stock code..." style="flex:1; padding:8px 12px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:6px;">
+    <button type="submit" class="btn" style="background:#3b82f6; color:#fff; padding:8px 16px; border-radius:6px;">Search</button>
+    {% if search_query %}
+      <a href="{{ url_for('tester_db.index') }}" class="btn" style="background:#64748b; color:#fff; padding:8px 16px; border-radius:6px; text-decoration:none;">Clear</a>
+    {% endif %}
+  </form>
+</div>
+
+<!-- Testers Table -->
+<div style="background:#1e293b; border-radius:8px; overflow:hidden; border:1px solid #334155;">
+  <table style="width:100%; border-collapse:collapse; text-align:left; font-size:13px; color:#e2e8f0;">
+    <thead>
+      <tr style="background:#0f172a; color:#94a3b8; border-bottom:1px solid #334155;">
+        <th style="padding:12px;">Tester</th>
+        <th style="padding:12px;">Brand</th>
+        <th style="padding:12px;">Component Type</th>
+        <th style="padding:12px;">Stock Codes</th>
+        <th style="padding:12px;">OS / BIOS / BMC</th>
+        <th style="padding:12px;">Test Ver</th>
+        <th style="padding:12px;">Work Instruction</th>
+        <th style="padding:12px; text-align:right;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in testers %}
+      <tr style="border-bottom:1px solid #334155;">
+        <td style="padding:12px; font-weight:600; color:#fff;">{{ t.tester_name }}</td>
+        <td style="padding:12px;">{{ t.brand or '-' }}</td>
+        <td style="padding:12px;">{{ t.component_type or '-' }}</td>
+        <td style="padding:12px;">
+          {% for sc in (t.stock_codes or '').split(',') %}
+            {% if sc.strip() %}
+              <span style="background:#0f172a; color:#38bdf8; padding:2px 6px; border-radius:4px; font-size:11px; display:inline-block; margin:2px;">{{ sc.strip() }}</span>
+            {% endif %}
+          {% endfor %}
+        </td>
+        <td style="padding:12px; font-size:12px; color:#94a3b8;">
+          OS: <span style="color:#e2e8f0;">{{ t.os_version or '-' }}</span><br>
+          BIOS: <span style="color:#e2e8f0;">{{ t.bios_version or '-' }}</span><br>
+          BMC: <span style="color:#e2e8f0;">{{ t.bmc_version or '-' }}</span>
+        </td>
+        <td style="padding:12px;">{{ t.test_version or '-' }}</td>
+        <td style="padding:12px;">
+          {% if t.work_instruction %}
+            <a href="{{ t.work_instruction }}" target="_blank" style="color:#38bdf8; text-decoration:underline;" title="Open Link or Path">Open Link / Path</a>
+          {% else %}
+            -
+          {% endif %}
+        </td>
+        <td style="padding:12px; text-align:right;">
+          <button class="btn" style="background:#334155; color:#fff; padding:4px 8px; border-radius:4px; font-size:11px;" onclick='openEditTesterModal({{ t | tojson | safe }})'>Edit</button>
+          <form action="{{ url_for('tester_db.delete', id=t.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Delete this tester profile?');">
+            <button type="submit" class="btn" style="background:#ef4444; color:#fff; padding:4px 8px; border-radius:4px; font-size:11px; margin-left:4px;">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="8" style="padding:24px; text-align:center; color:#64748b;">No tester configurations found. Click "+ Add New Tester" to create one.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Add / Edit Modal -->
+<div id="testerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;">
+  <div style="background:#1e293b; width:650px; max-width:90%; border-radius:8px; border:1px solid #334155; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+    <h3 id="modalTitle" style="margin-top:0; color:#fff;">Add New Tester Profile</h3>
+    <form id="testerForm" method="POST" action="{{ url_for('tester_db.index') }}">
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Tester Name *</label>
+          <input type="text" name="tester_name" id="tester_name" required style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Brand</label>
+          <input type="text" name="brand" id="brand" placeholder="e.g. Supermicro, ZT Systems" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Type of Component</label>
+        <input type="text" name="component_type" id="component_type" placeholder="e.g. Motherboard, GPU, Server Node" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Stock Codes (Add multiple as needed)</label>
+        <div id="stockCodesContainer" style="display:flex; flex-direction:column; gap:6px; max-height:120px; overflow-y:auto; padding-right:4px;"></div>
+        <button type="button" class="btn" onclick="addStockCodeRow('')" style="margin-top:6px; background:#334155; color:#38bdf8; font-size:11px; padding:4px 10px; border-radius:4px;">+ Add Stock Code</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">OS</label>
+          <input type="text" name="os_version" id="os_version" placeholder="e.g. Ubuntu 22.04" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">BIOS</label>
+          <input type="text" name="bios_version" id="bios_version" placeholder="e.g. v1.2.4" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">BMC</label>
+          <input type="text" name="bmc_version" id="bmc_version" placeholder="e.g. v2.10" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Test Version</label>
+          <input type="text" name="test_version" id="test_version" placeholder="e.g. v3.4.1" style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+        <div>
+          <label style="display:block; font-size:12px; color:#94a3b8; margin-bottom:4px;">Work Instruction (URL or File/Folder Path)</label>
+          <input type="text" name="work_instruction" id="work_instruction" placeholder="e.g. C:\WorkInstructions\guide.pdf or http://..." style="width:100%; padding:8px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px;">
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:8px;">
+        <button type="button" class="btn" onclick="closeTesterModal()" style="background:#64748b; color:#fff; padding:8px 16px; border-radius:4px;">Cancel</button>
+        <button type="submit" class="primary btn" style="padding:8px 16px; border-radius:4px;">Save Tester</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openAddTesterModal() {
+  document.getElementById('modalTitle').innerText = 'Add New Tester Profile';
+  document.getElementById('testerForm').action = "{{ url_for('tester_db.index') }}";
+  document.getElementById('tester_name').value = '';
+  document.getElementById('brand').value = '';
+  document.getElementById('component_type').value = '';
+  document.getElementById('os_version').value = '';
+  document.getElementById('bios_version').value = '';
+  document.getElementById('bmc_version').value = '';
+  document.getElementById('test_version').value = '';
+  document.getElementById('work_instruction').value = '';
+  document.getElementById('stockCodesContainer').innerHTML = '';
+  addStockCodeRow('');
+  document.getElementById('testerModal').style.display = 'flex';
+}
+
+function openEditTesterModal(data) {
+  document.getElementById('modalTitle').innerText = 'Edit Tester Profile';
+  document.getElementById('testerForm').action = "/tester-db/edit/" + data.id;
+  document.getElementById('tester_name').value = data.tester_name || '';
+  document.getElementById('brand').value = data.brand || '';
+  document.getElementById('component_type').value = data.component_type || '';
+  document.getElementById('os_version').value = data.os_version || '';
+  document.getElementById('bios_version').value = data.bios_version || '';
+  document.getElementById('bmc_version').value = data.bmc_version || '';
+  document.getElementById('test_version').value = data.test_version || '';
+  document.getElementById('work_instruction').value = data.work_instruction || '';
+  const container = document.getElementById('stockCodesContainer');
+  container.innerHTML = '';
+  if (data.stock_codes) {
+    data.stock_codes.split(',').forEach(c => addStockCodeRow(c.trim()));
+  } else {
+    addStockCodeRow('');
+  }
+  document.getElementById('testerModal').style.display = 'flex';
+}
+
+function closeTesterModal() {
+  document.getElementById('testerModal').style.display = 'none';
+}
+
+function addStockCodeRow(value) {
+  const container = document.getElementById('stockCodesContainer');
+  const div = document.createElement('div');
+  div.style.cssText = "display:flex; gap:6px;";
+  div.innerHTML = `
+    <input type="text" name="stock_codes[]" value="${value}" placeholder="Enter Stock Code (e.g. BD-00329-002)" style="flex:1; padding:6px 10px; background:#0f172a; border:1px solid #334155; color:#fff; border-radius:4px; font-size:12px;">
+    <button type="button" class="btn" onclick="this.parentElement.remove()" style="background:#ef4444; color:#fff; padding:4px 8px; border-radius:4px; font-size:11px;">X</button>
+  `;
+  container.appendChild(div);
+}
+</script>
+{% endblock %}

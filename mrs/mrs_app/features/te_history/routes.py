@@ -1,0 +1,17 @@
+"""Isolated Test Engineering feature: History."""
+from flask import Blueprint, render_template
+
+bp = Blueprint("te_history", __name__, template_folder="templates")
+
+def register(app):
+    if bp.name in app.blueprints:
+        return
+    core = __import__(app.import_name, fromlist=["section_required", "te_permission_required"])
+
+    @bp.get("/te/history")
+    @core.section_required("te")
+    @core.te_permission_required("te_history")
+    def index():
+        return render_template("te_history/index.html")
+
+    app.register_blueprint(bp)

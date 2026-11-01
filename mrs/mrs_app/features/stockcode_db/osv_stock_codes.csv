@@ -1,0 +1,245 @@
+Stock Code,Testing Capabilities,Validation,When,Stock Code Prefix,Validation Scope,Category,Status,Description,High Value
+BD-00329-002,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00329-003,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00329-005,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00329-006G,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00398-001,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00398-002,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00398-003,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,TRUE
+BD-00398-005G,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,FALSE
+BD-00447-001,GTX Capability,Yes,Available,BD,Include,HIB,Obsolet,Inventec HIB,FALSE
+GP-00061-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H100 UBB8 GPU,TRUE
+GP-00082-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H100 Single GPU,TRUE
+GP-00083-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H100 Single GPU,TRUE
+GP-00084-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H200 Single GPU,TRUE
+GP-00090-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,MI300X UBB8 GPU,TRUE
+GP-00090-002G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,MI300X UBB8 GPU,TRUE
+GP-00090-901G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,MI300X UBB8 GPU,TRUE
+GP-00091-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,MI300X XT Single GPU,TRUE
+GP-00106-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,MI300X NT Single GPU,TRUE
+GP-00115-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H200 UBB8 GPU,TRUE
+GP-00133-001G,GTX Capability,Yes,Available,GP,Include,GPU,Obsolet,H200 Single GPU,TRUE
+HD-00505-001,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,WD SATA Hard Drive,FALSE
+HD-00541-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,WD SATA Hard Drive,FALSE
+HD-00548-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Toshiba SAS Hard Drive,FALSE
+HD-00549-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Toshiba SATA Hard Drive,FALSE
+HD-00550-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Seagate SATA Hard Drive,FALSE
+HD-00551-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Seagate SAS Hard Drive,FALSE
+HD-00553-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Toshiba SATA Hard Drive,FALSE
+HD-00573-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Seagate SAS Hard Drive,FALSE
+HD-00574-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,Seagate SATA Hard Drive,FALSE
+HD-00578-001G,GTX Capability,Yes,Available,HD,Include,Hard Drive,Active,WD SATA Hard Drive,FALSE
+MB-00681-001,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-002,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-003,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-004,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-005,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-006,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-007,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-008,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-009,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-010,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00681-011,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00789-001,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00789-002,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,FALSE
+MB-00789-004,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00789-006,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00789-007,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00789-009,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00789-904G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00799-004,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00810-001,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00810-002,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00810-003G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00810-004G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00810-005G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00822-001,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00822-002G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00822-003G,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+MB-00823-001,GTX Capability,Yes,Available,MB,Include,Motherboard,Active,Inventec Motherboard,TRUE
+ND-00006-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00007-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00017-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Samsung M.2,FALSE
+ND-00018-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Samsung M.2,FALSE
+ND-00020-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00029-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00043-001,GTX Capability,Yes,Available,ND,Include,M.2,Active,Samsung NVMe,FALSE
+ND-00059-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00060-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00062-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00063-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00064-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00072-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00075-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00078-001G,GTX Capability,Yes,Available,ND,Include,NVMe,Active,Hynix NVMe,FALSE
+ND-00089-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Samsung NVMe,FALSE
+ND-00106-001G,GTX Capability,Yes,Available,ND,Include,NVMe,Active,Hynix NVMe,FALSE
+ND-00114-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,WD M.2,FALSE
+ND-00123-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00124-001D,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00124-001G,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00124-001L,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+ND-00132-001E,GTX Capability,Yes,Available,ND,Include,M.2,Active,Hynix M.2,FALSE
+NT-00276-001G,GTX Capability,Yes,Available,NT,Include,FPGA,Active,Quanta FPGA,FALSE
+NT-00276-002G,GTX Capability,Yes,Available,NT,Include,FPGA,Active,Quanta FPGA,FALSE
+NT-00284-006G,GTX Capability,Yes,Available,NT,Include,FPGA,Active,Quanta FPGA,FALSE
+NT-00284-007G,GTX Capability,Yes,Available,NT,Include,FPGA,Active,Quanta FPGA,FALSE
+PB-00161-005,GTX Capability,Yes,Available,PB,Include,PDB  ,Active,Inventec PDB ,TRUE
+PB-00161-006,GTX Capability,Yes,Available,PB,Include,PDB  ,Active,Inventec PDB ,TRUE
+PB-00161-007,GTX Capability,Yes,Available,PB,Include,PDB  ,Active,Inventec PDB ,TRUE
+PB-00207-003,GTX Capability,Yes,Available,PB,Include,PDB  ,Active,Inventec PDB ,TRUE
+PB-00207-004,GTX Capability,Yes,Available,PB,Include,PDB  ,Active,Inventec PDB ,TRUE
+PS-00331-001,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00331-004,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00341-001,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00341-004,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00435-001,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00435-002,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00435-002G,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00435-003,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00435-004,GTX Capability,Yes,Available,PS,Include,PSU,Active,Flex PSU,FALSE
+PS-00451-004G,GTX Capability,Yes,Available,PS,Include,PSU,Active,Liteon PSU,FALSE
+PS-00470-005G,GTX Capability,Yes,Available,PS,Include,PSU,Active,Delta PSU,FALSE
+RD-00587-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00595-002G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR5 DIMM,FALSE
+RD-00600-002G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR5 DIMM,FALSE
+RD-00602-002G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00602-902G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00619-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR4 DIMM,FALSE
+RD-00620-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00627-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR4 DIMM,FALSE
+RD-00654-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR5 DIMM,FALSE
+RD-00659-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00665-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR4 DIMM,FALSE
+RD-00667-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR4 DIMM,FALSE
+RD-00669-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00674-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR5 DIMM,FALSE
+RD-00678-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00691-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR5 DIMM,FALSE
+RD-00694-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00703-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR4 DIMM,FALSE
+RD-00773-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR5 DIMM,FALSE
+RD-00797-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00805-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00809-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00825-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Hynix DDR4 DIMM,FALSE
+RD-00829-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00855-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR5 DIMM,FALSE
+RD-00857-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00882-001G,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Micron DDR5 DIMM,FALSE
+RD-00595-001,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR5 DIMM,FALSE
+RD-00595-002,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR5 DIMM,FALSE
+RD-00595-002B,GTX Capability,Yes,Available,RD,Include,DIMM,Active,Samsung DDR5 DIMM,FALSE
+ND-00151-001G,GTX Capability,Yes,Available,ND,Include,NVMe,Active,Hynix NVMe,FALSE
+ca-xxxxx-xxxx,No,No,Available,ca,Exclude,Cable,Active,Cable,FALSE
+CS-xxxxx-xxxx,No,No,Available,CS,Exclude,Chassis,Active,Chassis,FALSE
+CP-xxxxx-xxxx,No,No,Available,CP,Exclude,CPU,Active,CPU,FALSE
+FN-xxxxx-xxxx,No,No,Available,SW,Exclude,Switch,Active,Switch,FALSE
+PU-xxxxx-xxxx,No,No,Available,FN,Exclude,Fan,Active,Fan,FALSE
+RL-xxxxx-xxxx,No,No,Available,PU,Exclude,PMDU,Active,PMDU,FALSE
+RL-xxxxx-xxxx,No,No,Available,RL,Exclude,Rails,Active,Rails,FALSE
+PC-xxxxx-xxxx,No,No,Available,PC,Exclude,Riser Card,Active,Riser Card,FALSE
+HT-xxxxx-xxxx,No,No,Available,HT,Exclude,Heatsink,Active,Heatsink,FALSE
+BK-xxxxx-xxxx,No,No,Available,BK,Exclude,Braket,Active,Braket,FALSE
+RK-xxxxx-xxxx,No,No,Available,RK,Exclude,Rack,Active,Rack,FALSE
+LA-xxxxx-xxxx,No,No,Available,LA,Exclude,Linking cable,Active,Linking cable,FALSE
+CD-xxxxx-xxxx,No,No,Available,CD,Exclude,Cable,Active,Cable,FALSE
+MA-xxxxx-xxxx,No,No,Available,MA,Exclude,Mother Board,Active,Mother Board,FALSE
+SC-xxxxx-xxxx,No,No,Available,SC,Exclude,Screw,Active,Screw,FALSE
+LB-xxxxx-xxxx,No,No,Available,LB,Exclude,Label,Active,Label,FALSE
+RS-xxxxx-xxxx,No,No,Available,RS,Exclude,Riser Card,Active,Riser Card,FALSE
+CR-xxxxx-xxxx,No,No,Available,CR,Exclude,HDD-Carrier,Active,HDD-Carrier,FALSE
+BP-xxxxx-xxxx,No,No,Available,BP,Exclude,Backplane,Active,Backplane,FALSE
+CL-xxxxx-xxxx,No,No,Available,CL,Exclude,Controller-Card,Active,Controller-Card,FALSE
+EP-xxxxx-xxxx,No,No,Available,EP,Exclude,Expander Board,Active,Expander Board,FALSE
+TY-xxxxx-xxxx,No,No,Available,TY,Exclude,Trays,Active,Trays,FALSE
+PN-xxxxx-xxxx,No,No,Available,PN,Exclude,Side Panel,Active,Side Panel,FALSE
+AD-xxxxx-xxxx,No,No,Available,AD,Exclude,Clip,Active,Clip,FALSE
+IP-xxxxx-xxxx,No,No,Available,IP,Exclude,Interposer Board,Active,Interposer Board,FALSE
+CN-xxxxx-xxxx,No,No,Available,CN,Exclude,Coupler,Active,Coupler,FALSE
+my-xxxxx-xxxx,No,No,Available,my,Exclude,Mylard,Active,Mylard,FALSE
+DC-xxxxx-xxxx,No,No,Available,DC,Exclude,Airduct,Active,Airduct,FALSE
+,,,,PE,Exclude,,,,
+,,,,MH,Exclude,,,,
+,,,,PW,Exclude,,,,
+,,,,KT,Exclude,,,,
+,,,,BU,Exclude,,,,
+,,,,PK,Exclude,,,,
+,,,,RE,Exclude,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,

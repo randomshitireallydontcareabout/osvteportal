@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block content %}<section class="card tool-page"><a
+        href="{{ url_for('tools_portal.index') }}">&larr; All Tools</a><span class="section-kicker">TRAINING</span>
+    <h1>Work Instruction Presentations</h1>
+    <p>Select an approved interactive work instruction.</p>
+    <div class="tool-grid"><a class="tool-card card" href="{{ url_for('wi_micron_ddr4.index') }}">
+        <span>MEMORY · WI-007
+                REV C01</span>
+            <h2>Micron DDR4 DIMM</h2>
+            <p>Step-by-step Micron DDR4 inspection, testing, logging, and closeout guide.</p><b>OPEN PRESENTATION
+                &rarr;</b>
+        </a></div>
+
+        <div class="tool-grid"><a class="tool-card card" href="{{ url_for('wi_micron_ddr4.index') }}">
+            <span>FPGA - CELESTERIAL PEAK CARD
+                REV C01</span>
+            <h2>INVENTEC FPGA - NT - 00 SOMETHING SOMETHING</h2>
+            <p>Step-by-step INVENTEC FPGA inspection, testing, logging, and closeout guide.</p><b>OPEN PRESENTATION
+                &rarr;</b>
+        </a></div>
+</section>{% endblock %}

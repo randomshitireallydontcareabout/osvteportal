@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('tools_portal.static', filename='analyzer.css') }}">
+<section class="card dimm-summary">
+  <div><span class="section-kicker">ANALYSIS COMPLETE</span><h1>DIMM Results</h1><p>{{ file_count }} file(s), {{ total_events }} event(s), {{ rows|length }} DIMM record(s)</p></div>
+  <div class="dimm-actions"><a class="btn" href="{{ url_for('tools_portal.dimm') }}">New Analysis</a><a class="btn primary" href="{{ url_for('tools_portal.dimm_report') }}">Download Report</a></div>
+</section>
+{% if system_findings %}<section class="card"><h2>System Findings</h2><ul>{% for item in system_findings %}<li>{{ item }}</li>{% endfor %}</ul></section>{% endif %}
+<section class="card"><h2>DIMM Health</h2><div class="table-scroll"><table class="dimm-table"><thead><tr><th>Location</th><th>Maker</th><th>Serial</th><th>Status</th><th>Events</th><th>ECC C/U</th><th>Trend</th><th>Risk</th></tr></thead><tbody>
+{% for row in rows %}<tr><td>{{ row.locator }}<br><small>Ch {{ row.channel }} / Slot {{ row.slot }}</small></td><td>{{ row.manufacturer }}<br><small>{{ row.family }}</small></td><td>{{ row.serial }}<br><small>{{ row.part_number }}</small></td><td><span class="status-pill status-{{ 'bad' if ('FAIL' in row.status or 'CRITICAL' in row.status) else 'warning' if ('WARN' in row.status or row.risk_score >= 40) else 'good' }}">{{ row.status }}</span></td><td>{{ row.total_events }}</td><td>{{ row.corrected }} / {{ row.uncorrected }}</td><td>{{ row.trend }}<br><small>{{ row.prediction }}</small></td><td>{{ row.risk_score }}</td></tr>
+<tr class="detail-row"><td colspan="8"><strong>{{ row.recommendation.signature }}:</strong> {{ row.recommendation.diagnosis }}{% if row.recommendation.actions %}<ul>{% for action in row.recommendation.actions %}<li>{{ action }}</li>{% endfor %}</ul>{% endif %}</td></tr>{% else %}<tr><td colspan="8">No populated DIMM records were detected in the uploaded logs.</td></tr>{% endfor %}
+</tbody></table></div></section>
+<section class="card"><details><summary><strong>Event Details ({{ events|length }})</strong></summary><div class="table-scroll"><table class="dimm-table"><thead><tr><th>Time</th><th>Severity</th><th>Channel</th><th>Slot</th><th>Counter</th><th>Source</th><th>Evidence</th></tr></thead><tbody>{% for event in events %}<tr><td>{{ event.timestamp }}</td><td>{{ event.severity }}</td><td>{{ event.channel }}</td><td>{{ event.slot }}</td><td>{{ event.err_count }}</td><td>{{ event.source_file }}</td><td><code>{{ event.raw_line }}</code></td></tr>{% endfor %}</tbody></table></div></details></section>
+{% endblock %}
