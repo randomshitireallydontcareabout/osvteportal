@@ -1,0 +1,367 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Tuesday, October 27, 2026
+  Login Time          : 02:22:49 PM Central Daylight Time
+  Audit Session ID    : 4910664b26b4d0c4
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[02:22:49.527 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[02:22:50.363 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:22:51.490 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[02:22:52.702 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[02:22:52.712 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[02:22:53.117 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:22:57.431 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[02:22:57.667 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:22:59.994 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:23:01.742 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /overview
+    - Field: 
+
+[02:23:02.291 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:24:06.881 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Collapse All
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:27:30.464 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:32.407 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[02:27:32.415 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[02:27:32.749 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:35.293 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /overview
+    - Field: 
+
+[02:27:35.337 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:40.597 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: + Add Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:27:49.178 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: + Add Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:27:49.843 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:27:50.426 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: + Add Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:27:53.044 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[02:29:23.312 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /stockcode-db
+    - Field: 
+
+[02:29:24.071 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:29:26.963 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /my-completed
+    - Field: 
+
+[02:29:28.013 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:29:29.991 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View Details ↗
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[02:29:34.676 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[02:30:08.600 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /history
+    - Field: 
+
+[02:30:08.656 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:30:12.380 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Collapse All
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+

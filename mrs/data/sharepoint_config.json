@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "tenant_id": "456511db-ed57-4e12-aeab-e9fcdcccfca4",
+  "primary_domain": "ztgroup.onmicrosoft.com",
+  "client_id": "c53ced76-7109-4128-ab5c-9847512eca5e",
+  "client_secret": "PASTE-CLIENT-SECRET-VALUE-HERE",
+  "site_id": "412da48e-119f-4ae9-9911-5c844e7b24dd", 
+  "list_id": "54d086b6-e607-4603-858a-dcc9dc68ce0c",
+  "poll_seconds": 3,
+  "max_attempts": 12
+}

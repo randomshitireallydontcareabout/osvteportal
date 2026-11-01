@@ -1,0 +1,4579 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Thursday, October 29, 2026
+  Login Time          : 12:39:05 PM Central Daylight Time
+  Audit Session ID    : e049e5933fb0d07d
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[12:39:05.728 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[12:39:05.978 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:39:07.023 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[12:39:19.528 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:39:19.546 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:39:19.994 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:39:23.165 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:39:23.192 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /overview
+    - Field: 
+
+[12:39:24.073 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[12:39:24.089 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[12:39:24.342 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:39:27.574 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:39:27.578 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[12:39:34.734 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:39:34.745 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:39:36.011 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:39:36.016 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:39:41.728 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:11.016 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_kpi.index
+  Request             : GET /te/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:11.020 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI
+    - Element: a
+    - Element Id: 
+    - Href: /te/kpi
+    - Page: /te/jira
+    - Field: 
+
+[12:41:12.813 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:12.824 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/kpi
+    - Field: 
+
+[12:41:18.627 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:41:18.632 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:41:21.227 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:45:12.783 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:49:17.209 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:49:17.218 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:49:18.231 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:49:18.912 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:49:18.927 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:49:19.225 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:54:37.041 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:54:37.055 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:54:38.585 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:56:47.534 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:56:47.548 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[12:56:48.542 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:13.458 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:16.318 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[02:27:16.331 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[02:27:16.612 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:19.355 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:27:25.404 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:27:46.332 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Pending RMA# 1
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:28:27.458 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 
+    - Element: select
+    - Element Id: status-filter
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:28:33.366 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 
+    - Element: select
+    - Element Id: status-filter
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:28:34.919 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 
+    - Element: select
+    - Element Id: status-filter
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:28:37.600 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:30:18.085 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:30:19.991 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:30:29.297 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/jira
+    - Field: 
+
+[02:30:30.196 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:30:38.919 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:30:38.939 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/jira
+    - Field: 
+
+[02:30:55.808 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:30:56.658 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:32:26.750 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:32:27.131 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:32:28.531 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:32:28.534 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:47:38.139 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:47:55.711 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[02:47:55.726 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[02:47:56.184 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:47:59.396 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:48:10.133 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:48:24.724 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:48:26.809 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:48:41.223 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:48:42.385 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:48:51.736 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:48:51.757 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/jira
+    - Field: 
+
+[02:48:54.227 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_kpi.index
+  Request             : GET /te/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:48:54.236 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI
+    - Element: a
+    - Element Id: 
+    - Href: /te/kpi
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:48:55.628 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/kpi
+    - Field: 
+
+[02:48:56.506 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:49:21.318 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:49:21.327 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:49:22.471 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:49:27.686 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/jira
+    - Field: 
+
+[02:49:28.532 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:55:27.654 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:55:27.668 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:55:29.558 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:55:41.546 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:55:41.559 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:55:43.328 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:56:28.195 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:57:15.706 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:57:15.719 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:57:17.513 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:17.670 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/jira
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:57:17.678 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search JIRA
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[02:57:19.445 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:38.573 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:38.591 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/jira
+    - Field: 
+
+[02:57:40.519 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_dashboard.index
+  Request             : GET /te/dashboard
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:40.528 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Test Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /te/dashboard
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:57:43.129 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:43.146 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/dashboard
+    - Field: 
+
+[02:57:57.364 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_kpi.index
+  Request             : GET /te/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:57:57.382 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI
+    - Element: a
+    - Element Id: 
+    - Href: /te/kpi
+    - Page: /te/pie-tickets
+    - Field: 
+
+[02:58:21.113 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/kpi
+    - Field: 
+
+[02:58:22.030 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:58:25.283 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:58:25.770 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:59:00.724 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:59:02.052 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[02:59:03.046 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[03:26:42.518 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[03:26:44.472 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[03:26:44.483 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:48:53.638 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:49:02.185 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[04:49:02.209 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[04:49:12.545 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:50:28.574 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Under Investigation 4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:29.495 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: SOP Update 4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:29.970 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Preventive Action Pending 7
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:30.335 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Pending Quality 1
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:30.680 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Pending Mfg Test SW 1
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:31.020 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Done 3
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:31.379 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Corrective Action Released 3
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:31.726 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancelled 4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:50:32.271 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: All 28
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:51:13.514 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_history.index
+  Request             : GET /te/history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:51:13.516 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /te/history
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:51:14.870 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/history
+    - Field: 
+
+[04:51:22.358 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:51:28.506 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/jira
+    - Field: 
+
+[04:51:30.027 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:51:51.449 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_history.index
+  Request             : GET /te/history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:51:51.455 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /te/history
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:51:52.895 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/history
+    - Field: 
+
+[04:51:53.595 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:52:06.220 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1726 · No Project Preventive Action Pending B350//MULTIPLE SKU// SLT //RLT//MULTIPLE SS//API-TIMEOUT ASSIGNEE Unassigned PRIORITY 0 - Blocking CREATED 2026-10-28 14:30:45 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=249865
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:52:07.832 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:54:42.066 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:54:48.023 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:54:53.804 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:54:54.764 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:54:54.770 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:55:14.970 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Corrective Action Released 3
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:55:17.523 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: All 28
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:55:22.452 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=250145
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:55:24.327 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:59:47.393 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:59:49.573 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:59:49.575 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:59:50.941 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[04:59:50.950 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[04:59:52.531 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:59:57.625 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=249799
+    - Page: /te/pie-tickets
+    - Field: 
+
+[04:59:59.790 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:12.718 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:14.404 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:00:14.418 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:00:15.893 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:19.112 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=249799
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:00:21.024 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:26.187 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:00:35.431 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:39.312 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[05:00:42.920 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:00:44.547 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/jira
+    - Field: 
+
+[05:00:45.176 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:05:47.812 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:05:47.859 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:05:50.339 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:05:50.352 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:05:59.950 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:06:02.648 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1719 · No Project Corrective Action Released B4050//GEN9.1 XARCHIVE SINGLE FRAME//SS-AZU03366-001D//BIOS Setting ASSIGNEE Daniel Rojas PRIORITY 1 - Critical CREATED 2026-10-28 12:16:33 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=249834
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:06:04.232 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:06:07.806 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:06:17.279 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:06:21.587 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[05:06:24.698 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:07:44.482 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:07:44.500 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/jira
+    - Field: 
+
+[05:07:45.829 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[05:07:45.851 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[05:07:46.725 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:07:51.128 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /overview
+    - Field: 
+
+[05:07:52.122 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:07:56.271 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View All Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[05:07:58.516 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[05:08:00.466 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /my-completed
+    - Field: 
+
+[05:08:00.481 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:08:01.741 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[05:08:05.491 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[05:08:05.531 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:08:12.246 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.add_work_instruction
+  Request             : GET /tools/work-instructions/add
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:08:12.247 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: + Upload and Build New WI
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/add
+    - Page: /tools/work-instructions
+    - Field: 
+
+[05:08:32.233 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:08:32.249 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /tools/work-instructions/add
+    - Field: 
+
+[05:08:34.072 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:08:34.097 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:08:36.752 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:08:40.588 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:08:41.378 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:11:11.141 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:11.192 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:11:13.869 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:11:13.876 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:11:18.430 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:11:19.080 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:11:19.092 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:11:21.476 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1719 · No Project Corrective Action Released B4050//GEN9.1 XARCHIVE SINGLE FRAME//SS-AZU03366-001D//BIOS Setting ASSIGNEE Daniel Rojas PRIORITY 1 - Critical CREATED 2026-10-28 12:16:33 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/pie-tickets?ticket_id=249834
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:22.371 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/249834
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 249834
+
+[05:11:28.888 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: All ticket information
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:33.502 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: All ticket information
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:36.412 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Work sections & comments
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:38.711 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:40.780 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: JIRA
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:11:48.844 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_jira.index
+  Request             : GET /te/jira
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:11:49.515 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:11:49.540 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:11:51.894 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: QFT-3552 Pending RMA# 7x Amphenol CA-04364-002L / CA-04843-001L - Various Failure Symptoms - Engineering Requested ASSIGNEE Unassigned RESPONSIBLE TEAM ZT-TW CREATED 2026-10-26 14:39:34.890000 DUE No due date
+    - Element: a
+    - Element Id: 
+    - Href: /te/jira?issue_id=249485
+    - Page: /te/jira
+    - Field: 
+
+[05:11:53.701 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/jira/249485
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: jira
+        Ticket Key: 249485
+
+[05:11:56.359 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/jira
+    - Field: 
+
+[05:17:20.243 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/jira
+    - Field: 
+
+[05:17:20.297 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:17:23.185 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:17:23.197 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:17:27.632 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:17:28.379 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:17:28.398 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:17:31.413 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:17:32.654 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:17:32.971 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Ticket details All source fields
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:17:46.447 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Ticket details All source fields
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:17:48.615 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity Sections and comments
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:17:53.403 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Ticket details All source fields
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:01.666 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity Sections and comments
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:11.527 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ＋ New work section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:23.067 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Work status Planned In Progress Blocked Completed
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: status
+
+[05:18:27.168 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Publish work section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:27.179 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.add_section
+  Request             : POST /te/ticket-collaboration/pie/250145/sections
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+    - Form:
+    - Uploaded Files:
+
+[05:18:27.181 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:29.442 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:18:48.737 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Ticket details All source fields
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:56.297 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:18:58.994 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:19:00.040 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:19:00.672 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity Sections and comments
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:19:02.530 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:19:07.984 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:19:08.904 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:26:14.805 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:26:15.767 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:26:18.560 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:26:18.732 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:26:21.990 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:26:22.966 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 250145
+
+[05:26:52.137 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:27:54.715 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1728 · No Project Preventive Action Pending GTX//ALL SKUS//Infoharvester API 404 error ASSIGNEE Shaquel Seymour PRIORITY 0 - Blocking CREATED 2026-10-28 15:41:21 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:27:56.827 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:27:56.900 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.ticket_activity
+  Request             : GET /te/ticket-collaboration/pie/249901
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Ticket Key: 249901
+
+[05:33:00.011 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:00.073 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:33:02.759 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:33:02.764 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:33:09.858 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:33:10.701 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:33:10.714 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:33:14.114 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:14.877 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:33:24.157 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ☆ High priority
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:24.172 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.priority
+  Request             : POST /te/ticket-collaboration/pie/249743/priority
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:33:24.873 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:26.541 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:33:29.929 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:30.828 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:33:31.454 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ★ High priority
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:31.462 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.priority
+  Request             : POST /te/ticket-collaboration/pie/249743/priority
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:33:31.940 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:32.649 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:33.421 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:33:33.738 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:34.632 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1733 · No Project Under Investigation B350//GEN9.1 XARCHIVE SINGLE FRAME//SS-AZU03366-001B//BIOS file missing ASSIGNEE Joao Dias Tarouco PRIORITY 3 - Medium CREATED 2026-10-29 09:38:05 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:35.366 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:35.495 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/250052
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 250052
+
+[05:33:36.276 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:33:41.131 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancelled 4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:41.654 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1734 · No Project Cancelled B350//HOPPER68EK EVT2//SS-AMZ03305-001LA//IOEXP Black List ASSIGNEE Yasmine El Khadraoui PRIORITY 1 - Critical CREATED 2026-10-29 11:34:42 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:42.595 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:42.729 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/250057
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 250057
+
+[05:33:54.543 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 
+    - Element: select
+    - Element Id: status-filter
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:57.012 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1704 · No Project Cancelled B350//HOPPER68EK HN EVT2(NO JBOD)//SS-AMZ03305-001LA//Assembly ZConform//DMI ASSIGNEE Jeffrey Edouard PRIORITY 1 - Critical CREATED 2026-10-26 18:28:36 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:57.830 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249544
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249544
+
+[05:33:57.990 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:59.012 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1706 · No Project SOP Update B4050//HELIOS-R HPE COMPUTE TRAY DVT//SS-HPE03696-001C// Failing OOB for AMC update ASSIGNEE George Cermak PRIORITY 3 - Medium CREATED 2026-10-26 20:03:49 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:33:59.874 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249570
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249570
+
+[05:33:59.884 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:34:53.082 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:34:54.036 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:35:02.028 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:06.470 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1716 · No Project SOP Update 4050//HELIOS-R HPE COMPUTE TRAY DVT//[DC_ON_CHECK] Failed to reach DC ON before uptime 1500s ASSIGNEE George Cermak PRIORITY 3 - Medium CREATED 2026-10-28 03:37:18 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:07.329 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249806
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249806
+
+[05:35:09.162 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:12.196 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ＋ Work section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:17.242 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: status
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: status
+
+[05:35:21.822 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Publish section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:21.826 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:21.826 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.section
+  Request             : POST /te/ticket-collaboration/pie/249806/sections
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249806
+    - Form:
+    - Uploaded Files:
+
+[05:35:25.547 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249806
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249806
+
+[05:35:26.251 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:27.116 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1724 · No Project Under Investigation B4050//HELIOS-M 1OU COMPUTE TRAY DVT//SS-AZU03653-001D//BMC connection failed ASSIGNEE Jason Alba PRIORITY 3 - Medium CREATED 2026-10-28 13:17:39 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:28.098 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249844
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249844
+
+[05:35:36.116 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:38.307 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:39.179 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:41.250 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:44.033 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:47.266 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:48.071 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:35:56.012 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ▦ Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:56.568 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:35:58.241 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:00.874 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:01.740 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:36:06.281 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:08.267 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search PIE
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:08.272 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:10.349 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:10.353 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search PIE
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:10.674 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:36:13.733 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:36:14.638 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:36:14.654 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:36:31.095 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:31.101 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Search PIE
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:32.723 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:36:33.846 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:36:33.869 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:36:36.229 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:37.072 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:36:37.926 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:39.203 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ＋ Work section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:42.887 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Publish section
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:42.894 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.section
+  Request             : POST /te/ticket-collaboration/pie/249743/sections
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:36:42.898 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets?project_key=PIE-1712
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:45.781 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:36:45.783 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:49.043 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:54.145 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:56.141 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:36:57.128 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:36:57.394 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:37:02.346 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Post
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:37:02.359 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets?project_key=PIE-1712
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:37:02.364 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.comment
+  Request             : POST /te/ticket-collaboration/pie/249743/comments
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:37:05.051 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Post
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:37:05.062 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets?project_key=PIE-1712
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:37:05.062 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.comment
+  Request             : POST /te/ticket-collaboration/pie/249743/comments
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:37:06.371 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:37:10.017 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:38:32.533 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:38:36.967 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:38:38.851 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:38:39.173 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:38:57.928 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:38:58.848 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:40:01.337 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:35.438 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Switch Section
+    - Element: a
+    - Element Id: 
+    - Href: /
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:35.473 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:44:38.344 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/te
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: te
+
+[05:44:38.352 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TE TEST ENGINEERING TE Workspace Open the modular Test Engineering portal and its independent tools. Select TE →
+    - Element: a
+    - Element Id: 
+    - Href: /section/te
+    - Page: /
+    - Field: 
+
+[05:44:42.392 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : te_pie_tickets.index
+  Request             : GET /te/pie-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:44:43.343 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.css
+
+[05:44:43.357 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.static
+  Request             : GET /te-ticket-collaboration-static/ticket_collaboration.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: ticket_collaboration.js
+
+[05:44:46.893 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:47.707 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:44:49.364 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:50.794 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:51.547 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:44:51.828 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:52.332 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1713 · No Project Under Investigation B4050//HELIOS-R COMPUTE TRAY DVT POR INT//SS-AMD03671-001R//Fail to DC on in SAC test ASSIGNEE Ryan Braster PRIORITY 2 - High CREATED 2026-10-28 01:24:33 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:53.260 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249799
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249799
+
+[05:44:53.462 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:54.650 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1738 · No Project Corrective Action Released B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//Tray failed check-in due to Zconform PreZ part number mismatches ASSIGNEE Jeff Friedman PRIORITY 3 - Medium CREATED 2026-10-29 17:39:26 DUE No du
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:55.365 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:55.544 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/250145
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 250145
+
+[05:44:56.063 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:44:57.019 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:45:01.211 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:45:11.709 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Post
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:45:11.716 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:45:11.719 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.comment
+  Request             : POST /te/ticket-collaboration/pie/249743/comments
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:45:15.379 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:45:23.099 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Post
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:45:23.105 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.comment
+  Request             : POST /te/ticket-collaboration/pie/249743/comments
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 201
+    - Object:
+        Source: pie
+        Key: 249743
+    - Form:
+    - Uploaded Files:
+
+[05:45:23.105 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/te/pie-tickets
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:45:25.811 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+
+[05:45:59.775 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ×
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:46:01.258 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PIE-1712 · No Project Preventive Action Pending B4050//HPE ROW HELIOS-R COMPUTE_TRAY DVT POR//SS-HPE03696-001C// Failing AMC update in OOB ASSIGNEE Unassigned PRIORITY 3 - Medium CREATED 2026-10-27 18:43:22 DUE No due date
+    - Element: article
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:46:02.240 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✦ Work activity
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /te/pie-tickets
+    - Field: 
+
+[05:46:06.387 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : ticket_collaboration.activity
+  Request             : GET /te/ticket-collaboration/pie/249743
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Source: pie
+        Key: 249743
+

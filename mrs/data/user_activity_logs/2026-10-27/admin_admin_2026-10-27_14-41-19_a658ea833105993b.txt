@@ -1,0 +1,580 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Tuesday, October 27, 2026
+  Login Time          : 02:41:19 PM Central Daylight Time
+  Audit Session ID    : a658ea833105993b
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[02:41:19.203 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[02:41:19.818 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:20.818 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[02:41:22.063 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[02:41:22.072 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[02:41:22.779 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:26.591 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[02:41:27.022 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:35.897 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-tickets
+    - Field: 
+
+[02:41:36.203 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:37.420 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[02:41:37.751 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:41.842 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Release
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:41:42.827 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : release_ticket_ajax
+  Request             : POST /ticket/31125/release-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+    - Form:
+    - Uploaded Files:
+
+[02:41:43.590 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-tickets
+    - Field: 
+
+[02:41:43.934 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:49.857 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Claim Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /overview
+    - Field: 
+
+[02:41:49.900 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : assign_stock
+  Request             : POST /stock/RD-00691-001G/assign
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Stock Code: RD-00691-001G
+    - Form:
+    - Uploaded Files:
+
+[02:41:51.802 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[02:41:52.156 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:41:55.148 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Start Test
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:41:55.191 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : start_test_ajax
+  Request             : POST /ticket/31125/start-test-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+    - Form:
+    - Uploaded Files:
+
+[02:41:58.677 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:09.672 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:17.689 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:21.283 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:29.076 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:38.906 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:41.951 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Release
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:43.046 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : release_ticket_ajax
+  Request             : POST /ticket/31125/release-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+    - Form:
+    - Uploaded Files:
+
+[02:42:44.903 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:45.252 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:42:48.603 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Claim Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /overview
+    - Field: 
+
+[02:42:48.620 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : assign_stock
+  Request             : POST /stock/RD-00691-001G/assign
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Stock Code: RD-00691-001G
+    - Form:
+    - Uploaded Files:
+
+[02:42:49.704 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[02:42:50.081 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:42:50.848 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:51.145 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:42:53.059 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Start Test
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:42:53.089 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : start_test_ajax
+  Request             : POST /ticket/31125/start-test-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+    - Form:
+    - Uploaded Files:
+
+[02:42:54.860 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:46:17.304 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[02:46:18.732 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:46:18.778 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[02:46:28.496 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-completed
+    - Field: 
+
+[02:46:29.085 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[02:46:31.346 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:46:43.026 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[02:46:47.752 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+

@@ -1,0 +1,5 @@
+-- database: c:\Users\Chrono\Pictures\PRNVIDEO\prjt\old files\mrs\data\mrs.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+SELECT * FROM tickets;

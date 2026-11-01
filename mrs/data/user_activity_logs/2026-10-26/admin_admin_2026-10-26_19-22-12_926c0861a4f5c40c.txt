@@ -1,0 +1,765 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Monday, October 26, 2026
+  Login Time          : 07:22:12 PM Central Daylight Time
+  Audit Session ID    : 926c0861a4f5c40c
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[07:22:12.056 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[07:22:12.590 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:22:13.508 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[07:22:15.287 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[07:22:15.304 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[07:22:15.908 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:22:18.613 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:22:18.615 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[07:22:19.104 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[07:22:21.133 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[07:22:21.154 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:22:32.912 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: + Upload and Build New WI
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/add
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:22:32.947 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.add_work_instruction
+  Request             : GET /tools/work-instructions/add
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:24:23.907 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Approved WI DOCX
+    - Element: input
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/add
+    - Field: wi_file
+
+[07:24:37.661 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: UPLOAD, BUILD, AND INTEGRATE WI
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/add
+    - Field: 
+
+[07:24:37.699 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/tools/work-instructions/add
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/add
+    - Field: 
+
+[07:24:41.013 PM]  Wi Module Created
+  Status              : SUCCESS
+  Area / Action       : tools_portal.add_work_instruction
+  Request             : POST /tools/work-instructions/add
+  Source IP           : 127.0.0.1
+  Details:
+    - Wi Key: toshiba_hdd
+    - Folder: wi_toshiba_hdd
+
+[07:24:41.390 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tools_portal.add_work_instruction
+  Request             : POST /tools/work-instructions/add
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Component Name: Toshiba HDD
+        Category: HDD
+        Accent: #00c760
+    - Uploaded Files:
+        * Toshiba_HDD_Test_Work_Instruction 3.docx
+
+[07:24:42.137 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_work_instruction
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:24:42.585 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_wi_file
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd/file/static/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+        Filename: static/wi.js
+
+[07:24:42.598 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_wi_file
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd/file/static/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+        Filename: static/wi.css
+
+[07:25:11.530 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Work Instruction
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/uploaded/toshiba_hdd
+    - Field: 
+
+[07:25:12.302 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Document Control
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/uploaded/toshiba_hdd
+    - Field: 
+
+[07:25:14.040 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:25:14.045 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/uploaded/toshiba_hdd
+    - Field: 
+
+[07:25:15.410 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-007 · REV C01 MICRON DDR4 DIMM Inspection, testing, log review, and closeout for the Micron DDR4 workflow. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/micron-ddr4
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:25:15.422 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.index
+  Request             : GET /tools/work-instructions/micron-ddr4
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:25:16.115 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[07:25:16.130 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[07:25:18.978 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Confirm the DIMM is Micron DDR4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/micron-ddr4
+    - Field: 
+
+[07:25:20.556 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:25:20.558 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/micron-ddr4
+    - Field: 
+
+[07:25:27.454 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Toshiba HDD
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:25:27.484 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:39.944 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 4. Scope
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd?step=3
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:39.967 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:41.668 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 3. Document Control
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd?step=2
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:41.676 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:42.561 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 2. Work Instruction
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd?step=1
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:42.568 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:42.939 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:42.940 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 1. Gtx Osv
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd?step=0
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:43.677 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 5. Responsibilities
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd?step=4
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:43.685 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:45.454 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:25:45.455 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:25:50.563 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Toshiba HDD
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:25:50.566 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:25:54.613 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:25:54.615 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:26:00.857 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-DRAFT · DRAFT TOSHIBA HDD HDD · Uploaded Work Instruction OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/uploaded/toshiba_hdd
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:26:00.871 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_work_instruction
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:26:01.719 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_wi_file
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd/file/static/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+        Filename: static/wi.css
+
+[07:26:01.726 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.uploaded_wi_file
+  Request             : GET /tools/work-instructions/uploaded/toshiba_hdd/file/static/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+        Filename: static/wi.js
+
+[07:26:05.185 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:26:05.187 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/uploaded/toshiba_hdd
+    - Field: 
+
+[07:26:07.973 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/toshiba_hdd
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: toshiba_hdd
+
+[07:26:07.976 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Toshiba HDD
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/toshiba_hdd
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:26:13.031 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:26:13.035 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/edit/toshiba_hdd
+    - Field: 
+
+[07:26:16.253 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:26:16.267 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions
+    - Field: 
+
+[07:26:16.830 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[07:26:19.691 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Users
+    - Element: a
+    - Element Id: 
+    - Href: /admin/users
+    - Page: /tools
+    - Field: 
+
+[07:26:19.811 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_users
+  Request             : GET /admin/users
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:26:40.248 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /admin/users
+    - Field: 
+
+[07:26:40.333 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db.index
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:26:40.759 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /admin/users
+    - Field: 
+

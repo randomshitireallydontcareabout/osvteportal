@@ -1,0 +1,9 @@
+Your tenant ID and primary domain are useful, but you will also need:
+
+A Microsoft Entra application registration
+Its Application/Client ID
+A client secret value
+Microsoft Graph application permission
+SharePoint Site ID
+SharePoint List ID
+The SharePoint columns listed in SHAREPOINT_SETUP.md

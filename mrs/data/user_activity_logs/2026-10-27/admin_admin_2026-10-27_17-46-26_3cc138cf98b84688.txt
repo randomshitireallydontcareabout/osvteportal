@@ -1,0 +1,3534 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Tuesday, October 27, 2026
+  Login Time          : 05:46:26 PM Central Daylight Time
+  Audit Session ID    : 3cc138cf98b84688
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[05:46:26.109 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[05:46:26.315 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:27.186 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[05:46:28.906 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[05:46:28.918 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[05:46:29.630 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:34.047 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[05:46:34.882 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:35.127 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:46:35.132 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[05:46:35.506 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:35.719 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:39.543 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:46:39.550 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:46:40.863 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:41.081 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:46:41.085 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:46:41.460 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:46:41.678 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:49:08.575 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /admin/kpi
+    - Field: 
+
+[05:49:08.606 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:49:12.262 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NT-00243-002 View details ›
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[05:49:13.573 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Record
+    - Element: button
+    - Element Id: detailEditButton
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[05:49:32.713 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[05:51:03.160 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /stockcode-db
+    - Field: 
+
+[05:51:04.043 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:51:04.799 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:51:04.826 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:51:05.199 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:51:05.421 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:51:09.394 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:51:09.397 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:51:10.554 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:51:10.855 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:51:10.858 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:51:11.282 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:51:11.501 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:24.624 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:25.218 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:53:25.286 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:53:25.534 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:25.759 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:38.955 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:40.546 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[05:53:40.557 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[05:53:41.149 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:43.234 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[05:53:44.220 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:44.498 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:53:44.502 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[05:53:45.539 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_alerts
+  Request             : GET /admin/alerts
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:47.340 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /admin/alerts
+    - Field: 
+
+[05:53:47.912 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:48.169 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:53:48.176 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[05:53:48.623 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:48.864 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:51.340 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:53:51.343 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:53:53.131 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:53.387 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:53:53.390 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:53:53.817 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:53:54.041 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:56:50.623 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:56:51.339 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:56:51.342 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:56:51.785 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:56:52.004 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:56:57.117 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:56:58.628 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[05:56:58.636 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[05:56:59.205 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:02.518 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[05:57:03.639 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:03.897 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:57:03.902 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[05:57:04.380 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:04.668 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:08.499 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:57:08.503 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[05:57:09.795 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:10.046 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[05:57:10.056 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[05:57:10.527 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[05:57:10.802 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:01:43.574 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /admin/kpi
+    - Field: 
+
+[06:01:44.788 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:01:45.096 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:01:45.102 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:01:45.617 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:01:45.880 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:01:55.068 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /admin/kpi
+    - Field: 
+
+[06:01:55.998 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:02:02.617 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Test Result All Results Passed Failed Not Tested (NTF) Failed & NTF Combined [Empty / Blank]
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: f_result
+
+[06:02:06.702 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/history
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:06.706 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filters
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:07.533 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:02:24.864 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Test Result All Results Passed Failed Not Tested (NTF) Failed & NTF Combined [Empty / Blank]
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: f_result
+
+[06:02:26.292 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/history?from=2024%2F10%2F20&to=2026%2F10%2F27&f_stock=&f_tech=&f_result=passed&f_part_type=&f_wh=&f_qd=&q=
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:26.297 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filters
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:28.538 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:02:35.294 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:41.438 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View Details ↗
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /history
+    - Field: 
+
+[06:02:53.877 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /history
+    - Field: 
+
+[06:02:55.085 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /history
+    - Field: 
+
+[06:02:55.143 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:02:55.400 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:02:55.410 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:02:55.725 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:02:55.903 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:20.322 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:21.219 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:04:21.235 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:04:21.753 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:22.038 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:29.691 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:29.694 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:31.375 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:31.679 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:04:31.708 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:04:32.232 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:32.535 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:04:40.029 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS NTF 503 (56%) Failed 382 (42%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) passed 2 (0%)
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:42.358 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS NTF 503 (56%) Failed 382 (42%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) passed 2 (0%)
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:43.912 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WORK STATE RATIO (2026/01/26 TO 2026/11/01) Completed Work 898 (100%) In Progress (WIP) 3 (0%)
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:46.021 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62 HD-00578-001G 60% 27 RD-00691-001G 69% 19 RD-00619-001G 74% 17 NT-00284-007G 79% 15 PS-00435-004 84% 14 PS-00331-004 88% 14 PS-
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:04:49.329 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62 HD-00578-001G 60% 27 RD-00691-001G 69% 19 RD-00619-001G 74% 17 NT-00284-007G 79% 15 PS-00435-004 84% 14 PS-00331-004 88% 14 PS-
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:09:43.087 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:09:43.895 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:09:43.930 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:09:44.415 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:09:44.711 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:09:46.234 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:09:51.895 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:09:54.490 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WORK BREAKDOWN (ALL VS CURRENT WIP VS COMPLETED) Click graph to enlarge WORK STATE RATIO (2026/01/26 TO 2026/11/01) Completed Work 898 (100%) In Progress (WIP) 3 (0%) Graph Summary MEANING / WHAT 898 of 901 tickets are completed and 3 remai
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:10:00.925 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 📄 Export OSV KPI PDF
+    - Element: a
+    - Element Id: kpiPdfExport
+    - Href: /admin/kpi/pdf?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Page: /admin/kpi
+    - Field: 
+
+[06:10:03.260 PM]  Server Action
+  Status              : FAILED
+  Area / Action       : admin_kpi_pdf
+  Request             : POST /admin/kpi/pdf
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+    - Form:
+    - Uploaded Files:
+
+[06:17:00.601 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS Click graph to enlarge OVERALL TEST RESULTS NTF 503 (56%) Failed 382 (42%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) passed 2 (0%) Graph Summary MEANING / WHAT The chart separates NTF, failed, not-teste
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:17:02.038 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:02.972 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:17:03.041 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:17:03.416 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:03.697 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:06.537 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:06.871 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[06:17:06.890 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:17:07.448 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:07.770 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:17:10.834 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 📄 Export OSV KPI PDF
+    - Element: a
+    - Element Id: kpiPdfExport
+    - Href: /admin/kpi/pdf?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Page: /admin/kpi
+    - Field: 
+
+[06:17:13.274 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_pdf
+  Request             : POST /admin/kpi/pdf
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Form:
+    - Uploaded Files:
+
+[06:24:00.283 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:01.228 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[06:24:01.262 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:24:01.801 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:02.121 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:02.508 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /admin/kpi
+    - Field: 
+
+[06:24:03.294 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:03.655 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[06:24:03.660 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:24:04.253 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:04.594 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:09.984 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:24:09.987 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:24:11.760 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:12.113 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[06:24:12.119 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:24:12.707 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:13.013 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:14.964 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 📄 Export OSV KPI PDF
+    - Element: a
+    - Element Id: kpiPdfExport
+    - Href: /admin/kpi/pdf?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Page: /admin/kpi
+    - Field: 
+
+[06:24:17.417 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_pdf
+  Request             : POST /admin/kpi/pdf
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Form:
+    - Uploaded Files:
+
+[06:24:56.240 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /admin/kpi
+    - Field: 
+
+[06:24:56.715 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:24:57.982 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[06:24:58.455 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:25:17.730 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[06:25:17.863 PM]  Page View
+  Status              : FAILED
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+
+[06:25:21.202 PM]  Page View
+  Status              : FAILED
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+
+[06:25:32.597 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[06:25:32.646 PM]  Page View
+  Status              : FAILED
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+
+[06:26:00.643 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:26:00.992 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:26:01.006 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:26:01.606 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:26:01.965 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:26:04.835 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[06:26:04.914 PM]  Page View
+  Status              : FAILED
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+
+[06:29:05.559 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:30:05.962 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:32:51.911 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:33:52.342 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:34:46.438 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WORK BREAKDOWN (ALL VS CURRENT WIP VS COMPLETED) Click graph to enlarge WORK STATE RATIO (2026/01/26 TO 2026/11/01) Completed Work 898 (100%) In Progress (WIP) 3 (0%) Graph Summary MEANING / WHAT 898 of 901 tickets are completed and 3 remai
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:34:52.719 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:35:53.158 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:36:14.531 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS Click graph to enlarge OVERALL TEST RESULTS NTF 503 (56%) Failed 382 (42%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) passed 2 (0%) Graph Summary MEANING / WHAT The chart separates NTF, failed, not-teste
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:36:53.636 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:37:54.137 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:38:09.833 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS Click graph to enlarge OVERALL TEST RESULTS NTF 503 (56%) Failed 382 (42%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) passed 2 (0%) Graph Summary MEANING / WHAT The chart separates NTF, failed, not-teste
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:39:33.945 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:37.847 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[06:39:37.863 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[06:39:38.817 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:43.270 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[06:39:45.364 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:45.766 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:39:45.782 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[06:39:46.409 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:46.802 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:48.599 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:39:48.605 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:39:52.142 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:52.532 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:39:52.551 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[06:39:53.217 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:53.248 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:39:53.922 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:40:53.659 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:41:54.168 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:42:54.643 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:48:16.559 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:48:43.565 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:48:44.481 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[06:48:44.488 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[06:48:45.197 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:48:45.598 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:48:55.307 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS Click graph to enlarge OVERALL TEST RESULTS NTF 1 (17%) Pending / WIP 3 (50%) passed 2 (33%) Graph Summary MEANING / WHAT The chart separates NTF, failed, not-tested, and pending outcomes for the selected date and techn
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[06:48:59.606 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[06:48:59.649 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:50:00.299 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:52:48.102 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:53:43.980 PM]  Page View
+  Status              : FAILED
+  Request             : GET /.well-known/appspecific/com.chrome.devtools.json
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[06:53:48.566 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:53:49.046 PM]  Page View
+  Status              : FAILED
+  Request             : GET /.well-known/appspecific/com.chrome.devtools.json
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[06:54:49.059 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:54:49.496 PM]  Page View
+  Status              : FAILED
+  Request             : GET /.well-known/appspecific/com.chrome.devtools.json
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[06:55:49.506 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:55:50.744 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:58:11.478 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[06:59:11.951 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:00:12.409 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:01:12.828 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:02:13.248 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:03:13.657 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:08:52.306 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:04.887 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[07:09:04.892 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[07:09:05.652 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:10.949 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[07:09:11.341 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:12.543 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[07:09:13.042 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:16.462 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /my-completed
+    - Field: 
+
+[07:09:17.259 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:17.599 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[07:09:17.613 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[07:09:18.316 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:18.732 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:20.960 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[07:09:21.015 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:49.559 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:49.562 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /admin/kpi
+    - Field: 
+
+[07:09:50.002 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[07:09:56.816 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Operations Calendar DUTIES Schedule daily duties and tester maintenance items for the live presentation. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/duties
+    - Page: /tools
+    - Field: 
+
+[07:09:56.857 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : GET /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:09:57.616 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[07:10:03.161 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : GET /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:10:03.164 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 27
+    - Element: a
+    - Element Id: 
+    - Href: /tools/duties?date=2026-10-27&month=2026-10
+    - Page: /tools/duties
+    - Field: 
+
+[07:10:03.668 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[07:10:21.265 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Type General Cleaning Maintenance Inspection Calibration Training
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: duty_type
+
+[07:10:21.730 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:10:25.847 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Priority Normal High Critical
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: priority
+
+[07:10:42.741 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: [object HTMLInputElement]
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: 
+
+[07:10:42.750 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ADD DUTY
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: 
+
+[07:10:42.753 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : POST /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: save
+        Duty Date: 2026-10-27
+        Title: cleaning
+        Duty Type: Cleaning
+        Priority: Critical
+        Tester Id: 
+        Details: EveryBody! Time to Lean, Time to Clean
+    - Uploaded Files:
+
+[07:10:43.981 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : GET /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:10:44.401 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[07:11:22.145 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:11:47.961 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: [object HTMLInputElement]
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: 
+
+[07:11:47.962 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : POST /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: save
+        Duty Date: 2026-10-27
+        Title: lunch
+        Duty Type: General
+        Priority: Normal
+        Tester Id: 
+        Details: buy lunch for the team
+    - Uploaded Files:
+
+[07:11:47.966 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ADD DUTY
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/duties
+    - Field: 
+
+[07:11:48.797 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : GET /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:11:49.539 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[07:12:22.628 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:13:23.114 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:13:35.634 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:13:35.652 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/duties
+    - Field: 
+
+[07:13:36.096 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[07:13:42.454 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OPEN DATABASE BUILDER →
+    - Element: a
+    - Element Id: 
+    - Href: /admin/history-database-builder
+    - Page: /tools
+    - Field: 
+
+[07:13:43.290 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:13:55.804 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /admin/tickets
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[07:13:56.440 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_tickets
+  Request             : GET /admin/tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:00.950 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Alerts
+    - Element: a
+    - Element Id: 
+    - Href: /admin/alerts
+    - Page: /admin/tickets
+    - Field: 
+
+[07:14:02.648 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_alerts
+  Request             : GET /admin/alerts
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:09.076 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/alerts
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:09.082 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Analyze Work Week
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:10.541 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_alerts
+  Request             : GET /admin/alerts
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:11.524 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Analyze Work Week
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:11.531 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/alerts?week=2026-10-19
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:12.371 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Current Week
+    - Element: a
+    - Element Id: 
+    - Href: /admin/alerts
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:12.996 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Current Week
+    - Element: a
+    - Element Id: 
+    - Href: /admin/alerts
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:13.348 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_alerts
+  Request             : GET /admin/alerts
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:14.822 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_alerts
+  Request             : GET /admin/alerts
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:17.122 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /admin/alerts
+    - Field: 
+
+[07:14:17.822 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:23.583 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /admin/tickets
+    - Page: /overview
+    - Field: 
+
+[07:14:23.591 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:24.106 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_tickets
+  Request             : GET /admin/tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:31.440 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /admin/tickets
+    - Field: 
+
+[07:14:31.510 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:39.178 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:41.985 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:14:41.986 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /overview
+    - Field: 
+
+[07:14:53.243 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: RD-00654-001G Hynix DDR5 DIMM ›
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[07:14:55.214 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[07:15:10.299 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /stockcode-db
+    - Field: 
+
+[07:15:12.342 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:12.758 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[07:15:12.772 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[07:15:13.590 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:14.066 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:16.389 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:16.396 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:20.492 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:20.975 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[07:15:20.993 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[07:15:21.796 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:22.251 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:24.458 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:15:25.932 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:27.494 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:27.710 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:27.869 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:28.773 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:29.835 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:31.097 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:31.547 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:32.009 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:32.387 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:15:33.099 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:16:22.067 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 19 38 57 76 0% 25% 50% 75% 100% 76 RD-00665-001G 23% 64 RD-00797-001G 42% 62
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:16:23.051 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ✕ Close
+    - Element: button
+    - Element Id: closeKpiChartModal
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:16:24.968 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:16:37.136 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: By Brand
+    - Element: input
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: ctdMode
+
+[07:16:39.794 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Brand Select brand Delta PSU FLEX PSU FPGA H100 SINGLE GPU H100 UBB-8 H200 SINGLE GPU H200 UBB-8 HAYSTACK MB HYNIX DDR4 HYNIX DDR5 HYNIX M.2 HYNIX NVMe INTEL CPU Inventec HIB Inventec Honeycomb MB Inventec MB Inventec PDB Liteon PSU MI300X 
+    - Element: select
+    - Element Id: ctdBrandPick
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:16:40.396 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:17:00.159 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Element: form
+    - Element Id: ctdControls
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:17:00.169 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Update graph
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[07:17:00.826 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[07:17:25.816 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+

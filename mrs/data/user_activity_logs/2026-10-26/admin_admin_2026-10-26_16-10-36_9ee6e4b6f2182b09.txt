@@ -1,0 +1,986 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Monday, October 26, 2026
+  Login Time          : 04:10:36 PM Central Daylight Time
+  Audit Session ID    : 9ee6e4b6f2182b09
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[04:10:36.198 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[04:10:37.104 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:10:38.752 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[04:10:40.093 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[04:10:40.106 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[04:10:40.650 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:10:56.739 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[04:10:56.743 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:10:57.584 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:10:59.554 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:10:59.556 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:11:53.145 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PSU · WI-006 REV C01 LITEON PSU TESTER Function test, firmware recovery, five-cycle retest, and disposition. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/liteon-psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:11:53.159 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.index
+  Request             : GET /tools/work-instructions/liteon-psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:11:54.043 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[04:11:54.052 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[04:11:54.905 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_01.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_01.jpg
+
+[04:11:55.958 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Check 12V and 54V Outputs
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:55.989 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_03.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_03.jpg
+
+[04:11:56.410 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Install the Liteon PSU
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:56.430 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_02.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_02.jpg
+
+[04:11:56.839 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 04 Upgrade Firmware After Function Failure
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:56.857 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_05.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_05.jpg
+
+[04:11:56.862 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_04.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_04.jpg
+
+[04:11:57.413 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Check 12V and 54V Outputs
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:58.776 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 04 Upgrade Firmware After Function Failure
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:59.192 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 05 Retest After Firmware Upgrade
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:59.221 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_06.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_06.jpg
+
+[04:11:59.640 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 06 Unload the PSU Safely
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:11:59.661 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_08.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_08.jpg
+
+[04:11:59.672 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_07.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_07.jpg
+
+[04:12:00.126 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 07 Inspect and Record the Result
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:12:00.159 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_09.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_09.jpg
+
+[04:12:00.796 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 08 Package and Complete Shift Records
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:12:00.991 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_10.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_10.jpg
+
+[04:12:01.461 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_11.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_11.jpg
+
+[04:12:01.918 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_12.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_12.jpg
+
+[04:12:08.230 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 07 Inspect and Record the Result
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:12:13.538 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:13.560 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/liteon-psu
+    - Field: 
+
+[04:12:30.266 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:30.275 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← All Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:12:30.771 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:12:32.282 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:32.297 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools
+    - Field: 
+
+[04:12:32.813 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[04:12:34.465 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:34.479 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:12:38.044 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:38.059 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:12:38.592 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[04:12:38.905 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_users
+  Request             : GET /admin/users
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:46.228 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:46.239 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /admin/users
+    - Field: 
+
+[04:12:46.748 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[04:12:49.191 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:12:49.202 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:21:30.282 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:21:32.750 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[04:21:32.757 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[04:21:33.161 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:21:36.899 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:21:36.900 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[04:21:37.342 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:21:38.999 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:21:39.001 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:22:11.844 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-005 · REV C01 DELTA PSU TESTER Fixture setup, 12V and 54V verification, documentation, and closeout. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/delta-psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:22:11.886 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.index
+  Request             : GET /tools/work-instructions/delta-psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:22:12.745 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[04:22:12.750 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[04:22:14.610 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 04 Check the 54V Output
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/delta-psu
+    - Field: 
+
+[04:22:14.628 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/assets/image_10.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_10.jpg
+
+[04:22:14.632 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/assets/image_09.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_09.jpg
+
+[04:22:15.229 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Check the 12V Output
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/delta-psu
+    - Field: 
+
+[04:22:15.250 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/assets/image_07.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_07.jpg
+
+[04:22:15.250 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/assets/image_08.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_08.jpg
+
+[04:22:15.715 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 01 Inspect and Verify the PSU
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/delta-psu
+    - Field: 
+
+[04:22:16.280 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:22:16.292 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/delta-psu
+    - Field: 
+
+[04:22:45.789 PM]  Page View
+  Status              : FAILED
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/liteon_psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+    - Object:
+        Wi Key: liteon_psu
+
+[04:22:45.804 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Liteon PSU
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/liteon_psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:27:57.693 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.index
+  Request             : GET /tools/work-instructions/delta-psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:27:57.701 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PSU · WI-005 REV C01 DELTA PSU TESTER Fixture setup, 12V and 54V verification, documentation, and closeout. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/delta-psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:27:58.192 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[04:27:58.197 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_delta_psu.static
+  Request             : GET /static/wi_delta_psu/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[04:28:00.753 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:00.764 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions/delta-psu
+    - Field: 
+
+[04:28:01.200 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:28:02.614 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:02.627 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:28:04.090 PM]  Page View
+  Status              : FAILED
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/liteon_psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+    - Object:
+        Wi Key: liteon_psu
+
+[04:28:04.105 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Liteon PSU
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/liteon_psu
+    - Page: /tools/work-instructions
+    - Field: 
+

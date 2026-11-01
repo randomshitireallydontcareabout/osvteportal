@@ -1,0 +1,11 @@
+DIMM LOGS ANALYZER REPORT
+Files: 1
+Events: 10
+
+CPU1_DIMM_B1 | Ch 1 Slot 0
+Hynix | E55E7F60 | GOOD (Healthy) | Risk 0.0
+HEALTHY: No parsed memory-error evidence was associated with this populated DIMM.
+
+CPU1_DIMM_F1 | Ch 5 Slot 0
+Hynix | E44A2155 | WARNING (Elevated Corrected Errors) | Risk 640.0
+WARNING: Broad multi-test failure. The evidence is elevated but does not yet prove that the physical DIMM is defective.

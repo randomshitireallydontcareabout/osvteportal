@@ -1,0 +1,1715 @@
+[12:22:25.539 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:22:28.832 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:22:29.926 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:22:29.943 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:22:29.975 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:22:31.815 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:22:31.828 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:22:50.170 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:22:50.176 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:39.668 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:40.926 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:26:40.934 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:26:40.980 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:47.964 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:47.974 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:26:52.244 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:53.831 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:26:53.847 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:26:59.390 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:27:01.098 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /overview
+    - Field: 
+
+[12:27:01.140 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:27:03.603 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Collapse All
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[12:27:04.844 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /stockcode-db
+    - Field: 
+
+[12:27:04.866 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:32:11.289 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:32:12.414 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:32:12.429 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:32:12.475 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:32:17.455 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:32:17.485 AM]  Page View
+  Status              : FAILED
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+
+[12:34:12.248 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:34:13.270 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:34:13.283 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:34:13.325 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:34:19.078 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:34:19.103 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:02.979 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:04.069 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:41:04.079 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:41:04.130 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:05.023 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:41:05.070 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:41:29.012 AM]  Server Action
+  Status              : FAILED
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 500
+    - Form:
+        Action: save
+        Id: 
+        Category: DIMM
+        Brand: Samsung
+        Memory Type: DDR5
+        Osv Tester: Samsung DDR5 Tester
+        Username: 
+        Password: [REDACTED]
+        Mac Address: 
+        Ip Address: 
+        Location: 
+        Remote Access: 
+        Script Version: 
+        All Stockcode: 
+        Os Version: 
+        Bios: 
+        Bmc: 
+        Last Maintenance Date: 2026-10-27
+        Work Instruction: 
+    - Uploaded Files:
+
+[12:46:22.353 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:46:23.486 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:46:23.497 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:46:23.521 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:46:25.687 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:46:25.715 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:46:38.894 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: save
+        Id: 
+        Category: DIMM
+        Brand: Samsung
+        Memory Type: DDR5
+        Osv Tester: Samsung DDR5 Tester
+        Username: 
+        Password: [REDACTED]
+        Mac Address: 
+        Ip Address: 
+        Location: 
+        Remote Access: 
+        Script Version: 
+        All Stockcode: 
+        Os Version: 
+        Bios: 
+        Bmc: 
+        Last Maintenance Date: 2026-10-27
+        Work Instruction: 
+    - Uploaded Files:
+
+[12:46:38.913 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:47:08.657 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: save
+        Id: 
+        Category: DIMM
+        Brand: Samsung
+        Memory Type: DDR4
+        Osv Tester: Samsung DDR4 Tester
+        Username: 
+        Password: [REDACTED]
+        Mac Address: 
+        Ip Address: 
+        Location: 
+        Remote Access: 
+        Script Version: 
+        All Stockcode: 
+        Os Version: 
+        Bios: 
+        Bmc: 
+        Last Maintenance Date: 2026-10-27
+        Work Instruction: 
+    - Uploaded Files:
+
+[12:47:08.682 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:50:21.667 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:50:22.904 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:50:22.922 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:50:22.973 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:50:26.550 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:50:26.580 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:51:03.543 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:51:04.651 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:51:04.657 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:51:04.727 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:51:06.536 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:51:06.564 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:04.074 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:05.478 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:52:05.487 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:52:05.514 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:09.773 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:52:09.805 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:40.950 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:42.306 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:52:42.338 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:52:42.364 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:52:44.985 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:52:45.029 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:53:06.455 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:53:52.695 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:54:08.214 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:54:09.410 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:54:09.429 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:54:09.465 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:54:10.593 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:54:10.624 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:55:03.323 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:55:04.239 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:55:04.262 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:55:04.308 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:55:08.806 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:55:08.837 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:56:17.984 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:56:52.577 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:57:09.505 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:57:11.237 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:57:11.262 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:57:11.304 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:57:15.726 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:57:15.754 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:58:05.489 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:58:06.778 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[12:58:06.789 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[12:58:06.813 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[12:58:08.633 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[12:58:08.664 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:00:02.287 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: comment
+        Id: 2
+        Comment Text: sadadasdasdasd
+    - Uploaded Files:
+
+[01:00:02.309 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:00:10.335 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: comment
+        Id: 2
+        Comment Text: asdasdasdsa
+    - Uploaded Files:
+
+[01:00:10.375 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:03:29.300 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:03:32.344 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[01:03:32.387 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[01:03:32.417 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:03:34.872 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[01:03:34.914 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:04:12.610 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:04:13.282 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:04:24.061 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:04:25.082 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[01:04:25.104 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[01:04:25.149 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:04:29.032 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[01:04:29.071 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:02.445 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:03.589 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[01:05:03.602 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[01:05:03.627 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:04.523 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[01:05:04.553 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:15.243 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: comment
+        Id: 2
+        Comment Text: dasdasd
+    - Uploaded Files:
+
+[01:05:15.262 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:21.677 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : POST /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Action: comment
+        Id: 2
+        Comment Text: dsadasfvafasfasfasdfvav
+    - Uploaded Files:
+
+[01:05:21.694 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:05:54.434 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:27.511 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /overview
+    - Field: 
+
+[01:06:27.520 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:28.644 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[01:06:28.667 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:29.641 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[01:06:29.676 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:32.633 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /my-completed
+    - Field: 
+
+[01:06:32.790 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:35.158 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /history
+    - Field: 
+
+[01:06:35.815 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:35.875 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[01:06:35.896 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[01:06:35.919 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:35.955 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:39.247 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[01:06:39.248 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[01:06:40.386 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:40.430 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[01:06:40.438 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[01:06:40.475 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:40.515 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:06:49.220 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: By Brand
+    - Element: input
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: ctdMode
+
+[01:06:55.482 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Brand
+    - Element: select
+    - Element Id: ctdBrandPick
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[01:06:55.666 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:07:14.894 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[01:07:14.939 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:07:27.102 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:07:27.155 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[01:07:27.161 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.css
+
+[01:07:27.195 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:07:27.225 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:07:31.402 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Users
+    - Element: a
+    - Element Id: 
+    - Href: /admin/users
+    - Page: /admin/kpi
+    - Field: 
+
+[01:07:31.433 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_users
+  Request             : GET /admin/users
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+

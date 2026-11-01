@@ -1,0 +1,252 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Saturday, October 24, 2026
+  Login Time          : 11:02:57 PM Central Daylight Time
+  Audit Session ID    : e3bffa7d5d3d5e3e
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[11:02:57.125 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[11:02:57.997 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:02:58.799 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[11:03:01.645 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[11:03:01.679 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[11:03:02.307 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:03:09.614 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:03:09.629 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[11:03:09.968 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[11:03:12.577 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:03:12.597 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[11:03:54.849 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.index
+  Request             : GET /tools/work-instructions/micron-ddr4
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:03:54.878 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-007 · REV C01 MICRON DDR4 DIMM Inspection, testing, log review, and closeout for the Micron DDR4 workflow. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/micron-ddr4
+    - Page: /tools/work-instructions
+    - Field: 
+
+[11:03:55.220 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[11:03:55.234 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[11:03:59.383 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.index
+  Request             : GET /tools/work-instructions/micron-ddr4
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:03:59.401 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-007 · REV C01 MICRON DDR4 DIMM Inspection, testing, log review, and closeout for the Micron DDR4 workflow. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/micron-ddr4
+    - Page: /tools/work-instructions
+    - Field: 
+
+[11:03:59.767 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: wi.css
+
+[11:03:59.776 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: wi.js
+
+[11:04:03.145 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.index
+  Request             : GET /tools/work-instructions/micron-ddr4
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[11:04:03.168 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-007 · REV C01 MICRON DDR4 DIMM Inspection, testing, log review, and closeout for the Micron DDR4 workflow. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/micron-ddr4
+    - Page: /tools/work-instructions
+    - Field: 
+
+[11:04:03.559 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: wi.css
+
+[11:04:03.573 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: wi.js
+

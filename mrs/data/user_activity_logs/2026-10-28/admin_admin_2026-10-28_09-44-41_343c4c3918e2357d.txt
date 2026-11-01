@@ -1,0 +1,1728 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Wednesday, October 28, 2026
+  Login Time          : 09:44:41 AM Central Daylight Time
+  Audit Session ID    : 343c4c3918e2357d
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[09:44:41.398 AM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[09:44:42.690 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:44:44.598 AM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[09:44:46.299 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[09:44:46.319 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[09:44:46.898 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:44:47.487 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Go
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /overview
+    - Field: 
+
+[09:44:47.500 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/overview
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /overview
+    - Field: 
+
+[09:44:47.690 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:44:52.562 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[09:44:56.490 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:44:56.923 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:44:56.949 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[09:44:57.581 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:44:58.081 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:45:24.266 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:45:24.272 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:45:26.065 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:45:26.463 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:45:26.475 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:45:27.207 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:45:27.579 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:45:56.493 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: By Brand
+    - Element: input
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: ctdMode
+
+[09:46:01.431 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Brand Select brand Delta PSU FLEX PSU FPGA H100 SINGLE GPU H100 UBB-8 H200 SINGLE GPU H200 UBB-8 HAYSTACK MB HYNIX DDR4 HYNIX DDR5 HYNIX M.2 HYNIX NVMe INTEL CPU Inventec HIB Inventec Honeycomb MB Inventec MB Inventec PDB Liteon PSU MI300X 
+    - Element: select
+    - Element Id: ctdBrandPick
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:46:01.752 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:46:06.808 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Element: form
+    - Element Id: ctdControls
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:46:06.818 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Update graph
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:46:07.096 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:46:29.371 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 📄 Export OSV KPI PDF
+    - Element: a
+    - Element Id: kpiPdfExport
+    - Href: /admin/kpi/pdf?chart=pie&tech=&from=2026-01-26&to=2026-11-01
+    - Page: /admin/kpi
+    - Field: 
+
+[09:46:32.379 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_pdf
+  Request             : POST /admin/kpi/pdf
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Form:
+    - Uploaded Files:
+
+[09:46:40.234 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OVERALL TEST RESULTS Click graph to enlarge OVERALL TEST RESULTS NTF 502 (56%) Failed 382 (43%) Pending / WIP 3 (0%) CUSTOMER INDUCED DAMAGE (CID) 11 (1%) Graph Summary MEANING / WHAT Failure dominates this period: 382 of 887 results (43%) 
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:03.141 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Chart Type Pie Chart Donut Chart Horizontal Bars Vertical Bars Stat Cards Treemap Radial / Rose
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:06.145 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:06.566 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:47:06.579 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:47:07.278 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:07.664 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:11.546 AM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Chart Type Pie Chart Donut Chart Horizontal Bars Vertical Bars Stat Cards Treemap Radial / Rose
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:14.250 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:14.675 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:47:14.689 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:47:15.392 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:15.826 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:41.809 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/kpi?chart=stat&tech=&from=2026-01-26&to=2026-11-01
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:41.816 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Apply Filter
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:47.630 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:48.115 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:47:48.129 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:47:48.900 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:49.317 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:47:57.563 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: THROUGHPUT — PASS / FAIL / NOT TESTED Click graph to enlarge Stacked bars show total volume per period with outcome split. THROUGHPUT — WEEKLY PASS / FAIL / NOT TESTED 0 63 127 191 255 2025-W20 26 2025-W19 30 2025-W18 64 130 2025-W17 151 10
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:47:59.146 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 45 91 136 182 0% 25% 50% 75% 100% 182 RD-00691-001G 17% 137 RD-00665-001G 29
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:48:00.898 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: PARETO — TOP FAILURE CONTRIBUTORS Click graph to enlarge Failed tickets grouped by Stock Code, with cumulative percentage line. TOP FAILURE CONTRIBUTORS — PARETO 0 45 91 136 182 0% 25% 50% 75% 100% 182 RD-00691-001G 17% 137 RD-00665-001G 29
+    - Element: div
+    - Element Id: 
+    - Href: 
+    - Page: /admin/kpi
+    - Field: 
+
+[09:48:39.423 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /admin/kpi
+    - Field: 
+
+[09:48:41.526 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:48:42.056 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:48:42.078 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:48:42.336 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:48:43.424 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[09:48:49.941 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Memory Diagnostics DIMM LOGS ANALYZER Analyze DIMM test logs, ECC events, health, trends, and recommendations. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/dimm-logs-analyzer
+    - Page: /tools
+    - Field: 
+
+[09:48:49.945 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.dimm
+  Request             : GET /tools/dimm-logs-analyzer
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:48:50.950 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/analyzer.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: analyzer.css
+
+[09:48:58.135 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:48:58.146 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/dimm-logs-analyzer
+    - Field: 
+
+[09:48:58.610 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[09:49:07.588 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[09:49:07.618 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:49:26.984 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: WI-007 · REV C01 MICRON DDR4 DIMM Inspection, testing, log review, and closeout for the Micron DDR4 workflow. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/micron-ddr4
+    - Page: /tools/work-instructions
+    - Field: 
+
+[09:49:26.997 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.index
+  Request             : GET /tools/work-instructions/micron-ddr4
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:49:27.954 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[09:49:27.959 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_micron_ddr4.static
+  Request             : GET /static/wi_micron_ddr4/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[09:49:30.486 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Confirm the DIMM is Micron DDR4
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/micron-ddr4
+    - Field: 
+
+[09:49:31.285 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Perform the pre-test physical inspection
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/micron-ddr4
+    - Field: 
+
+[09:49:33.753 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/micron-ddr4
+    - Field: 
+
+[09:49:33.754 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:49:40.330 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Inventec
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/inventec
+    - Page: /tools/work-instructions
+    - Field: 
+
+[09:49:40.382 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/inventec
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: inventec
+
+[09:49:59.092 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:49:59.096 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← Work Instructions
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools/work-instructions/edit/inventec
+    - Field: 
+
+[09:50:04.509 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:50:04.517 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: ← All Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions
+    - Field: 
+
+[09:50:05.032 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[09:50:17.426 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Operations Calendar DUTIES Schedule daily duties and tester maintenance items for the live presentation. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/duties
+    - Page: /tools
+    - Field: 
+
+[09:50:17.494 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.duties
+  Request             : GET /tools/duties
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:50:18.377 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: tools.css
+
+[09:50:36.526 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /tools/duties
+    - Field: 
+
+[09:50:37.765 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:50:38.337 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:50:38.341 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[09:50:39.302 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:50:39.822 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:50:40.608 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[09:50:40.723 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:20.297 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:20.833 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:51:20.848 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[09:51:21.770 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:22.339 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:25.206 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /admin/kpi
+    - Field: 
+
+[09:51:25.452 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:33.687 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:51:39.852 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:51:44.108 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[09:51:44.647 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:51:46.939 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-completed
+    - Field: 
+
+[09:51:47.088 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:52:03.950 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:12.551 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Save NTF and Complete Ticket
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:12.565 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/my-tickets
+    - Element: form
+    - Element Id: ntf-form
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:12.577 AM]  Server Action
+  Status              : FAILED
+  Area / Action       : complete_pass_ajax
+  Request             : POST /ticket/31125/complete-pass-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 400
+    - Object:
+        Tid: 31125
+    - Form:
+        Mrs Ticket: MRS0111112
+        Serial Number: 5274432.353645345345
+        Wh Location: 
+        Technician Name: admin
+        Stock Code: RD-00691-001G
+        Part Type: DIMM
+        Part Description: Hynix DDR5 DIMM
+        Assigned At: 2026/10/27 02:42:48 PM
+        Test Started At: 2026/10/27 02:42:53 PM
+        Completed At: 10/28/2026, 9:52:03 AM
+        Return Time: 
+        Test Result: NTF
+        Failure Reason: Passed All Test (NTF)
+        Quality Disposition: N/A
+        Logs Uploaded: no
+        Log Path: no Log
+        Mrs Comments: testing
+        Stock Cd: 
+        Bb Flag: 0
+        Sxm1 Flag: 0
+        Sxm2 Flag: 0
+        Sxm3 Flag: 0
+        Sxm4 Flag: 0
+        Sxm5 Flag: 0
+        Sxm6 Flag: 0
+        Sxm7 Flag: 0
+        Sxm8 Flag: 0
+        Csv Id: 
+        Csv Index: 
+        Modified: 
+    - Uploaded Files:
+
+[09:52:31.973 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31125
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:37.425 AM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/my-tickets
+    - Element: form
+    - Element Id: ntf-form
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:37.433 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Save NTF and Complete Ticket
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:38.075 AM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : complete_pass_ajax
+  Request             : POST /ticket/31125/complete-pass-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+    - Form:
+        Mrs Ticket: MRS0111112
+        Serial Number: 5274432.353645345345
+        Wh Location: ZTP
+        Technician Name: admin
+        Stock Code: RD-00691-001G
+        Part Type: DIMM
+        Part Description: Hynix DDR5 DIMM
+        Assigned At: 2026/10/27 02:42:48 PM
+        Test Started At: 2026/10/27 02:42:53 PM
+        Completed At: 10/28/2026, 9:52:31 AM
+        Return Time: 
+        Test Result: NTF
+        Failure Reason: Passed All Test (NTF)
+        Quality Disposition: N/A
+        Logs Uploaded: no
+        Log Path: no Log
+        Mrs Comments: testing
+        Stock Cd: 
+        Bb Flag: 0
+        Sxm1 Flag: 0
+        Sxm2 Flag: 0
+        Sxm3 Flag: 0
+        Sxm4 Flag: 0
+        Sxm5 Flag: 0
+        Sxm6 Flag: 0
+        Sxm7 Flag: 0
+        Sxm8 Flag: 0
+        Csv Id: 
+        Csv Index: 
+        Modified: 
+    - Uploaded Files:
+
+[09:52:38.691 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:52:42.843 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /my-tickets
+    - Field: 
+
+[09:52:43.873 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:52:48.915 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Print 59 × 104 mm Label
+    - Element: a
+    - Element Id: 
+    - Href: /ticket/31125/print-label
+    - Page: /my-completed
+    - Field: 
+
+[09:52:48.984 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : print_ticket_label
+  Request             : GET /ticket/31125/print-label
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31125
+
+[09:53:20.267 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View All Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[09:54:01.296 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /my-completed
+    - Field: 
+
+[09:54:01.991 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:54:05.418 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /history
+    - Field: 
+
+[09:54:05.545 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:54:10.105 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: KPI Presentation
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi
+    - Page: /overview
+    - Field: 
+
+[09:54:11.376 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:54:11.936 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:54:11.943 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 304
+    - Object:
+        Filename: timeline.js
+
+[09:54:12.925 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:54:13.501 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:54:31.205 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 🖥️ Launch TV Presentation Mode
+    - Element: a
+    - Element Id: 
+    - Href: /admin/kpi/presentation?chart=pie
+    - Page: /admin/kpi
+    - Field: 
+
+[09:54:31.254 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:55:13.298 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi_presentation
+  Request             : GET /admin/kpi/presentation
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:55:26.098 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_kpi
+  Request             : GET /admin/kpi
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:55:26.517 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.css
+
+[09:55:26.535 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.static
+  Request             : GET /component-test-duration-assets/timeline.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: timeline.js
+
+[09:55:27.250 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:55:27.659 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : component_test_timeline.data
+  Request             : GET /api/component-test-duration
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:55:32.445 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /admin/kpi
+    - Field: 
+
+[09:55:32.511 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:56:11.723 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:56:14.309 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /overview
+    - Field: 
+
+[09:56:14.364 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:56:38.171 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: RD-00659-001G Hynix DDR4 DIMM ›
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[09:56:41.286 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[09:56:48.892 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: RD-00587-001G Hynix DDR4 DIMM ›
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[09:57:03.811 AM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /stockcode-db
+    - Field: 
+
+[09:59:16.974 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /stockcode-db
+    - Field: 
+
+[09:59:17.565 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:59:17.875 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /stockcode-db
+    - Field: 
+
+[09:59:20.566 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /admin/tickets
+    - Page: /history
+    - Field: 
+
+[09:59:20.840 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_tickets
+  Request             : GET /admin/tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:59:24.270 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:59:24.274 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /admin/tickets
+    - Field: 
+
+[09:59:24.808 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[09:59:32.032 AM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /tools
+    - Field: 
+
+[09:59:32.038 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[09:59:36.290 AM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+

@@ -1,0 +1,487 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Monday, October 26, 2026
+  Login Time          : 04:28:24 PM Central Daylight Time
+  Audit Session ID    : 82712ef046e04d3f
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[04:28:24.084 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[04:28:24.750 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:25.760 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[04:28:26.611 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[04:28:26.619 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[04:28:27.094 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:32.949 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[04:28:32.951 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:33.544 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:28:34.892 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:34.893 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:28:36.922 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Liteon PSU
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/liteon_psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:28:36.948 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/liteon_psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: liteon_psu
+
+[04:28:37.673 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_liteon_psu.static
+  Request             : GET /static/wi_liteon_psu/assets/image_01.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_01.jpg
+
+[04:28:40.252 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:40.261 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions/edit/liteon_psu
+    - Field: 
+
+[04:28:40.606 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:28:42.116 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:42.145 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:28:44.544 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.edit_work_instruction
+  Request             : GET /tools/work-instructions/edit/delta_psu
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Wi Key: delta_psu
+
+[04:28:44.553 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Edit Delta PSU
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/edit/delta_psu
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:28:48.853 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:28:48.863 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /tools/work-instructions/edit/delta_psu
+    - Field: 
+
+[04:28:49.234 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[04:29:07.566 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Training WORK INSTRUCTION PRESENTATIONS Open the organized work-instruction presentation library. OPEN TOOL →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions
+    - Page: /tools
+    - Field: 
+
+[04:29:07.581 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.work_instructions
+  Request             : GET /tools/work-instructions
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:30:40.539 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: SAMSUNG DDR5 · REV A SAMSUNG DDR5 OSV Two BIOS tests, OS aging, log collection, recovery, and final disposition. OPEN INSTRUCTION →
+    - Element: a
+    - Element Id: 
+    - Href: /tools/work-instructions/samsung-ddr5
+    - Page: /tools/work-instructions
+    - Field: 
+
+[04:30:40.605 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.index
+  Request             : GET /tools/work-instructions/samsung-ddr5
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[04:30:41.472 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/wi.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.css
+
+[04:30:41.488 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/wi.js
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: wi.js
+
+[04:30:42.300 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/assets/image_01.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_01.jpg
+
+[04:30:43.067 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Load Samsung DDR5 Modules
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:43.104 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/assets/image_02.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_02.jpg
+
+[04:30:43.762 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 01 Prepare the Station
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:47.361 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Verify BIOS Settings
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:48.433 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 04 Run BIOS-Level Test 1
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:48.467 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/assets/image_03.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_03.jpg
+
+[04:30:48.935 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 05 Run BIOS-Level Test 2
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:49.699 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 06 Run OS-Level Aging
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:49.733 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : wi_samsung_ddr5.static
+  Request             : GET /static/wi_samsung_ddr5/assets/image_04.jpg
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: assets/image_04.jpg
+
+[04:30:50.325 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 03 Verify BIOS Settings
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:50.947 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 02 Load Samsung DDR5 Modules
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+
+[04:30:53.186 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: 01 Prepare the Station
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /tools/work-instructions/samsung-ddr5
+    - Field: 
+

@@ -1,0 +1,1024 @@
+==============================================================================
+                        OSV PORTAL USER ACTIVITY LOG
+==============================================================================
+
+USER AND YUBIKEY IDENTITY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Portal Username     : admin
+  User ID             : 1
+  Account Type        : Administrator
+  YubiKey Name        : Cong
+  YubiKey Public ID   : cccccb...gjji
+
+SESSION INFORMATION
+------------------------------------------------------------------------------
+  Login Date          : Tuesday, October 27, 2026
+  Login Time          : 01:30:24 PM Central Daylight Time
+  Audit Session ID    : 54d1a03dfe213621
+  IP Address          : 127.0.0.1
+  Browser / Device    : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+
+ACTIVITY TIMELINE
+==============================================================================
+Events are listed in the order they occurred.
+
+[01:30:24.233 PM]  Login Success
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+
+[01:30:24.931 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : main_menu
+  Request             : GET /
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:30:26.257 PM]  Page View
+  Status              : FAILED
+  Request             : GET /favicon.ico
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 404
+
+[01:30:31.659 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[01:30:31.664 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[01:30:32.142 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:30:35.154 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /overview
+    - Field: 
+
+[01:30:35.163 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:30:35.899 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[01:30:42.012 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OPEN DATABASE BUILDER →
+    - Element: a
+    - Element Id: 
+    - Href: /admin/history-database-builder
+    - Page: /tools
+    - Field: 
+
+[01:30:42.322 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:30:53.153 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:30:55.567 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:30:59.333 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/history-database-builder
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:30:59.339 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Add Choice to List
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:30:59.745 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : POST /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Field Name: WH Location
+        Option Value: ZTP
+    - Uploaded Files:
+
+[01:31:00.442 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:31:14.777 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:31:41.238 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:31:44.998 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:32:05.495 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/history-database-builder
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:05.500 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Add Choice to List
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:05.843 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : POST /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Field Name: Part Type
+        Option Value: FPGA
+    - Uploaded Files:
+
+[01:32:06.527 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:32:15.537 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:32:17.637 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/history-database-builder
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:17.640 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Add Choice to List
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:17.964 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : POST /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Field Name: Part Type
+        Option Value: MB
+    - Uploaded Files:
+
+[01:32:18.835 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:32:27.568 PM]  Field Change
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Table Title Title Part SN WH Location Technician Stock Code Part Type Part Description Assigned Time Test Start Time Test End Time Return Time Result Test Failure Quality Disposition Logs Uploaded Log Path Comments Stock_cd BB Flag SXM1 Fla
+    - Element: select
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: field_name
+
+[01:32:28.908 PM]  Form Submit
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: https://localhost/admin/history-database-builder
+    - Element: form
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:28.912 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Add Choice to List
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:29.246 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : POST /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Form:
+        Field Name: Part Type
+        Option Value: PSU
+    - Uploaded Files:
+
+[01:32:30.132 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history_database_builder
+  Request             : GET /admin/history-database-builder
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:32:53.965 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /admin/history-database-builder
+    - Field: 
+
+[01:32:54.413 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:32:58.292 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Manage Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /admin/tickets
+    - Page: /my-completed
+    - Field: 
+
+[01:32:58.678 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : admin_tickets
+  Request             : GET /admin/tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:33:05.209 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: StockCode DB
+    - Element: a
+    - Element Id: 
+    - Href: /stockcode-db
+    - Page: /admin/tickets
+    - Field: 
+
+[01:33:05.329 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : stockcode_db.index
+  Request             : GET /stockcode-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:33:31.827 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /stockcode-db
+    - Field: 
+
+[01:33:32.152 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:33:40.229 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Print 59 × 104 mm Label
+    - Element: a
+    - Element Id: 
+    - Href: /ticket/31119/print-label
+    - Page: /my-completed
+    - Field: 
+
+[01:33:40.267 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : print_ticket_label
+  Request             : GET /ticket/31119/print-label
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31119
+
+[01:33:59.938 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View All Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[01:34:55.685 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[01:34:56.634 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /my-completed
+    - Field: 
+
+[01:34:57.740 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:35:26.115 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /history
+    - Field: 
+
+[01:35:26.264 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:35:28.782 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-tickets
+    - Field: 
+
+[01:35:28.803 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:35:32.134 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tester DB
+    - Element: a
+    - Element Id: 
+    - Href: /tester-db
+    - Page: /overview
+    - Field: 
+
+[01:35:32.329 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tester_db
+  Request             : GET /tester-db
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:35:35.009 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:35:59.699 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /overview
+    - Field: 
+
+[01:36:00.317 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:01.536 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-completed
+    - Field: 
+
+[01:36:01.550 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:04.232 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-tickets
+    - Field: 
+
+[01:36:04.251 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:05.855 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /overview
+    - Field: 
+
+[01:36:06.640 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:09.570 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: View All Details
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[01:36:33.944 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Close
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-completed
+    - Field: 
+
+[01:36:35.096 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-completed
+    - Field: 
+
+[01:36:35.112 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:35.804 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /my-completed
+    - Field: 
+
+[01:36:35.841 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:37.285 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Overview
+    - Element: a
+    - Element Id: 
+    - Href: /overview
+    - Page: /overview
+    - Field: 
+
+[01:36:37.315 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:38.787 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Claim Stock Code
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /overview
+    - Field: 
+
+[01:36:38.806 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : assign_stock
+  Request             : POST /stock/GP-00061-001G/assign
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Stock Code: GP-00061-001G
+    - Form:
+    - Uploaded Files:
+
+[01:36:39.934 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /overview
+    - Field: 
+
+[01:36:39.961 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:41.096 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: My Dashboard
+    - Element: a
+    - Element Id: 
+    - Href: /my-tickets
+    - Page: /my-tickets
+    - Field: 
+
+[01:36:41.104 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_tickets
+  Request             : GET /my-tickets
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:36:43.669 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Start Test
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[01:36:43.691 PM]  Server Action
+  Status              : SUCCESS
+  Area / Action       : start_test_ajax
+  Request             : POST /ticket/31121/start-test-ajax
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Tid: 31121
+    - Form:
+    - Uploaded Files:
+
+[01:36:45.649 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: NTF and Completed
+    - Element: button
+    - Element Id: pass-btn-31121
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[01:38:29.674 PM]  Click
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Cancel
+    - Element: button
+    - Element Id: 
+    - Href: 
+    - Page: /my-tickets
+    - Field: 
+
+[01:38:31.616 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:38:31.624 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /my-tickets
+    - Field: 
+
+[01:38:32.160 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+
+[01:39:03.488 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: History
+    - Element: a
+    - Element Id: 
+    - Href: /history
+    - Page: /tools
+    - Field: 
+
+[01:39:04.508 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : history
+  Request             : GET /history
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:39:09.049 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Completed Tickets
+    - Element: a
+    - Element Id: 
+    - Href: /my-completed
+    - Page: /history
+    - Field: 
+
+[01:39:09.847 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : my_completed
+  Request             : GET /my-completed
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:39:12.017 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.index
+  Request             : GET /tools
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[01:39:12.029 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Tools
+    - Element: a
+    - Element Id: 
+    - Href: /tools
+    - Page: /my-completed
+    - Field: 
+
+[01:39:12.598 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : tools_portal.static
+  Request             : GET /static/tools_portal/tools.css
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+    - Object:
+        Filename: tools.css
+

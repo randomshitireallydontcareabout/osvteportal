@@ -1,0 +1,57 @@
+[08:29:17.309 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : choose_section
+  Request             : GET /section/osv
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 302
+    - Object:
+        Section Key: osv
+
+[08:29:17.322 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: OSV ON-SITE VERIFICATION OSV Workspace Open the existing OSV ticket, KPI, history, alert, and administration system. Select OSV →
+    - Element: a
+    - Element Id: 
+    - Href: /section/osv
+    - Page: /
+    - Field: 
+
+[08:29:17.377 PM]  Page View
+  Status              : SUCCESS
+  Area / Action       : overview
+  Request             : GET /overview
+  Source IP           : 127.0.0.1
+  Details:
+    - Status Code: 200
+
+[08:29:23.155 PM]  Logout
+  Status              : SUCCESS
+  Details:
+    - Session Duration: 00:04:23
+
+[08:29:23.163 PM]  Navigation
+  Status              : SUCCESS
+  Area / Action       : audit_client_event
+  Request             : POST /audit/client-event
+  Source IP           : 127.0.0.1
+  Details:
+    - Label: Sign out
+    - Element: a
+    - Element Id: 
+    - Href: /logout
+    - Page: /overview
+    - Field: 
+
+==============================================================================
+SESSION SUMMARY
+------------------------------------------------------------------------------
+  YubiKey Holder Name : admin
+  Session Duration    : 00:04:23
+  Log Closed          : Saturday, October 24, 2026 at 08:29:23 PM Central Daylight Time
+  Integrity SHA256    : 721e10b5788e053fa51ac731a42c7c410a78bf275c9ee674221f15bd7da29404
+==============================================================================

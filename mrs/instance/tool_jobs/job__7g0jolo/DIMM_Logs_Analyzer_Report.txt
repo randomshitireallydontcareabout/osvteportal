@@ -1,0 +1,7 @@
+DIMM LOGS ANALYZER REPORT
+Files: 1
+Events: 127
+
+CPU1_DIMM_B1 | Ch 1 Slot 0
+Hynix | 47BDCB83 | FAILED (Tester Threshold - Corrected ECC) | Risk 1800.0
+FAILED: The tester failure threshold was reached through sustained corrected ECC activity. The dominant pattern is Broad multi-test failure. The test result is failed, while a controlled swap is still required to determine whether the physical DIMM or its slot/channel path caused it.
